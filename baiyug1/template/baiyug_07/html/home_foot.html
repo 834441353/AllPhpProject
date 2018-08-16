@@ -1,0 +1,56 @@
+<div class="footer footer_inner">
+	<div class="foot-bottom">
+	{if-A:{maccms:siteaid} = 10 }
+    	<div class="mod_footer_partners">
+        	<span class="partner_title">合作伙伴</span>
+            <div class="partner_links">
+			<a href="http://baiyug.cn" rel="nofollow">百域阁-影视传媒 </a>|
+			<a href="http://{maccms:url}" target="_blank" title="{maccms:name}" >{maccms:name}</a>|
+            {maccms:link type=font num=20}
+    		<a href="[link:link]" target="_blank" title="[link:name]" >[link:name]</a>|
+            {/maccms:link}
+          	</div>
+        </div>
+            {endif-A}
+        <div class="mod_footer">
+			<div class="copyrightzh">
+            <a href="{maccms:link_map_rss}" target="_blank">RSS订阅</a>&nbsp;|&nbsp;
+			<a href="{maccms:link_map_vod}"  title="排行榜">最新排行</a>&nbsp;|&nbsp;
+			<a href="{maccms:getlink top.html}" title="最近更新" >最新更新</a>&nbsp;|&nbsp;{maccms:visits}
+			<br />
+			本网站所有资源均系各大视频网站收集，本网站只提供web页面服务，并不提供影片资源存储，也不参与录制、<br />上传
+			若本站收录的节目无意侵犯了贵司版权，请给{maccms:email}邮箱地址来信，我们将在第一时间处理与回复,谢谢</div>
+			<div class="copyrighten">Copyright © <span>2015</span>所有版权：{maccms:name}  合作邮箱：{maccms:email}  联系QQ： {maccms:qq}  备案号： {maccms:icp}</div>
+		</div>
+    </div>
+</div>
+<div class="rightMenu" style="display: block; position: fixed; top: 340px; " id="rightMenu">
+ 		{maccms:matrix table=vod type=parent}
+		<ul>
+		<li><a href="[matrix:link] " target="_self" style="border-bottom:1px solid #ddd;">[matrix:name]</a></li>
+		</ul> 
+		{/maccms:matrix}
+		<ul>
+		<li><a href="javascript:window.scrollTo(0, 0);" target="_self" class="backTop">返回</a></li>
+		</ul> 
+     </div>
+<script type="text/javascript">
+<!--
+		(function () {
+			$("#rightMenu").click(function () {
+				$("html, body").animate({ scrollTop: 0 },1);
+			})
+			$backToTopFun = function () {
+				var st = $(document).scrollTop(), winh = $(window).height();
+				(st > 0) ? $("#rightMenu").show() : $("#rightMenu").hide();
+				//IE6下的定位
+				if (!window.XMLHttpRequest) {
+					$("#rightMenu").css("top", st + winh - 250);
+				}
+			};
+			$(window).bind("scroll", $backToTopFun);
+			$(function () { $backToTopFun(); });
+		})();	
+//-->
+</script>
+<script src="{maccms:path_ads}shichuang.js"></script><script src="{maccms:path_ads}duilian.js"></script>

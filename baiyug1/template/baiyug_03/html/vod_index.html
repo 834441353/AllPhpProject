@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{maccms:name}</title>
+{maccms:include}
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<meta name="author" content="{maccms:name}：http://baiyug.cn" />
+<meta property="qc:admins" content="55262572576253162176375" />
+<link rel="shortcut icon" href="{maccms:path_tpl}imgs/favicon.ico"/>
+<link rel="bookmark" href="{maccms:path_tpl}imgs/favicon.ico"/>
+</head>
+<body>
+{maccms:head}
+<div class="container">
+
+
+
+
+
+
+
+
+
+<div class="video-list">
+    <div class="row video-tags">
+      <h1 class="tag-title">最新电视剧</h1>
+      <div class="pull-right video-tags-right car-btn"> <a href="/index.php?m=vod-list-id-2-pg-1-order--by-hits-class--year--letter--area--lang-.html" class="more" style="line-height:27px;margin-right:3px">热门</a>/ <a href="/?m=vod-type-id-2.html" class="more" style="line-height:27px;">更多</a> </div>
+    </div>
+    <div class="row movie_row">
+      <div class="movie_item active" name="movie_1">
+        <div class="movie-item"> {maccms:vod type=2 num=36 order=desc by=time}
+          <div class="movie-info"> <a href="[vod:link]" class="not"><img class="movie-pic lazy" title="[vod:name]" alt="[vod:name]" data-original="[vod:pic]" src="{maccms:path}images/blank.png"></a>
+            <p class="movie-info-format"><strong>[vod:name]</strong></p>
+            <p class="movie-info-updateTime">时间：[vod:addtime style=m-d] </p>
+            <p class="movie-info-remarks">[vod:remarks]</p>
+          </div>
+          {/maccms:vod} </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="video-list">
+    <div class="row video-tags">
+      <h1 class="tag-title">最新电影</h1>
+      <span>今天<em class="up_number">{maccms:count_vod_day}</em>部新电影</span>
+      <div class="pull-right video-tags-right car-btn"> <a href="/index.php?m=vod-list-id-1-pg-1-order--by-hits-class--year--letter--area--lang-.html" class="more" style="line-height:27px;margin-right:3px">热门</a>/ <a href="/?m=vod-type-id-1.html" class="more" style="line-height:27px;">更多</a> </div>
+    </div>
+    <div class="row movie_row">
+      <div class="movie_item active" name="movie_1">
+        <div class="movie-item"> {maccms:vod type=1 num=36 order=desc by=time}
+          <div class="movie-info"> <a href="[vod:link]" class="not"><img class="movie-pic lazy" title="[vod:name]" alt="[vod:name]" data-original="[vod:pic]" src="{maccms:path}images/blank.png"></a>
+            <p class="movie-info-format"><strong>[vod:name]</strong></p>
+            <p class="movie-info-updateTime">时间：[vod:addtime style=m-d]</p>
+            <p class="movie-info-remarks">[vod:remarks]</p>
+          </div>
+          {/maccms:vod} </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="video-list">
+    <div class="row video-tags">
+      <h1 class="tag-title">最新综艺节目</h1>
+      <div class="pull-right video-tags-right car-btn"> <a href="/index.php?m=vod-list-id-3-pg-1-order--by-hits-class--year--letter--area--lang-.html" class="more" style="line-height:27px;margin-right:3px">热门</a>/ <a href="/?m=vod-type-id-3.html" class="more" style="line-height:27px;">更多</a> </div>
+    </div>
+    <div class="row movie_row">
+      <div class="movie_item active" name="movie_1">
+        <div class="movie-item"> {maccms:vod type=3 num=12 order=desc by=time}
+          <div class="movie-info"> <a href="[vod:link]" class="not"><img class="movie-pic lazy" title="[vod:name]" alt="[vod:name]" data-original="[vod:pic]" src="{maccms:path}images/blank.png"></a>
+            <p class="movie-info-format"><strong>[vod:name]</strong></p>
+            <p class="movie-info-updateTime">时间：[vod:addtime style=m-d] </p>
+            <p class="movie-info-remarks">[vod:remarks]</p>
+          </div>
+          {/maccms:vod} </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="video-list recommend">
+  <div class="row video-tags">
+    <h2 class="tag-title">热门视频推荐</h2>
+  </div>
+  <div class="tag-nr">
+	  <ul>
+		{maccms:vod num=20 type=all order=desc by=hits}
+		<li><a href="[vod:link]">[vod:name]</a></li>
+		{/maccms:vod}
+	  </ul>
+  </div>
+</div>
+<div class="friend-link">
+  <div class="fter">
+    <h4>友情链接</h4>
+  </div>
+  <div class="Links"> {maccms:link type=font num=100} <a href="[link:link]" target="_blank" class="link">[link:name]</a> {/maccms:link} </div>
+</div>
+{maccms:foot}
+</body>
+</html>

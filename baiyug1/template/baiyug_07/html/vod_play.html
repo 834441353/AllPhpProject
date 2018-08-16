@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>正在播放 [vod:name] [vod:playname]</title>
+<meta name="Keywords" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<meta name="description" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<meta property="qc:admins" content="5040353377677066375" />
+<link href="{maccms:path_tpl}css/xing_allstyle.css" rel="stylesheet" />
+{maccms:include}
+{maccms:xubao}
+{maccms:qbfq}
+{maccms:viptan}
+{maccms:putan}
+{maccms:adgg}
+{maccms:pbts}
+<script language="javascript">var Root='/';var Sid='1';var Cid='15';var SiteShortName='{maccms:name}';var Id='337';</script>
+<script language="javascript" type="text/javascript" src="{maccms:path_tpl}js/youmtvjs.js" charset="utf-8"></script>
+<script language="javascript" src="{maccms:path_tpl}js/youmtv-tab.js" charset="utf-8"></script>
+</head>
+<body class="ymplay">
+{maccms:head}
+<div class="ymtvPlay">
+<div class="vcate"><span>当前位置：</span>[vod:textlink]-[vod:playname]</div>
+<!--电影播放区域开始-->
+<div id="playBox">
+ <div class="lighton"><span class="s1">关灯</span><span class="s2">关闭广告</span></div>
+    <div class="playArea">
+      <div id="play-box">
+        <div class="center">
+         [vod:playerinfo][vod:player]
+        </div>
+      </div>
+    </div>
+</div>
+<div class="ligopen"></div>
+</div>
+<div class="warp">
+  <div class="ibox pbox">
+                            <div class="vodgoldbox playgold">
+                            [vod:scoremark1]
+                            <div class="ck"></div>
+                            </div>
+		<div class="loveidbox"><a rel="nofollow" class="sect-btn" href="javascript:void(0)" onclick="MAC.UserFav('[vod:id]');return false;">收藏</a></div>
+        <div class="remind"><a href="{maccms:link_map_rss}" target="_blank" class="rss-btn sect-btn" rel="nofollow">订阅</a></div>
+        <div class="updownbtnbox">[vod:digg]</div>
+        <div class="iconfontb"><a href=""><i class="iconfont m-r-5 f-s-20">&#xf01cb;</i>播放：[vod:hits] 次</a></div>
+        <div class="iconfontbox"><a href="javascript:void(0)" target="_self" onclick="MAC.Error(&quot;vod&quot;,&quot;[vod:id]&quot;,&quot;[vod:name]&quot;);return false;"><i class="iconfont m-r-5 f-s-20">&#xf0066;</i>报错</a></div>
+          <div class="sharebox">
+          <!-- Baidu Button BEGIN -->
+			<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare" data="{
+				'url':'http://{maccms:url}[vod:link]',
+				'desc':'[vod:contenttext len=40]',
+				'text':'[vod:name][vod:playname]',
+				'pic':'[vod:pic]'}">
+            <i class="iconfont m-r-5 fn-left f-s-20"style="float:left;">&#xf012f;分享：</i>
+			<a class="bds_mshare"></a>
+            <a class="bds_sqq"></a>
+            <a class="bds_qzone"></a>
+            <a class="bds_tqq"></a>
+            <a class="bds_tsina"></a>
+            <a class="bds_renren"></a>
+            <span class="bds_more"></span>
+            <a class="shareCount"></a>
+			</div>
+			<script type="text/javascript" id="bdshare_js" data="type=tools&uid=599666" ></script>
+			<script type="text/javascript" id="bdshell_js"></script>
+			<script type="text/javascript">
+			document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+			</script>
+			<!-- Baidu Button END -->
+		<div class="cl"></div>
+</div>
+</div> 
+<div class="ibox playBox" id="vodbox">
+<div class="playBar" id="playTabbtn">
+{maccms:play}
+<p class="{if-A:[play:num]=1}on{endif-A}"><span class="[play:from]">[play:show]</span></p>
+{maccms:url order=desc}
+{/maccms:url}
+{/maccms:play}
+</div>
+<div id="playTabcon">
+<div class="wxts"> <span>温馨提示：</span>[HD：高清版]&nbsp;[BD：高清无水印]&nbsp;[DVD：标准清晰版]&nbsp;[TS：抢先非清晰版] - 其中，BD和HD版本不太适合4M以下的宽带的用户和网速过慢的用户观看。</div>
+{maccms:play}
+<div class="vodplaybox" {if-A:[play:num]>1} style="display:none;"{endif-A}>
+<div id="plist">
+<ul class="split-list">
+{maccms:url order=asc}
+<li><a target="_blank" href="[url:link]">[url:name]{if-A:[url:num]=[play:urlcount]}<span class="new"></span>{endif-A}</a></li>
+{if-A:[url:num]=18}</ul>
+<ul id="all-plist" class="split_list all-plist" style="display:none;">{endif-A}
+{/maccms:url}
+</ul>
+{if-A:[play:urlcount]>18}
+<div id="pmoreContain" class="playMoreA pmoreContain"><a class="plMore" id="plMore">展开列表</a></div>
+{endif-A}
+</div>
+</div>
+{/maccms:play}
+</div>
+<div class="960Ad"><script src="{maccms:path_ads}play980.js"></script></div>
+</div>
+
+<div class="ibox playBox">
+<div class="playBar liketitle"><strong>喜欢看"<em>[vod:name]</em>"的人也喜欢：</strong></div>
+<!-- 滚动图片代码开始 -->
+<div id="vodhotscroll">
+<div class="sliderBox" id="sliderName">
+<ul class="silderNav clearfix" id="silderNav">
+<a class='prev'>Prev</a> <a class='next'>Next</a>
+<div class="ck"></div>
+</ul>
+<div class="imgitembox">
+<ul class="silderCon" id="silderCon"> 
+<li class="silder_panel clearfix">
+ {maccms:vod num=14 order=desc by=level type=parent}
+<div class="imgitem {if-A:[vod:num]=7}last{endif-A}{if-A:[vod:num]=14}last{endif-A}"><a class="imglink" href="[vod:link]" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="点击播放《[vod:name]》" />
+<span class="txbg"></span> 
+<span class="tx">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span></a>
+<p class="titlelink"><a href="[vod:link]" alt="点击查看详情《[vod:name]》" target="_blank">[vod:name]</a></p>
+<span class="yylink">[vod:starringlink]&nbsp;</span>
+<div class="starbox"> <span class="starbs"> <span class="starbb" style="width:{if-A:[vod:score]=1.0}10{elseif-A:[vod:score]=2.0}20{elseif-A:[vod:score]=3.0}30{elseif-A:[vod:score]=4.0}40{elseif-A:[vod:score]=5.0}50{elseif-A:[vod:score]=6.0}60{elseif-A:[vod:score]=7.0}70{elseif-A:[vod:score]=8.0}80{elseif-A:[vod:score]=9.0}90{elseif-A:[vod:score]=10.0}100{else-A}[vod:score]{endif-A}%;"></span> </span> <span class="goldtx">[vod:score] </span>
+<div class="ck"></div>
+</div>
+</div>
+{if-A:[vod:num]=7}
+<li class="silder_panel clearfix">
+{endif-A}
+{/maccms:vod}
+</li>
+</ul>
+<div class="ck"></div>
+</div>
+</div>
+<!-- 滚动图片代码结束 -->
+</div></div>
+
+                <div class="ibox playBox">
+                <div class="playBar liketitle"><strong >809视觉影院</strong><strong style="display:none;">优酷视频播放必看：</strong></div>
+                <div class="snvtvs" >
+                <div class="askbox">
+                    <span class="asktitle">常见问题</span>
+                    <p><span>常见问题一：</span>若809影院线路一无法正常播放,请切换其他播放线路,若依旧不能播放请点击报错按钮进行报错</p>
+                    <p><span>常见问题二：</span>使用809影院点播时接收速度变慢时，有连接数而没有接收速度，则可能是网络不通造成</p>
+                    <p><span>常见问题三：</span>809影视网有时可能会有网速变慢的情况，该如何解决？主菜单设置——选项——网络菜单中实现。如果您在用809影院看电影时，为保证流畅观看，建议将速度限制模式改为自动模式</p>
+                    <p><span>常见问题四：</span>文件接收正常，但播放文件时为什么会出现有声音没画面、画面"倒立"或是花屏、拖动后卡住不动的情况？请清理浏览器缓存。</p>
+                </div>                        
+				</div>
+				<div class="snvtvs" style="display:none;">
+                <div class="askbox">
+                    <span class="asktitle">Flash常见问题</span>
+                    <p><span>常见问题一：</span>如打开本页的播放窗口空白或有个是个大叉叉，请点击这里下载Flash 9插件,然后重启浏览器</p>
+                    <p><span>常见问题二：</span>在已安装Flash的情况下，如打开的本页播放区域是空白一片，可以尝试刷新本页（网速慢使播放器加载稍慢)</p>
+                    <p><span>常见问题三：</span>节目出现双语对白，可打开电脑上音量调节功能，拉动平衡杆到任意一边调整语种。</p>
+                    <p><span>常见问题四：</span>为何有的节目看到一半就断掉或没有响应了？最有效的解决方法是：IE浏览器--工具-- Internet选项--点击"删除文件"按钮，然后关闭浏览器重新打开</p>
+                    <p><span>播放技巧一：<span>部分视频如果出现卡的情况，可暂停一会，让其缓冲后再播放</p>
+                    <p><span>播放技巧二：<span>可提前打开下一集的页面，播放后按暂停（不要关闭），让其缓冲，这样看完这集就可以很流畅的看下一集了。</p>
+                </div>            
+				</div>
+				</div>
+<!-- UY BEGIN
+<div class="ibox playBox">
+<div class="playBar liketitle"><strong>影片评论：</strong></div>
+<div class="comm">
+
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+
+
+</div>
+</div>
+UY END -->
+</div>
+{maccms:foot}
+<script type="text/javascript" charset="utf-8">
+$(function(){	
+$("#vodbox").tab({tabId:"#playTabbtn",tabTag:"p",conId:"#playTabcon",conTag:"div.vodplaybox",act:"click",effact:"fadeIn"});
+$("#sliderName").ItemScroll({BoxObjID:"#sliderName",ItemConID:"#silderCon",ItemConItem:"li",ItemTabID:"#silderNav",ItemTabItem:"li",Timer:3000,Optrue:true,Rfunction:function(con){$(con).find("img.imgpic1").trigger("sporty");}});
+}) </script>
+<script language=JavaScript>
+document.oncontextmenu=new Function("event.returnValue=false;");
+document.onselectstart=new Function("event.returnValue=false;");
+</script>
+</body>
+</html>

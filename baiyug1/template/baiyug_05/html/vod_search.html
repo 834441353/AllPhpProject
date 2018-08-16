@@ -1,0 +1,103 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{page:key}-{maccms:name}</title>
+<meta name="keywords" content="{page:name},{maccms:name}" />
+<meta name="description" content="{page:name},{maccms:name}" />
+ 
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<div id="subnav" class="margin-b10">
+	<div class="wrap fn-clear">
+        {maccms:matrix type=1 table=vod}<div class="subnav-movie fn-left"><strong class="movie">[matrix:name]：</strong>
+			
+			{maccms:class num=10 type=[matrix:id] order=asc}<a href="[class:link]">[class:name]</a><em>|</em>{/maccms:class}
+			
+        </div>{/maccms:matrix}
+		 {maccms:matrix type=2 table=vod}<div class="subnav-tv fn-right"><strong class="tv">[matrix:name]：</strong>
+			
+		{maccms:class num=5 type=[matrix:id] order=asc}<a href="[class:link]">[class:name]</a><em>|</em>{/maccms:class}
+
+			
+		</div>{/maccms:matrix}
+	</div>
+</div>
+<div id="content" class="wrap clearfix ui-box">
+
+	<div class="content-left clearfix">
+		<div class="ui-title">
+            <h3>搜索 <strong class="red">{page:key}</strong> 的结果共 <strong class="red">{page:datacount}</strong> 条<span>
+              <p class="conbread"></p>
+                            </span></h3>
+        </div>
+		<section class="ui-box clearfix channellist-box">
+			<div class="hello-box">
+
+				<div class="module-content">
+					<ul class="yun-list clearfix" id="yun-list">		
+								
+						{maccms:vod pagesize=30 order=desc by=time table=vod}<li class="yun yun-large border-gray">
+							<a class="yun-link" href="[vod:link]" title="[vod:name]">
+								<div class="img">
+									<img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/noimage.gif" alt="[vod:name]" />
+									
+									<span class="bgb">
+									<i class="bgbbg"></i>
+									<p class="name">[vod:remarks]</p>
+									<p class="other">剧情：《[vod:name]》[vod:contenttext]</p>
+									</span>
+								</div>
+								<div class="text">
+									<p class="name">[vod:name]</p><p class="actor">主演：[vod:starring]</p>
+								</div>
+							</a>
+						</li>{/maccms:vod}
+								
+							
+
+					</ul>
+				</div>
+			</div>
+		</section>
+		   <div class="page clearfix">
+		
+		
+		
+	{maccms:pages len=6}
+		
+		
+		
+	</div>  
+	</div>
+</div>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</body>
+
+</html>

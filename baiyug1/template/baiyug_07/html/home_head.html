@@ -1,0 +1,79 @@
+              <div class="movie-wrap movie-top"> </div><!-- style="border-bottom: 1px solid blue;" -->
+              <div class="zt-top">
+              <div class="top-left">公告： <script>
+                now = new Date(),
+                hour = now.getHours()
+                document.write("<blink>")
+                if(hour < 5){document.write("{maccms:name}-提醒您:夜已深,请注意休息哦!身体是革命的本钱.")}
+                else if (hour < 9){document.write("早上好,欢迎光临-{maccms:name}!")}
+                else if (hour < 12){document.write("上午好,欢迎光临-{maccms:name}!")}
+                else if (hour < 14){document.write("中午好,欢迎光临-{maccms:name}!")}
+                else if (hour < 18){document.write("下午好,欢迎光临-{maccms:name}!")}
+                else if (hour < 23){document.write("晚上好,欢迎光临-{maccms:name}!")}
+                </SCRIPT>
+</div>
+           <div class="top-right">
+		      {maccms:name}影片共有：<strong>{maccms:count_vod_all}</strong>  
+		      今日更新:<strong>{maccms:count_vod_day}</strong>
+              <a target="_self" href="javascript:void(0)" onclick="MAC.Home(this,'http://{maccms:url}');"><span>设为首页</span></a>
+              <a target="_self" href="javascript:void(0)" onclick="MAC.FAV('http://{maccms:url}','{maccms:name}');"><span>加入收藏</span></a>
+              <a href="{maccms:link_map_vod}" title="排行榜"><span>最新排行</span></a>
+			  <a href="{maccms:getlink top.html}" title="最近更新" >最新更新</a>
+           </div>
+		   
+       </div><!-- zt-top -->
+       <div class="clear clear1"></div>
+<!--=============================================================================-->
+<div class="movie-header">
+<div class="movie-header-search">
+  <div class="mhs-inner">
+     <div class="logo fl"><a href="http://{maccms:url}" title="{maccms:name}">{maccms:name}</a></div>
+            <!-- 隐藏导航开始 -->
+			<div class="header-nav">
+              <div class="nav-btn bgray">
+                <span>分类导航</span>
+              </div><!--nav-btn-->
+              <div class="nav-content bgray">
+                     {maccms:matrix table=vod type=parent}
+                  <div class="nav-c-share clearfix">
+                      <a href="[matrix:link]" class="ncs-line fl">[matrix:name]</a>
+                     {maccms:menu type=child order=asc table=vod parent=[matrix:id]}
+                      <a href="[menu:link]" class="ncs-line fl">[menu:name]</a>
+                     {/maccms:menu}
+                  </div><!--nav-c-share-->
+                     {/maccms:matrix}  
+                  <div class="nav-c-share mb0"></div>
+              </div><!--nav-content-->
+            </div><!-- header-nav -->
+            <!-- 隐藏导航结束 -->
+          <div class="search fl">
+             <div class="search-inner">
+                 <form action="{maccms:link_search_vod}" method="post">
+                    <input type="text" x-webkit-speech="" autocomplete="off" name="wd" id="wd" class="search-text" onblur="if(this.value==''){ this.value='100万部影片任你搜索';this.style.color='#cfcdcd';}" onfocus="if(this.value=='100万部影片任你搜索'){this.value='';this.style.color='';}" value="100万部影片任你搜索">
+                    <input type="hidden" name="submit" value="search">
+                    <input type="submit" class="search-btn" value="搜索">
+                 </form>
+             </div><!--search-inner-->
+          </div><!--search-->
+          <div class="mod_quick">
+               <div class="quick_item"> <a class="quick_history" href="#" id="history"> <i class="ico_history_26"></i> <span class="quick_txt">看过</span> <i class="divide"></i> </a> </div>
+                 <div class="quick_item"> <a class="quick_attention" href="javascript:MAC.Fav(MAC.Url,MAC.Title)"> <i class="ico_collect_26"></i> <span class="quick_txt">关注</span> <i class="divide"></i> </a> </div>
+                <div class="quick_item"> <a class="quick_attention" href="{maccms:link_gbook}"> <i class="ico_uploab_26"></i> <span class="quick_txt">留言</span> <i class="divide"></i> </a> </div>
+				<div class="quick_item"> <a class="quick_attention" href="javascript:void(0)" id="login"><img src="{maccms:path_tpl}images/duface1.png" /></a> </div>
+          </div>
+  </div><!-- mhs-inner -->
+</div><!-- movie-header-search-->
+</div><!-- movie-header -->
+         <div class="mhm-inner mhm-share">
+           <div class="mhm-menu">
+             <ul class="nhm-menu-ul"> 
+               <li {if-A:{maccms:siteaid}=10} class="active-style5"{endif-A}{if-A:[menu:id]={maccms:curvodtypepid}} class="active-style5" {endif-A}><a href="{maccms:path}" title="首页">首页</a></li>
+			   {maccms:menu type=parent}   
+			   <li {if-A:[menu:id]={maccms:curvodtypeid}}  class="active-style5"{endif-A}{if-A:[menu:id]={maccms:curvodtypepid}} class="active-style5"{endif-A}><a href="[menu:link]" title="[menu:name]">[menu:name]</a></li> 
+			   {/maccms:menu}
+			   <li {if-A:{maccms:siteaid}=11} class="active-style5"{endif-A}{if-A:[menu:id]={maccms:curvodtypepid}} class="active-style5" {endif-A}><a href="{maccms:getlink tv.html}" title="电视直播">直播</a></li>
+			   </ul>
+			   <div class="active-style"></div>
+           </div>
+         </div><!--mhm-inner mhm-share-->
+

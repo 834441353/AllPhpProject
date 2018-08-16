@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link href="__ADMIN__/css/style.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="__ADMIN__/js/jquery.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        $('dd').find('ul').slideUp();
+        //导航切换
+        $(".menuson li").click(function() {
+            $(".menuson li.active").removeClass("active")
+            $(this).addClass("active");
+        });
+
+        $('.title').click(function() {
+            var $ul = $(this).next('ul');
+            $('dd').find('ul').slideUp();
+            if ($ul.is(':visible')) {
+                $(this).next('ul').slideUp();
+            } else {
+                $(this).next('ul').slideDown();
+            }
+        });
+    })
+    </script>
+</head>
+
+<body style="background:#f0f9fd;">
+    <div class="lefttop"><span></span>※ MENU ※</div>
+    {//遍历显示顶级权限}
+    <volist name='auths' id='auth'>
+      <dl class="leftmenu">
+        <if condition="$auth.auth_pid == 0 ">
+          <dd>
+              <div class="title">
+                  <span><img src="__ADMIN__/images/leftico01.png" /></span>{$auth.auth_name}
+              </div>
+              <ul class="menuson">
+                {//遍历显示二级权限}
+                <volist name='auths' id="at">
+                  <if condition="$at.auth_pid == $auth.auth_id ">
+                  <li>
+                      <cite></cite><a href="__MODULE__/{$at.auth_c}/{$at.auth_a}" target="rightFrame">{$at.auth_name}
+                      </a><i></i>
+                  </li>
+                  </if>
+                </volist>
+                {//遍历显示二级权限}
+              </ul>
+          </dd>
+          </if>
+      </dl>
+    </volist>
+    {//遍历显示顶级权限}
+</body>
+
+</html>

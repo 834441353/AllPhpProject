@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>{maccms:name}</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta name="keywords" content="{maccms:name}" /> 
+  <meta name="description" content="{maccms:name}" />
+  {maccms:include}
+ </head>
+ <body>   
+   {maccms:head} 
+     <div class="container">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd><a href="/">首页</a></dd>
+			</dl>
+		</div>
+</div>
+  <div class="xing_vb"> 
+   <ul>
+    <li><span class="xing_vb1">影片名称</span><span class="xing_vb2">影片类别</span><span class="xing_vb3">更新时间</span></li>
+   </ul> 
+   {maccms:vod pagesize=50 type=all order=desc by=time} 
+   <ul>
+    <li><span class="tt"></span><span class="xing_vb4"><a href="[vod:link]" target="_blank">[vod:name][vod:remarks]</a></span> <span class="xing_vb5">[vod:typename]</span> <span {if-A:[vod:addtime]=[vod:time]}class="xing_vb6"{else-A}class="xing_vb7"{endif-A}>[vod:time]</span></li>
+   </ul> 
+   {/maccms:vod} 
+   <ul style="display:block;clear:both;">
+    <li><div class="pages" style="margin-bottom:10px;">{maccms:pages len=6 linktype=index}</div></li>
+   </ul> 
+   <div style="clear:both"></div> 
+  </div> 
+  {maccms:foot}  
+ </body>
+</html>

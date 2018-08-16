@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>最新电影电视剧大全-{maccms:name}</title>
+<meta name="keywords" content="最新电影大全,最新电视剧大全,最新电影,热播电视剧" />
+<meta name="description" content="{maccms:name}提供2016最新电影、最好看的电视剧、高清电影下载" />
+<meta property="qc:admins" content="5040353377677066375" />
+<link href="{maccms:path_tpl}css/xing_map.css" rel="stylesheet" type="text/css" />
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<div class="topLine"></div>
+	<div class="w">
+	   <div class="container">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd><a href="/">首页</a>  »  最近更新前50部</dd>
+			</dl>
+		</div>
+	</div>
+		
+		<div class="w-content">
+			<ul>
+				<dd>
+					<span class="title">最新电影</span>
+					<h5>最近更新前50部</h5></dd>
+		            {maccms:vod num=50 type=1 start=1 order=desc by=time}
+				<li>
+					<span class="num">[vod:numfill].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:colorname]</a> / <a href="[vod:typelink]" target="_blank">[vod:typename]</a></span>
+					<span class="score">[vod:scoreall]</span>
+				</li>
+		            {/maccms:vod}
+			</ul>
+			<ul>
+				<dd>
+				<span class="title">最新电视剧</span>
+					<h5>最近更新前50部</h5></dd>
+		            {maccms:vod num=50 type=2 start=1 order=desc by=time}
+				<li>
+					<span class="num">[vod:numfill].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:colorname]</a> / <a href="[vod:typelink]" target="_blank">[vod:typename]</a></span>
+					<span class="score">[vod:scoreall]</span>
+				</li>
+		            {/maccms:vod}
+			</ul>
+			<ul>
+				<dd>
+				<span class="title">最新动漫</span>
+					<h5>最近更新前50部</h5></dd>
+		            {maccms:vod num=50 type=3 start=1 order=desc by=time}
+				<li>
+					<span class="num">[vod:numfill].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:colorname]</a> / <a href="[vod:typelink]" target="_blank">[vod:typename]</a></span>
+					<span class="score">[vod:scoreall]</span>
+				</li>
+		            {/maccms:vod}
+			</ul>
+			<ul style="border-right:0 none;">
+				<dd>
+				<span class="title">最新综艺</span>
+					<h5>最近更新前50部</h5></dd>
+		            {maccms:vod num=50 type=4 start=1 order=desc by=time}
+				<li>
+					<span class="num">[vod:numfill].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:colorname]</a> / <a href="[vod:typelink]" target="_blank">[vod:typename]</a></span>
+					<span class="score">[vod:scoreall]</span>
+				</li>
+		            {/maccms:vod}
+			</ul>
+		</div>
+		
+	</div>
+{maccms:foot}
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+
+
+<title>《[vod:name]》在线观看_《[vod:name]》_[vod:typename]_{maccms:name}</title>
+
+
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<meta name="author" content="{maccms:name}：http://baiyug.cn" />
+<link rel="bookmark" href="{maccms:path_tpl}images/favicon.ico"/>
+
+
+{maccms:include}
+
+
+<link href="{maccms:path_tpl}css/v280_detail.css" rel="stylesheet" />
+
+
+</head>
+
+
+<body>
+
+
+{maccms:head} 
+
+
+<div class="container" style="padding-top: 125px;">
+
+
+  <div class="home_navigation">
+
+
+    <dl>
+
+
+      <dt> <span>当前位置</span> <i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i> </dt>
+
+
+      <dd>[vod:textlink]</dd>
+
+
+    </dl>
+
+
+  </div>
+
+
+</div>
+
+
+<div class="container">
+
+
+  <div class="l">
+
+
+<div style="width:100%;"> <!---项部test---->
+
+
+    <div class="img"><a href="#play" title="[vod:name]在线观看"><img src="[vod:pic]"  alt="[vod:name]" title="[vod:name]" border="0"></a> <a href="#comment" class="com_btn" title="[vod:name]影片点评">请您参与评论体现您的观点!</a></div>
+
+
+    <div class="mod_txt">
+
+
+      <div style="float:left;">
+
+
+        <h1><a  class="c_txt5">[vod:name]</a></h1>
+
+
+        {if-A:not isN("[vod:subname]")}
+
+
+        <p><span class="mod_tip">[vod:subname]</span></p>
+
+
+        {endif-A} </div>
+
+
+      <div style="float:right; width:250px;">[vod:scoremark1]</div>
+
+
+      <ul class="details_list">
+
+
+        {if-A:not isN("[vod:remarks]")}
+
+
+        <li>剧集：[vod:remarks]{if-B:[vod:stint] > 0 }<span class="vip_tip">观看该视频每集需要[vod:stint]积分</span>{endif-B}</li>
+
+
+        {endif-A}
+
+
+        {if-A:not isN("[vod:directedlink]")}
+
+
+        <li><span class="detail_title">导演：</span><div class="detail_content">[vod:directedlink]</div></li>
+
+
+        {endif-A}
+
+
+        {if-A:not isN("[vod:starringlink]")}
+
+
+        <li><span class="detail_title">主演：</span><div class="detail_content">[vod:starringlink]</div></li>
+
+
+        {endif-A}
+
+
+        {if-A:not isN("[vod:yearlink]")}
+
+
+        <li><span class="detail_subfield">类型：<a href="[vod:typelink]">[vod:typename]</a>[vod:typeexpandlink]</span> {if-B:not isN("[vod:topiclink]")}<span class="detail_subfield">所属专题：[vod:topiclink]</span>{endif-B}</li>
+
+
+        {endif-A}
+
+
+        <li><span class="detail_subfield">地区：[vod:arealink]</span> <span class="detail_subfield">年份：[vod:yearlink]</span></li>
+
+
+        <li><span class="detail_subfield">总播放量：[vod:hits]</span> <span class="detail_subfield">今日播放量：[vod:dayhits]</span> </li>
+
+
+        <li><span class="detail_subfield">总评分数：[vod:scoreall]</span> <span class="detail_subfield">评分次数：[vod:scorenum]</span> </li>
+
+
+      </ul>
+
+
+      <div class="mod_desc">
+
+
+      <h2><p>[vod:name]剧情介绍：</p></h2>
+
+
+        <div style="text-indent:2em;">[vod:content]<strong> {maccms:name} ：{maccms:url} 提醒您如果觉得《[vod:name]》好看，就为《[vod:name]》打个分，如果觉得《[vod:name]》不好看就留言狠狠的吐槽。</strong></div>
+
+
+      </div>
+
+
+      <div class="mod_play"> <a href="[vod:playlink]" class="btn_play_rem" title="播放全集"><span></span></a> <a href="javascript:MAC.Fav(MAC.Url,MAC.Title)" class="btn_follow" title="关注"><span></span></a> </div>
+
+
+    </div>
+
+
+</div><!---项部test---->
+
+
+ {maccms:play }
+
+
+    <div class="showbox">
+
+
+      <div class="box_tt_tab">
+
+
+        <h2 id="nav_[play:from]" rel="play_tag" data="[play:from]">〖[vod:name]〗[play:show]<span>[play:urlcount]</span></h2>
+
+
+        <em>温馨提醒您：[play:tip]</em> </div>
+
+
+      <ul class="showplayul" id="list_[play:from]" rel="symax_player" data="[play:from]" order="desc" limit="[play:num]">
+
+
+        {maccms:url order=desc}
+
+
+        <li><a href="[url:link]" title="[url:name]" id="[play:from]_[url:num]">[url:name]</a></li>
+
+
+        {/maccms:url}
+
+
+      </ul>
+
+
+    </div>
+
+
+    {/maccms:play}
+
+
+    <div style="margin-top:10px; float:left; clear:none;">[vod:comment]</div>
+
+
+  </div>
+
+
+  <div class="r">
+
+
+    <div style="background-color:#CCC; height:100px; width:100%;overflow:hidden; text-align:center;">广告预留位</div>
+
+
+    <div class="mod_guess_video_list">
+
+
+     <h2>与《[vod:name]》相同类型的</h2>
+
+
+      <ul>
+
+
+        {maccms:vod type=current num=9 order=desc by=time}
+
+
+        <li> <a href="[vod:link]" class="mod_poster" title="[vod:name]"> <img class="lazy" data-original="[vod:pic]" src="{maccms:path}images/blank.png" alt="[vod:name]"  /></a>
+
+
+          <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a></h6>
+
+
+          <p align="right">主演：[vod:starringlink]</p>
+
+
+        </li>
+
+
+        {/maccms:vod}
+
+
+      </ul>
+
+
+    </div>
+
+
+    <div class="mod_guess_video_list">
+
+
+      <h2 style=" margin-bottom:0px;">喜欢看《[vod:name]》也喜欢</h2>
+
+
+      <ol>
+
+
+        {maccms:vod type=current num=10 order=desc by=hits}
+
+
+        <li> <em>[vod:num]</em>
+
+
+          <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> <span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span></h6>
+
+
+          <strong>[vod:hits]人看过</strong> </li>
+
+
+        {/maccms:vod}
+
+
+      </ol>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+{maccms:foot}
+
+
+</body>
+
+
+</html>

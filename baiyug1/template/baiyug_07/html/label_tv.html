@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>{maccms:name}-高清电视直播</title>
+<meta name="keywords" content="最新{page:name},热播{page:name},人气{page:name},国产{page:name},美国{page:name},{page:name}排行榜,经典{page:name}推荐,{page:name}大全" />
+<meta name="description" content="{maccms:name}提供最新{page:name},热播{page:name}推荐,最新上映{page:name}在线观看,想看最新{page:name}大全,就来{maccms:name}" />
+<meta name="Resource-type" content="{maccms:name}" />
+<meta property="qc:admins" content="5040353377677066375" />
+<link href="{maccms:path_tpl}css/xing_allstyle.css" rel="stylesheet" />
+{maccms:include}
+<script language="javascript">var Root='/';var Sid='1';var Cid='2';var SiteShortName='{maccms:name}';var Id='';</script>
+<script language="javascript" type="text/javascript" src="{maccms:path_tpl}js/youmtvjs.js" charset="utf-8"></script>
+</head>
+<body>
+{maccms:head}
+<div class="topLine"></div>
+<div class="container">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd><a href="{maccms:path}">首页</a> » 电视直播</dd>
+			</dl>
+		</div>
+</div>
+<div class="ymtvBox">
+  <div class="ymtv">
+    <!--网络电视代码开始-->
+    <iframe width="1240" height="520" src="http://www.tvs1.cn/api/" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="yes"></iframe>
+    <!--网络电视代码结束-->
+</div>
+</div>
+<div class="warp">
+ <div class="ibox playBox">
+<div class="playBar liketitle"><strong>喜欢看"<em>网络电视</em>"的人也喜欢：</strong></div>
+                    <div id="vodhotscroll">
+                    <div class="sliderBox" id="sliderName">
+                    <ul class="silderNav clearfix" id="silderNav">
+                    <a class='prev'>Prev</a> <a class='next'>Next</a>
+                    <div class="ck"></div>
+                    </ul>
+                                      <div class="imgitembox">
+                                      <ul class="silderCon" id="silderCon"> 
+                                      <li class="silder_panel clearfix">
+                                      {maccms:vod num=14 order=desc by=level type=parent}
+                                      <div class="imgitem {if-A:[vod:num]=7}last{endif-A}{if-A:[vod:num]=14}last{endif-A}"><a class="imglink" href="[vod:link]" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="点击播放《[vod:name]》" />
+                                      <span class="txbg"></span> 
+                                      <span class="tx">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span></a>
+                                      <p class="titlelink"><a href="[vod:link]" alt="点击查看详情《[vod:name]》" target="_blank">[vod:name]</a></p>
+                                      <span class="yylink">[vod:starringlink]&nbsp;</span>
+                                      <div class="starbox"> <span class="starbs"> <span class="starbb" style="width:{if-A:[vod:score]=1.0}10{elseif-A:[vod:score]=2.0}20{elseif-A:[vod:score]=3.0}30{elseif-A:[vod:score]=4.0}40{elseif-A:[vod:score]=5.0}50{elseif-A:[vod:score]=6.0}60{elseif-A:[vod:score]=7.0}70{elseif-A:[vod:score]=8.0}80{elseif-A:[vod:score]=9.0}90{elseif-A:[vod:score]=10.0}100{else-A}[vod:score]{endif-A}%;"></span> </span> <span class="goldtx">[vod:score] </span>
+                                      <div class="ck"></div>
+                                      </div>
+                                      </div>
+                                      {if-A:[vod:num]=7}
+                                      <li class="silder_panel clearfix">
+                                      {endif-A}
+                                      {/maccms:vod}
+                                      </li>
+                                      </ul>
+                                      <div class="ck"></div>
+                                      </div>
+                    </div>
+					</div> 
+ 
+</div>
+
+
+        <div class="ibox playBox">
+        <div class="playBar liketitle"><strong>直播评论：</strong></div>
+        <div class="comm">
+
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+<!-- UY END -->     
+        </div>
+        </div>
+
+  </div>
+
+{maccms:foot}
+<script type="text/javascript" charset="utf-8">
+$(function(){	
+$("#vodbox").tab({tabId:"#playTabbtn",tabTag:"p",conId:"#playTabcon",conTag:"div.vodplaybox",act:"click",effact:"fadeIn"});
+$("#sliderName").ItemScroll({BoxObjID:"#sliderName",ItemConID:"#silderCon",ItemConItem:"li",ItemTabID:"#silderNav",ItemTabItem:"li",Timer:3000,Optrue:true,Rfunction:function(con){$(con).find("img.imgpic1").trigger("sporty");}});
+}) </script>
+<script language=JavaScript>
+document.oncontextmenu=new Function("event.returnValue=false;");
+document.onselectstart=new Function("event.returnValue=false;");
+</script>
+</body>
+</html>

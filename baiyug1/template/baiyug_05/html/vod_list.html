@@ -1,0 +1,141 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>在线{page:name},2016最新{page:name},2016热门{page:name} 第1页-{maccms:name},在线云点播</title>
+<meta name="keywords" content="{page:name}第1页"/>
+<meta name="description" content="{maccms:name}为您提供手机电脑免插件软件即可在线点播2016最新的高清{page:name},高清电视剧,请记住我们的网址({maccms:url})"/>
+ 
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<div id="subnav" class="margin-b10">
+	<div class="wrap fn-clear">
+	
+       {maccms:matrix type=1 table=vod} <div class="subnav-movie fn-left"><strong class="movie">[matrix:name]：</strong>
+			
+			{maccms:class num=10 type=[matrix:id] order=asc}<a href="[class:link]">[class:name]</a><em>|</em>{/maccms:class}
+			
+			
+        </div>{/maccms:matrix}
+		 {maccms:matrix type=2 table=vod}<div class="subnav-tv fn-right"><strong class="tv">[matrix:name]：</strong>
+			
+		{maccms:class num=5 type=[matrix:id] order=asc}<a href="[class:link]">[class:name]</a><em>|</em>{/maccms:class}
+
+			
+		</div>{/maccms:matrix}
+	
+
+	
+	</div>
+</div>
+<div id="content" class="wrap clearfix">
+
+	<div class="content-left clearfix">
+		<div class="ui-title border-gray">
+            <h3 class="tt-tab">{page:name}&nbsp;&nbsp;<span class="ml19">展开筛选</span></h3>
+        </div>
+		<div class=" ui-cnt filter-focusdl mbfilter border-gray">	
+			<div class="filter-list fn-clear">
+			  <h5><i class="iconfont m-r-3 f-s-16">󰉿</i>按地区：</h5>
+			  <ul>
+			  
+			{maccms:area order=desc}	<li>
+					<a href="[area:link]" >[area:name]
+</a>
+				  </li>{/maccms:area}
+				
+				</ul>
+			</div>
+			<div class="filter-list fn-clear">
+			  <h5><i class="iconfont m-r-3 f-s-16">&#xf0063;</i>按年代：</h5>
+				<ul>			    
+			  
+				{maccms:year order=desc type=auto start=2000 end=2012}<li>
+					<a href="[year:link]">[year:name]
+</a>
+				  </li>{/maccms:year}
+				
+				 </ul>
+			</div>
+			<div class="filter-list fn-clear">
+				<h5><i class="iconfont m-r-3 f-s-14">󰅙</i>按语言：</h5>
+				<ul>
+				
+					{maccms:lang order=desc}<li>
+					  <a  href="[lang:link]">[lang:name]
+</a>
+					</li>   {/maccms:lang} 
+					
+				</ul>
+			</div>
+			<div class="filter-list filter-list-letter fn-clear">
+				<h5><i class="iconfont m-r-3 f-s-14">&#xf00cb;</i>按字母：</h5>
+				<ul>
+				
+					{maccms:letter type=auto letter=all}<li>
+					  <a  href="[letter:link]">[letter:name]</a>
+					</li> {/maccms:letter}
+					
+				</ul>
+			</div>
+
+			<div class="ui-bar fn-clear">
+				<ul class="view-mode">
+					<li id="view-list"><a class="current"><i class="iconfont m-r-3 f-s-14">󰅙</i>选择排序方式</a></li>
+				</ul>
+				<div class="view-filter">
+					<a id="time" href="{page:linkbytime}" class="order {if-A:"{page:by}"="time"}current {endif-A}" target="_self"><span>按时间</span></a>
+					<a id="hits" href="{page:linkbyhits}" class="order {if-A:"{page:by}"="hits"} current {endif-A}" target="_self"><span>按人气</span></a>
+					<a id="pingfen" href="{page:linkbyscore}" class="order {if-A:"{page:by}"="score"}current {endif-A}" target="_self"><span>按评分</span></a>
+				</div>
+			</div>
+		</div>
+		<section class="clearfix channellist-box">
+			<div class="hello-box">
+
+				<div class="module-content">
+					<ul class="yun-list clearfix" id="yun-list">		
+								
+						{maccms:vod pagesize=30 type=current order=desc by=time}<li class="yun yun-large border-gray">
+							<a class="yun-link" href="[vod:link]" title="[vod:name]">
+								<div class="img">
+									<img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/noimage.gif" alt="[vod:name]" />
+									
+									<span class="bgb">
+									<i class="bgbbg"></i>
+									<p class="name">[vod:remarks]</p>
+									<p class="other">剧情：《[vod:name]》[vod:contenttext]</p>
+									</span>
+								</div>
+								<div class="text">
+									<p class="name">[vod:name]</p><p class="actor">主演：[vod:starring]</p>
+								</div>
+							</a>
+						</li>{/maccms:vod}
+								
+						
+					</ul>
+				</div>
+			</div>	
+		</section>
+		<div class="page clearfix">
+		
+		{maccms:pages len=6}
+		
+		</div>
+	</div>
+
+</div>
+
+{maccms:foot}
+</body>
+
+</html>

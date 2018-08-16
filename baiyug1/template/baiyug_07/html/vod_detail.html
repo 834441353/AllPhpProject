@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>《[vod:name]》在线免费电影-[vod:remarks]下载-[vod:from]在线观看 - [vod:typename] - {maccms:name}</title>
+<meta name="keywords" content="《[vod:name]》高清下载,《[vod:name]》在线观看" />
+<meta name="description" content="[vod:name]剧情:[vod:contenttext len=60]" />
+<meta property="qc:admins" content="5040353377677066375" />
+<link href="{maccms:path_tpl}css/xing_allstyle.css" rel="stylesheet" />
+{maccms:include}
+<script language="javascript">var Root='/';var Sid='1';var Cid='15';var SiteShortName='{maccms:name}';var Id='337';</script>
+<script language="javascript" type="text/javascript" src="{maccms:path_tpl}js/youmtvjs.js" charset="utf-8"></script>
+<script language="javascript" src="{maccms:path_tpl}js/youmtv-tab.js" charset="utf-8"></script>
+<link href="{maccms:path_tpl}css/download.css" rel="stylesheet" type="text/css" />
+<script type=text/javascript src="{maccms:path_tpl}xl/thunderbatch.js"></script>
+<script type=text/javascript src="{maccms:path_tpl}xl/webthunderdetect.js"></script>
+<script src="{maccms:path_tpl}xl/anew.js"></script>
+[vod:history]
+</head>
+<body>
+{maccms:head} 
+<!-- <div class="topLine"> -->
+<div class="container">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd>[vod:textlink]</dd>
+			</dl>
+		</div>
+</div>
+<div class="warp">
+<div class="ibox">
+<div class="vod">
+<div class="vodBox">
+<div class="vodImg"><a href="[vod:link]"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/pic.png" alt="[vod:name]" /><b class="b1"></b><b class="b2"></b></a></div>
+<div class="vodInfo">
+                  <div class="vodh">
+                    <h2><a href="[vod:link]">[vod:name len=16]</a></h2>
+                    <span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span>
+                     <label>[vod:scoremark1]</label>
+					</div>
+<div class="vodgoldbox">
+ <!-- <div class="star1"><label>我也要给这影片打分：</label>[vod:scoremark1]</div> -->
+</div>
+              <div class="vodinfobox">
+              <ul>
+                <li>导演：<span>[vod:directedlink]</span></li>
+                <li>主演：<span>[vod:starringlink]&nbsp;</span></li>
+                <li>类型：<span><a href="[vod:typelink]" target="_blank">[vod:typename] </a></span></li>
+                <li class="sm">地区：<span>[vod:arealink]&nbsp;</span></li>
+				<li class="sm">语言：<span>[vod:lang]</span></li>
+                <li class="sm">收藏：<span>[vod:userfav]</span></li>
+                <li class="sm">上映：<span>[vod:yearlink]&nbsp;</span></li>
+                <li class="sm">更新：<span>[vod:time style=yy-m-d H:i:s]</span></li>
+                <li class="sm">总播放量：<span>[vod:hits]&nbsp;</span></li>
+                <li class="sm">今日播放量：<span>[vod:dayhits]</span></li>
+                <li class="sm">总评分数：<span>[vod:scoreall]&nbsp;</span></li>
+                <li class="sm">评分次数：<span>[vod:scorenum]</span></li>
+                <li class="cont"><div class="jjText"><span class="cl"></span> <span class="more" txt="[vod:contenttext len=200]" >[vod:contenttext len=75]！</span> <a href="#" class="contMore">[更多]</a> <span class="cr"></span></div></li>
+                <li class="tags"><span>[vod:taglink]</span></li>
+              </ul>
+              </div>
+<div class="vodplay"><a target="_blank" href="[vod:playlink]" title="[vod:name]在线播放"><span>立即点播</span></a></div>
+</div>
+</div>
+<div class="vodAd"><script src="{maccms:path_ads}detail300X320.js"></script></div>
+</div>
+</div>
+
+<div class="ibox playBox" id="vodbox">
+<div class="playBar" id="playTabbtn">
+{maccms:play}
+<p class="{if-A:[play:num]=1}on{endif-A}"><span class="[play:from]">[play:show]</span></p>
+{maccms:url order=desc}
+{/maccms:url}
+{/maccms:play}
+</div>
+<div id="playTabcon">
+<div class="wxts"> <span>温馨提示：</span>[HD：高清版]&nbsp;[BD：高清无水印]&nbsp;[DVD：标准清晰版]&nbsp;[TS：抢先非清晰版] - 其中，BD和HD版本不太适合4M以下的宽带的用户和网速过慢的用户观看。</div>
+{maccms:play}
+<div class="vodplaybox" {if-A:[play:num]>1} style="display:none;"{endif-A}>
+<div id="plist">
+<ul class="split-list">
+{maccms:url order=desc}
+<li><a target="_blank" href="[url:link]">[url:name]{if-A:[url:num]=[play:urlcount]}<span class="new"></span>{endif-A}</a></li>
+{if-A:[url:num]=18}</ul>
+<ul id="all-plist" class="split_list all-plist" style="display:none;">{endif-A}
+{/maccms:url}
+</ul>{if-A:[play:urlcount]>18}
+<div id="pmoreContain" class="playMoreA pmoreContain"><a class="plMore" id="plMore">展开列表</a></div>{endif-A}</div>
+</div>
+{/maccms:play}
+</div>
+<div class="960Ad"><script src="{maccms:path_ads}detail980.js"></script></div>
+<!--下载开始-->{maccms:down}
+		<div class="downloadlist">
+		{maccms:url order=asc}
+		<ul>
+		
+		  <LI onMouseOver="this.className='over'" onMouseOut="this.className=''">
+		  <DIV class=xzlb_mclb_nr><span class=xzlb_mc><INPUT id=downid1_[url:num] class=chk_se1 name=downid1[] checked="" value=[url:path] type=checkbox><label for="downid1_[url:num]"><span class="typec">[RMVB]</span><span class="title">[url:path]</span></label></span>
+		  <DIV class=xzlb_ff>
+		  <span class=bcaxl><A oncontextmenu=ThunderNetwork_SetHref(this) title=迅雷下载 onClick="return OnDownloadClick_Simple(this,2,4)" href="javascript:void(0);" thunderResTitle="" thunderType="" thunderPid="97379" thunderHref="[url:path]">迅雷下载</A>
+		  <script language="javascript">document.write('<a href="http://lixian.vip.xunlei.com/lixian_login.html?referfrom=union&ucid=97379&furl='+encodeURIComponent('[url:path]') +'" title=迅雷离线下载,不需挂机 class=lixian target=_blank>'+'离线下载'+'</a>');</script></span>
+		  <span class=bca><a href="javascript:void(0);" title=用迅雷看看播放 onClick="javascript:kkPlay('[url:path]')">迅雷看看</a></span>
+		  </DIV></DIV></LI>
+		
+		
+		</ul>
+		{/maccms:url}
+			<div class="downloadall"><INPUT id=chk_1 name=chk_1 value="" type=checkbox checked="" class="cbox" onClick="CheckAll(1)"><em><label for="chk_1">全选</label></em><strong><A onclick=XunLeiAll(1); href="javascript:void(0);" title="请先安装迅雷软件">一键迅雷下载</A> </strong><a onClick="reportErr(33483)" href="javascript:void(0)" class="wrong">如果不能下载，点这报错</a><span><a href="http://hezuo.down.xunlei.com/xunlei_hezuo_1/thunder(97379).exe" target="_blank">点这里安装迅雷</a></span></div>
+		</div>
+		{/maccms:down}
+		<!--下载结束-->
+</div>
+
+<div class="ibox playBox">
+
+<div class="playBar liketitle"><strong>喜欢看"<em>[vod:name]</em>"的人也喜欢：</strong></div>
+<!-- 滚动图片代码开始 -->
+<div id="vodhotscroll">
+<div class="sliderBox" id="sliderName">
+<ul class="silderNav clearfix" id="silderNav">
+<a class='prev'>Prev</a> <a class='next'>Next</a>
+<div class="ck"></div>
+</ul>
+<div class="imgitembox">
+<ul class="silderCon" id="silderCon"> 
+<li class="silder_panel clearfix">
+ {maccms:vod num=14 order=desc by=level type={maccms:curvodtypeid}}
+<div class="imgitem {if-A:[vod:num]=7}last{endif-A}{if-A:[vod:num]=14}last{endif-A}"><a class="imglink" href="[vod:link]" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="点击播放《[vod:name]》" /><span class="txbg"></span> <span class="tx">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span></a>
+<p class="titlelink"><a href="[vod:link]" alt="点击查看详情《[vod:name]》" target="_blank">[vod:name]</a></p>
+<span class="yylink">[vod:starringlink]&nbsp;</span>
+<div class="starbox"> <span class="starbs"> <span class="starbb" style="width:{if-A:[vod:score]=1.0}10{elseif-A:[vod:score]=2.0}20{elseif-A:[vod:score]=3.0}30{elseif-A:[vod:score]=4.0}40{elseif-A:[vod:score]=5.0}50{elseif-A:[vod:score]=6.0}60{elseif-A:[vod:score]=7.0}70{elseif-A:[vod:score]=8.0}80{elseif-A:[vod:score]=9.0}90{elseif-A:[vod:score]=10.0}100{else-A}[vod:score]{endif-A}%;"></span> </span> <span class="goldtx">[vod:score] </span>
+<div class="ck"></div>
+</div>
+</div>
+{if-A:[vod:num]=7}<li class="silder_panel clearfix">
+{endif-A}
+{/maccms:vod}
+</li>
+</ul>
+<div class="ck"></div>
+</div>
+</div>
+<!-- 滚动图片代码结束 -->
+</div></div>
+<div class="ibox playBox">
+<div class="playBar liketitle"><strong>剧情介绍：</strong></div>
+<div class="vodplayinfo">[vod:content]</div>
+</div>
+<div class="ibox playBox" id="commen">
+<div class="playBar liketitle"><strong>影片评论：</strong></div>
+<div class="comm">
+
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+<!-- UY END -->
+</div>
+</div>
+</div>
+</div>
+{maccms:foot}
+<script type="text/javascript"> 
+$(function(){
+$("#vodbox").tab({tabId:"#playTabbtn",tabTag:"p",conId:"#playTabcon",conTag:"div.vodplaybox",act:"click",effact:"fadeIn"});
+$("#sliderName").ItemScroll({BoxObjID:"#sliderName",ItemConID:"#silderCon",ItemConItem:"li",ItemTabID:"#silderNav",ItemTabItem:"li",Timer:3000,Optrue:true,Rfunction:function(con){$(con).find("img.imgpic1").trigger("sporty");}});
+});
+</script>
+<script language=JavaScript>
+document.oncontextmenu=new Function("event.returnValue=false;");
+document.onselectstart=new Function("event.returnValue=false;");
+</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>《[vod:name]》在线播放,[vod:name]剧情介绍</title>
+<meta name="keywords" content="[vod:name]免费在线观看,[vod:name]剧情介绍,[vod:name]电影海报"/>
+<meta name="description" content="[vod:name]剧情:影片延续《[vod:name]》的质感和风格，运用IMAX摄影机进行拍摄，剧情设定为《[vod:name].."/>
+<script src="{maccms:path_tpl}js/down.js"></script>
+ 
+{maccms:include}
+[vod:history]
+</head>
+<body>
+{maccms:head}
+<div id="dtextlink" class="wrap border-gray fn-clear">
+	<div class="textlink fn-left"><strong>您所在的位置：</strong><a href='/' >首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href='[vod:typelink]'>[vod:typename]</a></div>
+</div>
+<div id="content" class="wrap clearfix">
+
+	<div  class="border-gray clearfix" id="detail-box">
+		<span class="zkjuzhao">展开剧照</span>
+		<div class="detail-pic">
+				<img src="[vod:pic]" alt="[vod:name]">
+		</div>
+		<div class="detail-info fn-left">
+			<div class="detail-title fn-clear">
+				<h2>[vod:name]</h2><div style="display:none"><span id="hit">加载中...</span><script>getVideoHit('29638')</script></div>
+			</div>
+	
+			<div class="info fn-clear">
+
+			  <dl>
+				<dl>
+				  <dt><i class="iconfont m-r-2 f-s-14 m-t-5">󰃖</i>主演：</dt>
+				  <dd><a href=''>[vod:starringlink]</a>&nbsp;&nbsp;</dd>
+				</dl>
+				<dl class="fn-left">
+				  <dt><i class="iconfont m-r-2 f-s-15 m-t-5">㐴</i>时间：</dt>
+				  <dd><span id="addtime">[vod:time style=yy-m-d-H:i:s]</span></dd>
+				</dl>
+				<dl class="fn-right">
+				  <dt><i class="iconfont m-r-2 f-s-14 m-t-5">󰁣</i>年份：</dt>
+				  <dd><span>[vod:year]</span></dd>
+				</dl>
+				<dl class="fn-left">
+				  <dt><i class="iconfont m-r-2 f-s-14 m-t-5">󰃡</i>类型：</dt>
+				  <dd>[vod:classlink]</dd>
+				</dl>
+				<dl class="fn-right">
+				  <dt><i class="iconfont m-r-2 f-s-14 m-t-5">󰃍</i>地区：</dt>
+				  <dd><span>[vod:area]</span></dd>
+				</dl>
+				<dl class="fn-left">
+				  <dt><i class="iconfont m-r-2 f-s-15 m-t-5">󰃋</i>语言：</dt>
+				  <dd><span>[vod:lang]</span></dd>
+				</dl>
+				<dl class="fn-right">
+				  <dt><i class="iconfont m-r-2 f-s-14 m-t-5">󰄭</i>导演：</dt>
+				  <dd><a href=''>[vod:directedlink]</a>&nbsp;&nbsp;</dd>
+				</dl>
+				<dl class="juqing">
+				  <dt><i class="iconfont m-r-2 f-s-14 m-t-5">󰆘</i>剧情：</dt>
+				  <dd>[vod:contenttext]<a href="#box-jqjieshao">【详细】</a></dd>
+				</dl>
+			  </dl>
+			</div>	
+<!--			<div class="share">
+				<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a></div>
+				<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+			</div>
+-->
+
+		</div>
+		
+<!--
+		<div class="ui-sponsor300-250">
+<script type="text/javascript" language="javascript" src="{maccms:path_ads}vod300.js"></script>
+		</div>
+--><!--广告位-->
+        
+	</div>
+	<div class="ui-box border-gray clearfix">
+		<div class="playfrom jsfrom tab1 clearfix">
+			<span class="laiyuan">播放地址&nbsp;<i class="arrow"></i></span>
+			<ul>
+				
+
+{maccms:play} <li id="tab[play:num]" onclick="setTab('tab','stab',[play:num],5)"><i class="playerico ico-[play:show]"></i><span class="f">[play:show]</span></li>{/maccms:play}
+
+			</ul>
+		</div>
+		
+		<!--集数列表-开始-->
+		{maccms:play}
+		<div id="stab[play:num]" class="playlist jsplist clearfix">
+			  <ul class="video-play-src">
+				<!--把playul改成了video-play-src-->
+{maccms:url order=asc}<li><a title='[url:name]' href='[url:link]' target="_self">[url:name]</a></li>{/maccms:url}
+			</ul>
+		</div>
+		{/maccms:play}
+		<!--集数列表-结束-->
+		
+			
+	</div>
+			<div class="ui-box border-gray clearfix">
+            
+            
+<!--       
+		<div class="playfrom jsfrom tab1 clearfix">
+			<span class="laiyuan">下载地址&nbsp;<i class="arrow"></i></span>
+			<ul>
+				
+
+{maccms:down}<li id="tab[down:num]" onclick="setTab('tab','stab',[down:num],2)"><i class="downerico ico-[down:show]"></i><span class="f">[down:show]</span></li>{/maccms:down}
+
+			</ul>
+		</div>
+-->   <!--下载地址-->
+        
+        
+        
+		
+		{maccms:down}<div id="stab[down:num]" class="playlist clearfix">
+			  <ul class="playul">
+
+{maccms:url order=desc}<li><a title='[url:name]' href='[url:path]' target="_self">[url:name]</a></li>{/maccms:url}
+			</ul>
+		</div>{/maccms:down}
+		
+			
+	</div>		
+	<div class="ui-box clearfix" id="detailcnxh">	
+		<div class="playfrom jsfrom tab1 border-gray clearfix">
+			<span class="laiyuan">猜你喜欢&nbsp;<i class="arrow"></i></span>
+			<ul>
+
+			</ul>
+		</div>
+		<div class="hello-box clearfix">
+			<div class="module-content">
+				<ul class="yun-list clearfix" id="yun-list">		
+					
+							
+					{maccms:vod num=6 type=current order=desc by=time}<li class="yun yun-large  border-gray">
+						<a class="yun-link" href="[vod:link]" title="[vod:name]">
+							<div class="img">
+								<img class="lazy" src="[vod:pic]" alt="[vod:name]">
+								
+								<span class="bgb">
+								<i class="bgbbg"></i>
+								<p class="name">[vod:remarks]</p>
+								<p class="other">剧情：[vod:contenttext]</p>
+								</span>
+							</div>
+							<div class="text">
+								<p class="name">[vod:name]</p><p class="actor">主演：[vod:starring]</p>
+							</div>
+						</a>
+					</li>{/maccms:vod}
+					
+
+				</ul>
+			</div>
+		</div>		
+	</div>
+    
+    
+    
+
+	<div class="ui-box border-gray clearfix">	
+		<div class="playfrom jsfrom tab1 clearfix">
+			<span class="laiyuan">评论&nbsp;<i class="arrow"></i></span>
+		</div>
+		
+		
+		
+		
+		<!--PC和WAP自适应版  畅言留言代码安装-->
+<div id="SOHUCS" sid="29638" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysKCLho7'; 
+var conf = 'prod_d5d214c3321937cabcc33499aecaf707'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+		</div>	
+	</div>
+<!--剧情简介--> 
+    
+    
+    
+    
+    
+<!--
+	<div class="ui-box border-gray clearfix">	
+		<div class="playfrom jsfrom tab1 clearfix">
+			<span class="laiyuan">网友评论&nbsp;<i class="arrow"></i></span>
+		</div>
+        <div id="box-pinglun">
+--> <!--网友评论--> 
+        
+        
+        
+        
+<!--畅言留言 代码安装    
+<div id="SOHUCS"  sid="29638"></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cys3WkfOJ';
+var conf = 'prod_65b3351f61496ad3b82f753b99065731';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="js/changyan_mobile.js' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+-->
+
+
+
+
+
+
+
+
+
+ 
+		</div>	     
+	</div>	
+
+</div>
+{maccms:foot}
+</body>
+
+</html>

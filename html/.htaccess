@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks
+  #开启重写规则
+  RewriteEngine On
+
+
+#重写规则的执行条件
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+</IfModule>

@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>专辑列表_第{page:now}页_{maccms:name}</title>
+<meta name="keywords" content="{maccms:name}" />
+<meta name="description" content="{maccms:name}" />
+ 
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<div id="content" class="wrap">
+	<section class="ui-box clearfix" id="ui-topic">
+		<div class="hello-box">
+			<div class="module-head  border-gray">
+				<h2 class="module-title"><i class="iconfont m-r-3 f-s-28 m-t-5">&#xf0091;</i>精彩专题汇总</h2>
+				<a class="more"></a>
+			</div>
+			<div class="module-content">
+				<ul class="yun-list clearfix" id="yun-list">		
+							
+					
+					{maccms:topic pagesize=12 id=all table=vod}<li class="yun yun-topic border-gray">
+						<a class="yun-link" href="[topic:link]" title="[topic:name]">
+							<div class="img">
+								<img class="lazy" data-original="[topic:pic]" src="{maccms:path_tpl}images/blank.png" alt="[topic:name]" />
+
+							</div>
+							<div class="text">
+								<p class="name">[topic:name]</p><p class="topicdes">[topic:contenttext]</p>
+							</div>
+						</a>
+					</li>{/maccms:topic}
+					
+					
+
+				</ul>
+			</div>
+
+		</div>
+	</section>
+	<div class="page clearfix">
+
+{maccms:pages len=6}
+   
+
+   
+
+</div>
+</div>
+<!--/Wrap-->
+{maccms:foot}
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</body>
+</html>

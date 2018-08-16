@@ -1,0 +1,90 @@
+
+<div id="header" class="header-fixed">
+	
+<!-- WAP 导航栏 -->
+	<div id="navbar">
+		<div class="navbar-width wrap fn-clear">
+		
+			<div class="nav">
+<li ><a class="logo-jpg2" target="_self" href="/" ></a><!-- PC 图标LOGO -->
+				</li>
+				
+				<ul class="nav-r">
+				
+<li>
+		<a href="/">
+			<i class="ico mhome"></i>
+				<b>首页</b>
+		</a>
+</li>
+					<li class="jqnav">
+						<i class="ico mnav"></i>
+						<b>院线</b>
+					</li>
+					<li class="jqms">
+						<i class="ico ms"></i>
+						<b>搜索</b>
+					</li>
+				</ul>
+			</div>		
+			
+			<ul id="nav-left" class="ui-nav-left mb-nav-left">
+		  
+				<li class="nav-item" id="nav-home">
+				  <a class="nav-link" target="_self" href="/"><i class="iconfont m-r-5 f-s-18">󰅴</i>首页</a>
+				</li>
+				
+				{maccms:menu num=8 type=parent order=asc table=vod}
+				<li class="nav-item topcur {if-A:[menu:id]={maccms:curvodtypeid}}current{endif-A}" id="nav-1">
+				  <a class="nav-link" target="_self" href="[menu:link]">[menu:name]</a>
+				</li>	
+				{/maccms:menu}			  								  								
+			</ul>		
+
+
+
+			
+<!-- PC 导航栏 -->
+			<ul id="nav-left" class="ui-nav-left">
+		  <a class="logo-jpg" target="_self" href="/" ></a><!-- PC 图标LOGO -->
+				<li class="nav-item" id="nav-home">
+				  <a class="nav-link" target="_self" href="/"><i class="iconfont m-r-5 f-s-18">󰅴</i>首页</a>
+				</li>
+				
+				{maccms:menu num=8 type=parent order=asc table=vod}
+				<li class="nav-item" id="nav-dianshiju">
+				  <a class="nav-link" target="_self" href="[menu:link]">[menu:name]</a>
+				</li>				
+				{/maccms:menu}
+				<li class="nav-item bb" id="nav-top">
+					<a class="nav-link" id="login" href="#">会员中心</a>				
+					<div class="cc mbp">
+					<span id="seacms_member"><a href="{maccms:path}index.php?m=user-reg.html">登录</a> <a href="{maccms:path}index.php?m=user-login.html">注册</a></span>
+					<script>member()</script></div>
+				</li>
+</ul>
+
+<ul id="nav-left" class="ui-nav-left"> <!-- PC头部搜索条 -->
+						<form name="formsearch" id="formsearch" action='{maccms:link_search_vod}' method="post" target="_self">
+							<input type="text" id="wd" name="wd" class="search-input" value="请在此处输入影片片名或演员名称。" onfocus="if(this.value=='请在此处输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片片名或演员名称。';};">
+							<input type="submit" id="searchbutton" class="search-button iconfont f-s-28 webkit-width" value="󰄬">
+						</form>	
+					</ul>
+	
+			
+			<div id="mbsearchbar">
+				<div class="ui-search">
+					<form name="formsearch" id="formsearch" action="{maccms:link_search_vod}" method="post" target="_self">
+						<input type="text" id="wd" name="wd" class="input" onblur="if(this.value==''){ this.value='请输入影片或演员名';this.style.color='#cfcdcd';}" onfocus="if(this.value=='请输入影片或演员名'){this.value='';this.style.color='';}" value="请输入影片或演员名" style="color: rgb(207, 205, 205);">
+						<input type="submit" name="submit" class="imgbt" value="">
+						
+					</form>
+				</div>
+				<div class="searchgb">
+					<i>关闭</i>
+				</div>
+			</div>			
+		</div>
+	</div>
+
+</div>

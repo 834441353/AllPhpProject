@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link href="__ADMIN__/css/style.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="__ADMIN__/js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">表单</a></li>
+        </ul>
+    </div>
+    <div class="formbody">
+        <div class="formtitle"><span>基本信息</span></div>
+        <form action="" method="post">
+            <ul class="forminfo">
+                <li>
+                    <label>权限名称</label>
+                    <input name="name" value="{$auth.auth_name}" type="text" class="dfinput" />
+                    <input type="hidden" name="id" value="{$Think.get.id}">
+                </li>
+                {//判断auth.is_menu是否为1}
+                <!-- <if condition="$auth.is_menu == '0' ">checked="checked"</if> -->
+                <li><label>是否显示</label>
+                  <cite>
+                    <input name="menu" type="radio"
+                      <if condition="$auth.is_menu == '1' ">checked="checked"</if>
+                    value="1"/>在菜单中显示&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="menu"
+                      <if condition="$auth.is_menu == '0' ">checked="checked"</if>
+                    type="radio" value="0" />不在菜单中显示
+                  </cite>
+                </li>
+
+                <li>
+                    <label>父级权限</label>
+                    <select name="pid" class="dfinput">
+                        <option value="0"
+                          {//判断如果当前权限的$auth.auth_pid = 0 说明是顶级权限}
+                          <if condition="$auth.auth_pid == 0 ">selected="selected"</if>
+                        >作为顶级</option>
+                        {//遍历顶级权限,创建候选选项}
+                        <volist name="tops" id="top">
+                          <option value="{$top.auth_id}"
+                            {//判断如果当前权限的$auth.auth_pid = 正在遍历的顶级权限$top.auth_id}
+                            <if condition="$auth.auth_pid == $top.auth_id ">selected="selected"</if>
+                          >{$top.auth_name}</option>
+                        </volist>
+                        {//遍历顶级权限,创建候选选项}
+                    </select>
+                    <i></i></li>
+                {//判断如果当前权限的$auth.auth_pid = 0 说明是顶级权限 让下面两个li hidden}
+                <li <if condition="$auth.auth_pid == 0 ">style="display:none"</if>>
+                    <label>控制器名</label>
+                    <input name="controller" value="{$auth.auth_c}" type="text" class="dfinput" />
+                </li>
+                <li <if condition="$auth.auth_pid == 0 ">style="display:none"</if>>
+                    <label>方法名称</label>
+                    <input name="action" value="{$auth.auth_a}" type="text" class="dfinput" />
+                </li>
+                <li>
+                    <label>&nbsp;</label>
+                    <input name="" id="btnSubmit" type="button" class="btn" value="确认保存" />
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+//jQuery代码
+$(function(){
+    //给btnsubmit绑定点击事件
+    $('#btnSubmit').on('click',function(){
+        //表单提交
+        $('form').submit();
+    })
+
+    //找到父级权限的下拉选框,绑定onchange事件
+    $("[name=pid]").change(function(){
+      //判断自身选择的是否为作为顶级
+      if($(this).val()==='0'){
+        //如果是,关闭控制器和方法表单域
+        $(this).parent().next().hide().find('input').val('').parent().next().hide().find('input').val('');
+      }else{
+        $(this).parent().next().show(500).next().show(500);
+      }
+    })
+});
+</script>
+</html>

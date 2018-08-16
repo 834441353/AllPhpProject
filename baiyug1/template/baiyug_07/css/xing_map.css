@@ -1,0 +1,13 @@
+@charset "utf-8";
+.w{width:1240px;height: auto;margin: 0 auto;}
+.w-content{ float:left; width:1238px; height:auto;border:1px solid #CCC; overflow:hidden; margin-bottom:15px;}
+.w-content ul{ float:left; width:308px; border-right:1px solid #CCC;}
+.w-content ul dd{height:30px; line-height:30px; background-color:whiteSmoke;padding: 0 10px;}
+.w-content ul dd .title{color: #F60;float: left;font-size: 16px;font-weight: 700;}
+.w-content ul dd h5{font-size: 12px;font-weight: bold;float: right; line-height:30px;}
+.w-content ul li{ border-bottom:1px dashed #CCC; height:28px; line-height:28px;}
+.w-content ul li .num,.w-content ul li .tit,.w-content ul li.score{display: block;float: left;height: 28px;overflow: hidden;cursor: pointer;}
+.w-content ul li .num{font-size: 14px;font-style: italic;text-align: center;width: 40px;}
+.w-content ul li .tit{font-size: 12px; width:220px; overflow:hidden;text-overflow:ellipsis;}
+.w-content ul li .score{float: right;text-align: right;padding-right: 12px;color: #F60;}
+

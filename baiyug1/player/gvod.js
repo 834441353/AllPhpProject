@@ -1,0 +1,2 @@
+MacPlayer.Html = '<iframe border="0" src="'+SitePath+'player/gvod.html" width="100%" height="'+MacPlayer.Height+'" marginWidth="0" frameSpacing="0" marginHeight="0" frameBorder="0" scrolling="no" allowfullscreen="true" vspale="0" noResize></iframe>';
+MacPlayer.Show();function playerstop(){window.parent.frames.MacPlayer.GoNextUrl();return false;};

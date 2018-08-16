@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{page:name}_第{page:now}页_{maccms:name}</title>
+<meta name="keywords" content="{page:name}第{page:now}页" />
+<meta name="description" content="{page:name}第{page:now}页" />
+ 
+{maccms:include}
+</head>
+{maccms:head}
+<div id="dtextlink" class="wrap border-gray fn-clear">
+
+		<div class="textlink fn-left"><strong>您所在的位置：</strong>
+			<a href="/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;<a href="{maccms:link_topic_vod}">专题总汇</a>&nbsp;&nbsp;»&nbsp;&nbsp;{page:name}
+		</div>
+
+</div>
+<div id="content" class="wrap">
+	<div  class="border-gray clearfix" id="topic-box">
+		<div class="topic-pic fn-left">
+			<img src="{page:pic}" alt="{page:name}">
+		</div>
+		<div class="topic-info fn-left">
+			<div class="topic-title fn-clear">
+				<h2>{page:name}</h2>
+			</div><div class="info fn-clear">
+
+			  <dl>
+
+
+				<dl class="juqing">
+				  <dt><i class="iconfont m-r-2 f-s-14 m-t-5">󰆘</i>专题介绍：</dt>
+				  <dd>{page:des}</dd>
+				</dl>
+			  </dl>
+			</div>	
+	
+		</div>
+	</div>
+	
+	
+	<section class="ui-box clearfix" id="detailcnxh">
+		<div class="hello-box">
+			<div class="module-head  border-gray">
+				<h2 class="module-title">{page:name}&nbsp;&nbsp;影片汇总</h2>				
+				
+								
+				<a class="more" href="{maccms:link_topic_vod}" target="_blank" title="更多">更多</a>
+			</div>
+			<div class="module-content">
+				<ul class="yun-list clearfix" id="yun-list">		
+						
+					{maccms:vod pagesize=12 type=current by=time table=vod}<li class="yun yun-large  border-gray">
+						<a class="yun-link" href="[vod:link]" title="[vod:name]">
+							<div class="img">
+								<img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/noimage.gif" alt="[vod:name]" />
+								
+								<span class="bgb">
+								<i class="bgbbg"></i>
+								<p class="name">[vod:remarks]</p>
+								<p class="other">剧情：[vod:contenttext]</p>
+								</span>
+							</div>
+							<div class="text">
+								<p class="name">[vod:name]</p><p class="actor">主演：[vod:starring]</p>
+							</div>
+						</a>
+					</li>{/maccms:vod}
+						
+					
+					
+
+				</ul>
+			</div>
+	
+		</div>
+	</section>	
+            <div class="page clearfix">
+                  
+                  
+                  
+                {maccms:pages len=6}
+                  
+                  
+                  
+            </div> 	
+	
+	
+</div>
+{maccms:foot}
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</body>
+</html>

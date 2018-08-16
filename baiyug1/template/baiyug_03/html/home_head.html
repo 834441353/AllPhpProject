@@ -1,0 +1,77 @@
+<!-- 导航条开始 -->
+<nav class="navbar-nepiancom">
+  <div class="container"> 
+    <!--ul class="nav navbar-nav" id='menulist'>
+      <li id="home"><a href="{maccms:path}"></a></li>
+      {maccms:menu type=child}
+      <li > <a href="[menu:link]" {if-A:[menu:id]={maccms:curvodtypeid}} class="this"{endif-A} title="[menu:name]" target="_self">[menu:name]</a> </li>
+      {/maccms:menu}
+    </ul-->    
+    <ul class="nav navbar-nav">
+      <li id="home"><a href="{maccms:path}"></a></li>
+      {maccms:matrix type=parent table=vod}
+      <li class="matrixlist"> <a href="[matrix:link]" {if:{maccms:curvodtypeid}=[matrix:id]} class="this"{end if}>[matrix:name]</a>
+        <ul>
+          {maccms:menu parent=[matrix:id] order=asc table=vod}
+          <li><a href="[menu:link]">[menu:name]</a></li>
+          {/maccms:menu}
+        </ul>
+      </li>
+      {/maccms:matrix}
+      
+    </ul>
+    <header class="top-bar wmenu">
+      <div class="menulist">
+        <div class="menulix cl"> <a href="/">
+          <div class="top-logo">[LOGO]</div>
+          </a> <a id="searcha">[搜索]</a> <a id="navBtnOne">[菜单]</a> </div>
+        <section>
+          <ul id="navBtnOneLa" class="cl"  style="display:none">
+            {maccms:menu type=child}
+            <li><a href="[menu:link]" {if-A:[menu:id]={maccms:curvodtypeid}} class="this"{endif-A} title="[menu:name]" target="_self">[menu:name]</a> </li>
+            {/maccms:menu}
+          </ul>
+          <div class="pull-left form_search"  id='searchla' style="margin-top:5px;display:none">
+            <form action="{maccms:link_search_vod}" method="post">
+              <div class="input-group">
+                <input type="text" class="form-control" name="wd" onblur="if(this.value==''){ this.value='请输入影片名';this.style.color='#cfcdcd';}" onfocus="if(this.value=='请输入影片名'){this.value='';this.style.color='';}" value="请输入影片名" autocomplete="off" style="color: rgb(207, 205, 205);" >
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><img src="{maccms:path_tpl}imgs/search.png" alt=""></button>
+                </span> </div>
+            </form>
+          </div>
+        </section>
+      </div>
+      <script>
+	$(function(){
+$("#searcha").click(function(){
+			$("#searchla").toggle();
+		});		
+		$("#navBtnOne").click(function(){
+			$("#navBtnOneLa").toggle();
+		});		
+	})	
+</script> 
+    </header>
+  </div>
+</nav>
+<!-- 导航条结束 --> 
+
+<!-- 内容列表开始 -->
+<div class="container content"> 
+  <!-- banner开始 -->
+  <div class="row">
+    <div class="pull-left logo_img" style="height:60px;"> <a href="/" class="not"></a> </div>
+    <div class="pull-left form_search" style="margin-top:5px;">
+      <form action="{maccms:link_search_vod}" method="post">
+        <div class="input-group">
+          <input type="text" class="form-control" name="wd" onblur="if(this.value==''){ this.value='请输入影片名';this.style.color='#cfcdcd';}" onfocus="if(this.value=='请输入影片名'){this.value='';this.style.color='';}" value="请输入影片名" autocomplete="off" style="color: rgb(207, 205, 205);" >
+          <span class="input-group-btn">
+          <button class="btn btn-default" type="submit"><img src="{maccms:path_tpl}imgs/search.png" alt=""></button>
+          </span> </div>
+      </form>
+    </div>
+    <div class="pull-right cydy003-info-list"> <a type="button" class="btn btn-nepiancom btn-circle" href="/index.php?m=label-new.html">最近更新</a> <a type="button" class="btn btn-nepiancom btn-circle" href="/index.php?m=label-hot.html">影片排行</a> <a type="button" class="btn btn-nepiancom btn-circle" href="/index.php?m=gbook-show.html">影视交流</a> <a type="button" class="btn btn-nepiancom btn-circle" href="/index.php?m=gbook-show.html">留言反馈</a> <a type="button" class="btn btn-nepiancom btn-circle" onclick="javascipt:alert('请使用Ctrl+D，为您的浏览器添加书签！');" >收藏本站</a> <a id="history" type="button" class="btn btn-nepiancom btn-circle" href="javascript:void(0);">播放记录</a> </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

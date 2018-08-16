@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>{maccms:name}-最新{page:name}-热播{page:name}推荐-2015最新上映{page:name}-第{page:now}页-</title>
+<meta name="keywords" content="最新{page:name},热播{page:name},人气{page:name},国产{page:name},美国{page:name},{page:name}排行榜,经典{page:name}推荐,{page:name}大全" />
+<meta name="description" content="{maccms:name}提供最新{page:name},热播{page:name}推荐,最新上映{page:name}在线观看,想看最新{page:name}大全,就来{maccms:name}" />
+<meta name="Resource-type" content="{maccms:name}" />
+<meta property="qc:admins" content="5040353377677066375" />
+<link href="{maccms:path_tpl}css/xing_allstyle.css" rel="stylesheet" />
+{maccms:include}
+<script language="javascript">var Root='/';var Sid='1';var Cid='2';var SiteShortName='{maccms:name}';var Id='';</script>
+<script language="javascript" type="text/javascript" src="{maccms:path_tpl}js/youmtvjs.js" charset="utf-8"></script>
+</head>
+<body>
+{maccms:head}
+<div class="topLine"></div>
+<div class="container">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd><a href="{maccms:path}">首页</a> » {maccms:matrix type=parent table=vod}{if-A:{page:pid}= [matrix:id]}{maccms:vod num=1 by=level type=[matrix:id] order=desc}[vod:typepname] » {/maccms:vod}{endif-A}{/maccms:matrix}{page:name}</dd>
+			</dl>
+		</div>
+</div>
+<div class="warp">
+<!--头部开始-->
+<!--主体内容开始-->
+<div class="sideright">
+<div class="ibox">
+                            <div class="boxTt">
+                              <h2>索引</h2>
+                              <div class="tips">共有<span>{page:datacount}</span>个符合条件的视频</div>
+                            </div>
+               <div class="boxCon1">
+                      <div class="open">
+                              <dl class="taglist">
+                                <dt>按类型：</dt>
+                                 <dd>
+                                  <a href="{page:linktype}" {if-A:"{page:pid}"="0"}class="Class"{endif-A}><span>全部</span></a>
+                                  {maccms:menu type=auto}<a href="[menu:link]" {if-A:"{page:id}"="[menu:id]"}class="Class"{endif-A}><span>[menu:name]</span></a>{/maccms:menu}
+                                 </dd>
+							  </dl>
+                              <dl class="taglist">
+                              <dt>按地区：</dt>
+                              <dd> 
+                              <a href="{page:linkarea}" {if-A:"{page:area}"=""}class="Class"{endif-A}><span>全部</span></a>
+                              {maccms:area type=auto order=asc}
+                              <a href="[area:link]" {if-A:"{page:area}"="[area:name]"}class="Class"{endif-A}><span>[area:name]</span></a>
+                              {/maccms:area}
+                              </dd></dl>
+                              <dl class="taglist">
+                              <dt>按年代：</dt>
+                              <dd> 
+                              <a href="{page:linkyear}" {if-A:"{page:year}"=""}class="Class"{endif-A}><span>全部</span></a>
+                              {maccms:year type=auto start=2000 end=2016 order=desc}
+                              <a href="[year:link]" {if-A:"{page:year}"="[year:name]"}class="Class"{endif-A}><span>[year:name]</span></a>
+                              {/maccms:year}
+                              </dd></dl>
+                              <dl class="taglist">
+                              <dt>按语言：</dt>
+                              <dd>
+                              <a href="{page:linklang}" {if-A:"{page:lang}"=""}class="Class"{endif-A}><span>全部</span></a>
+                              {maccms:lang type=auto}								
+                               <a href="[lang:link]" {if-A:"{page:lang}"="[lang:name]"}class="Class"{endif-A}><span>[lang:name]</span></a>
+                              {/maccms:lang}
+                              </dd></dl>
+                              <dl class="taglist">
+                              <dt>按字母：</dt>
+                              <dd> 
+                              <a href="{page:linkletter}" {if-A:"{page:letter}"=""}class="Class"{endif-A}><span>全部</span></a>
+                              {maccms:letter type=auto letter=all}								
+                               <a href="[letter:link]" {if-A:"{page:letter}"="[letter:name]"}class="Class"{endif-A}><span>[letter:name]</span></a>
+                              {/maccms:letter}
+                              </dd>
+							  </dl>
+                         </div>
+                              <div class="openBtn"><span></span></div>
+                    </div>
+               </div>
+<div class="ibox">
+<div class="titleBar"><strong>排序：</strong>
+<p {if-A:"{page:by}"="time"}class='active'{endif-A}><a href='{page:linkbytime}'><span>按时间</span></a></p>
+<p {if-A:"{page:by}"="hits"}class='active'{endif-A}><a href='{page:linkbyhits}'><span>按热门</span></a></p>
+<p {if-A:"{page:by}"="score"}class='active'{endif-A}><a href='{page:linkbyscore}'><span>按评分</span></a></p><div class="plist"> <span title="海报" class="ltA" id="ltA" onclick="lvs(2)">海报</span> <span title="列表" class="lzB" id="lzA" onclick="lvs(1)">列表</span></div>
+<div class="pagetop"><label></label></div>
+</div>
+<div class="list">
+<div id="videoData" class="jsonPP boxList">
+<ul> 
+{maccms:vod pagesize=30 order=desc by=time}
+  <li class="mov">
+      <div class="imgBox">
+	  <a title="[vod:name]" href="[vod:link]" class="pic"> <img src="{maccms:path_tpl}images/grey.jpg"  class="scrollLoading" data-url="[vod:pic]" alt="[vod:name]"/></a>
+        <div class="verbg"></div>
+          <div class="ver">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</div>
+		</div>
+      <div class="minfo">
+                                                                <div class="movTt">
+                                                                <a target="_blank" href="[vod:link]" title="[vod:name]">[vod:name]</a>
+                                                                <a target="_blank" class="movInfo" title="《[vod:name]》在线评论" href="[vod:link]#comment">[vod:name]</a>
+                                                                <span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span>
+                                                                </div>
+																						   <div class="showgoldbox">
+<span class="starbs"> <span class="starbb" style="width:{if-A:[vod:score]=1.0}10{elseif-A:[vod:score]=2.0}20{elseif-A:[vod:score]=3.0}30{elseif-A:[vod:score]=4.0}40{elseif-A:[vod:score]=5.0}50{elseif-A:[vod:score]=6.0}60{elseif-A:[vod:score]=7.0}70{elseif-A:[vod:score]=8.0}80{elseif-A:[vod:score]=9.0}90{elseif-A:[vod:score]=10.0}100{else-A}[vod:score]{endif-A}%;"></span> </span>
+																								<span class="goldtxt">[vod:score]<em></em></span>
+																								<span class="pno">([vod:scorenum]人评分)</span>
+																							</div>
+        <div class="r3 dy"><span>导演:[vod:directedlink]&nbsp; </span></div>                          
+        <div class="r1"><span>主演：[vod:starringlink]&nbsp;</span> </div>
+        <div class="r1">上映：[vod:year]</div>
+        <div class="r2">评分：<i>[vod:score]</i></div>
+        <div class="r4"><span>主演：[vod:starringlink]&nbsp;</span></div>
+        <div class="r3"><span>类型：<a href="[vod:typelink]">[vod:typename]</a></span> <span>地区：[vod:area]</span> </div>
+        <div class="r3"><span>上映：[vod:year]</span><span>更新：[vod:time style=yy-m-d H:i:s]</span></div>
+        <div class="r5">[vod:contenttext len=60]…</div>
+        <div class="r6"><a href="[vod:playlink]" target="_blank" title="《[vod:name]》在线观看">在线观看</a></div>
+      </div>
+    </li>
+{/maccms:vod}
+
+ </ul>
+	<div class="pages">{maccms:pages len=6}</div>
+</div></div></div></div></div>
+{maccms:foot}
+</body>
+</html>

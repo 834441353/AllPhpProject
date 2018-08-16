@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>最近更新的电影-最近更新的电视剧-2013电视剧大全-2013最新电影-{maccms:name}</title>
+<meta name="keywords" content="最近更新的电影,最近更新的电视剧,{maccms:name}">
+<meta name="description" content="最近更新的电影,最近更新的电视剧,{maccms:name}！">
+{maccms:include}
+<link href="{maccms:path_tpl}css/new.css" rel="stylesheet" type="text/css" />
+</head><body>
+{maccms:head}
+<div id="content" class="layout">
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"><a href="/">首页</a> >></li>
+      <li>影视排行100个</li>
+    </ul>
+  </div>
+  <div class="ui-box ui-qire fn-clear" id="qire-lasted">
+    <div class="ui-title fn-clear">
+      <h2>影视排行100个</h2>
+      <div class="lasted-time fn-right">更新时间</div>
+      <div class="lasted-tags fn-right">人气</div>
+      <div class="lasted-type fn-right">类型</div>
+    </div>
+    <div class="ui-cnt">
+      <ul class="lasted-list fn-clear">
+        {maccms:vod num=100 type=all order=desc by=hits}
+        <li>
+          <div class="lasted-num fn-left">∷</div>
+          <div class="lasted-tit fn-left">
+            <h5 class="show-tipinfo"><a href="[vod:link]">[vod:name]</a></h5>
+          </div>
+          <div class="lasted-type fn-left">[vod:typename]</div>
+          <div class="lasted-tags fn-left">[vod:hits]</div>
+          <div class="lasted-time fn-right">[vod:time style=yy-mm-dd]</div>
+        </li>
+        {/maccms:vod}
+      </ul>
+    </div>
+  </div>
+</div>
+{maccms:foot}
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+
+<title> [vod:name] [vod:playname] -{if-A:[vod:type]=3}[vod:playtitle]-{endif-A}在线观看 - {maccms:name}</title>
+
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<meta name="author" content="{maccms:name}：http://baiyug.cn" />
+<link rel="bookmark" href="{maccms:path_tpl}images/favicon.ico"/>
+
+{maccms:include}
+{maccms:xubao}
+{maccms:qbfq}
+{maccms:viptan}
+{maccms:putan}
+{maccms:adgg}
+{maccms:pbts}
+<link href="{maccms:path_tpl}css/v280_play.css" rel="stylesheet" type="text/css" />
+
+[vod:history]
+
+</head>
+
+<body>
+
+	{maccms:head}
+
+
+
+        <div class="play" style="padding-top: 125px;">[vod:playerinfo][vod:player]</div>
+
+
+
+    </div>
+
+    <div class="video-path">
+
+    	<span class="video-name"><h1>[vod:name]</h1> [vod:subname]</span>
+
+        <div class="ui_tab_slide">
+
+        	<ul class="tools_temp">
+
+            	<li>[vod:digg]</li>
+
+            	<li>[vod:error]</li>
+
+            	<li>[vod:userfav]</li>
+
+            <li><a target="_self" href="javascript:void(0)" onclick="MAC.Copy(s);return false;">我要分享</a></li>
+
+            	<li><a href="[vod:link]">影片详情</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    
+
+    <div class="showbox">
+
+    	<div class="box_tt_tab">
+
+{maccms:play}
+
+            <h2 id="nav_[play:from]" rel="[play:show]" data="[play:from]">[play:show]<span>[play:urlcount]</span></h2>
+
+{maccms:url order=desc}
+
+{/maccms:url}
+
+{/maccms:play}
+
+            <em><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到搜狐微博" href="#" class="bds_tsohu" data-cmd="tsohu"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到百度新首页" href="#" class="bds_bdhome" data-cmd="bdhome"></a></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","tsohu","sqq","bdhome"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></em>
+
+        </div>
+
+
+
+
+
+
+
+
+{maccms:play}
+
+        <div class="box_con" id="tip_[play:from]" style="display:none">
+
+        	<div class="playtips">
+            	<p>《[vod:name]》[play:show]在线观看地址</p>
+				<div class="option_tip"><a href="javascript:void(0)">温馨提醒您：[play:show]资源点播[[vod:name]]</a>[play:tip]</div>
+			</div>
+
+        </div>
+        <ul class="showplayul" id="list_[play:from]" rel="symax_player" data="[play:from]" order="desc" limit="[play:num]">
+        {maccms:url order=desc}
+        <li><a href="[url:link]" title="[url:name]" id="[play:from]_[url:num]">[url:name]</a></li>
+        {/maccms:url}
+      </ul>
+{/maccms:play}
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+   <script type="text/javascript">
+
+    	var playFromShow = '[vod:playfromshow]';
+
+		var playFrom = $(".box_tt_tab h2[rel='"+playFromShow+"']").attr("data");
+
+		var playNum = '[vod:playnum]';
+
+		$("#tip_"+playFrom).show();
+
+		$("#list_"+playFrom).show();
+
+		$("#nav_"+playFrom).addClass("on");
+
+		$("#"+playFrom+"_"+playNum).addClass("selected");
+
+    </script>
+
+    <div class="like">
+
+    	<div class="l">
+
+        	<div class="like_title"><h3>您可能还喜欢的[vod:typename]</h3></div>
+
+            <ul class="list">
+
+{maccms:vod type=current num=16 order=desc by=time}
+
+            	<li><a href="[vod:link]"><img class="lazy" data-original="[vod:pic]" src="{maccms:path}images/blank.png" alt="[vod:name]">[vod:name]</a><span>[vod:starring]</span></li>
+
+{/maccms:vod}
+
+            </ul>
+
+        </div>
+
+        <div class="r">
+
+        	<h2>[vod:name]</h2><span>([vod:playname])</span>
+
+            <ul>
+
+            	{if-A:not isN("[vod:remarks]")}<li><b>状态：</b><!--[vod:state]-->[vod:remarks]</li>{endif-A}
+
+            	{if-A:not isN("[vod:directedlink]")}<li><b>导演：</b>[vod:directedlink]</li>{endif-A}
+
+            	{if-A:not isN("[vod:starringlink]")}<li><b>主演：</b>[vod:starringlink]</li>{endif-A}
+
+            	<li><b>分类：</b><a href="[vod:typelink]">[vod:typename]</a></li>
+
+            	<li><b>年份：</b>[vod:yearlink]</li>
+
+            	<li><b>地区：</b>[vod:arealink]</li>
+
+            	<!--<li><b>语言：</b>[vod:language]</li>-->
+
+            	<li><b>Tag ：</b>[vod:taglink]</li>
+
+            	<li><b>更新时间：</b>[vod:time style=y-m-d]</li>
+
+            	<li><b>[vod:playname]剧情简介：</b></li>
+
+                <div>[vod:contenttext len=250]</div>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+	{maccms:foot}
+
+   <style type="text/css">a,a:link,a:visited{text-decoration:none;}</style>
+
+</body>
+
+</html>

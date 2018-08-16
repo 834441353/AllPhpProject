@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{maccms:name} - 找回密码 </title>
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="/template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="/template/user/css/qirebox.css" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="/js/jquery.js"></script>
+<script src="/js/common.js"></script>
+
+
+
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<!--导航文件开始-->
+<script>var SitePath='/',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script type="text/javascript">var Root='/';var Sid='';var Cid='';var Id='';</script>
+
+<link href="/template/user/css/css/global.css" rel="stylesheet" type="text/css">
+<link href="/template/user/css/css/font_css.css" rel="stylesheet" type="text/css">
+<script>var SitePath='/',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+
+<link href="/template/user/css/css/main.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/template/user/js/js/home.js"></script>
+<script type="text/javascript" src="/template/user/js/js/zepto.js"></script>
+
+<!--<script type="text/javascript" src="/template/user/js/js/jquery-1.7.2.min.js"></script>-->
+<script type="text/javascript" src="/template/user/js/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/template/user/js/js/jquery.cookie.min.js"></script>
+<!--<script type="text/javascript" src="/template/user/js/js/md5.min00.js"></script>
+<script type="text/javascript" src="/template/user/js/js/login00.min.js"></script>-->
+<script type="text/javascript" src="/template/user/js/js/iscroll.js"></script>
+<!--<script type="text/javascript" src="/template/user/js/js/hot_word00.js"></script>-->
+<script type="text/javascript" src="/template/user/js/js/common.min.1027.js"></script>
+
+<!--导航文件结束-->
+
+
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link href="/template/user/css/1/login.css" type="text/css" rel="stylesheet"/>
+<link href="/template/user/css/1/reset_6331b55cbd48f0e4f85b0ee87cb10e50.css" rel="stylesheet">
+<script>var SitePath='/',SiteAid='40',SiteTid='',SiteId='';</script>
+<script type="text/javascript">var Root='/';var Sid='';var Cid='';var Id='';</script>
+<link href="/template/user/images/icon.jpg" rel="apple-touch-icon-precomposed">
+<link href="/template/user/images/icon.jpg" rel="apple-touch-icon">
+<link href="/template/user/css/1/global.css" rel="stylesheet" type="text/css">
+<link href="/template/user/css/1/font_css.css" rel="stylesheet" type="text/css">
+<link href="/template/user/css/1/main.css" rel="stylesheet" type="text/css">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link href="/template/user/css/1/login.css" type="text/css" rel="stylesheet"/>
+<meta name="keywords" content="{maccms:name}"/>
+<meta name="description" content="{maccms:name}"/>
+<link href="/template/user/css/1/base.css" type="text/css" rel="stylesheet"/>
+<link href="/template/user/css/1/qirebox.css" type="text/css" rel="stylesheet"/>
+
+<link href="/template/user/css/1/all_7cd6a06ffa0fb13c21f71ba788236445.css" rel="stylesheet">
+<script>var SitePath='/',SiteAid='40',SiteTid='',SiteId='';</script>
+<script src="/js/jquery.js"></script>
+<script src="/js/common.js"></script>
+
+
+
+
+</head>
+<body>
+
+
+
+<header class="headerbar">
+
+<!--导航开始-->
+<div class="wrapper">
+
+<div class="mask" id="mask_box"></div>
+
+<header class="headerbar">
+      <section class="headBox">
+
+        <a class="pull-left logo" href="/" title="">
+
+          <i>
+
+            <img src="/template/user/images/logo.png" alt="" title=""></i>
+
+        </a>
+
+        <a href="/index.php?m=user-index" rel="nofollow" class="app_down pull-right">
+
+          <span>会员中心</span></a>
+
+        <a href="/" rel="nofollow" class="zui-icon iconfont icon-lishijilu pull-right"></a>
+
+        <a href="/index.php?m=vod-search" rel="nofollow" class="zui-icon iconfont icon-sousuo pull-right"></a>
+
+      </section>
+
+</header>
+
+<div class="subNavheader">
+
+<nav class="subNav globalPadding" id="nav_menu" style="display:block">
+
+  <div class="con clearfix">
+
+    <p> <a{if-A:{maccms:siteaid}=10} class="cur" {endif-A} href="/" onclick="_dct_('dh_m_index');" target="_self">首页</a> {maccms:menu type=parent order=asc table=vod}<a href="[menu:link]" {if-A:{maccms:curvodtypeid}=[menu:id]}class="cur"{endif-A} {if-A:[menu:id]=1}onclick="_dct_('dh_m_dy');"{endif-A}{if-A:[menu:id]=2}onclick="_dct_('dh_m_tv');"{endif-A}{if-A:[menu:id]=4}onclick="_dct_('dh_m_dm');" {endif-A}{if-A:[menu:id]=3}onclick="_dct_('dh_m_ze');"{endif-A}{if-A:[menu:id]=18}onclick="_dct_('dh_m_vip');"{endif-A}{if-A:[menu:id]=36}onclick="_dct_('dh_m_vdy');"{endif-A} target="_self" >[menu:name]</a> {/maccms:menu}</p>
+
+  </div>
+
+</nav>
+</div>
+<br>
+<!--导航结束-->
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<div id="sign-logo"></div>
+
+<div class="login-wrapper">
+<form method="post" action="index.php?m=user-findpasssave.html">
+<section id="email" class="main hid" style="display: block;">
+  <input type="hidden" name="step" value="0">
+  <p class="hint_12_tit">用戶名</p>
+  <div class="mod mod_more h5_input">
+    <input id="u_name" name="u_name" type="text" placeholder="请输入你的用户名">
+  </div>
+  <p class="hint_12_tit">安全问题</p>
+  <div class="mod mod_more h5_input input_change_type">
+    <input id="u_question" name="u_question" type="text" placeholder="请输入你的问题"></div>
+  <p class="hint_12_tit">安全答案</p>
+  <div class="mod mod_more h5_input input_change_type">
+    <input id="u_answer" name="u_answer" type="text" placeholder="请输入你的答案"></div>
+  <p class="hint_12_tit">新密码</p>
+  <div class="mod mod_more h5_input">
+    <input id="u_password" name="u_password" type="password" placeholder="请输入你的新密码"></div>
+  <div class="mt_20"><a href="javascript:void(0);" onclick="javascript:document.forms[0].submit();" class="btn_common ok_btn">提交</a></div>
+</section>
+</form>
+</div>
+<br>
+{foot}
+</body>
+</html>

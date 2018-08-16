@@ -1,0 +1,782 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>{maccms:name}-最新免费在线观看电影,电视,综艺,动漫的在线视频网站</title>
+<meta name="keywords" content="{maccms:keywords}" />
+<meta name="description" content="{maccms:description}" />
+<meta name="Resource-type" content="{maccms:name}" />
+<meta property="qc:admins" content="5040353377677066375" />
+<link rel="stylesheet" href="{maccms:path_tpl}css/xing_index.css"/>
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<!--轮播图开始-->
+<div class="slider sliderd">
+	<div class="slider_box" id="slider_name">    
+      <ul class="silder_con">
+	  {maccms:vod num=10 type=all start=1 order=desc by=time level=1}
+        <li class="silder_panel">
+		<div class="silder_tip" id="movie_tip[vod:typepid]"></div>
+		<div class="silderg" id="movie[vod:subname]"></div>
+       	  <a href="[vod:link]" class="f_l"><img class="scrollLoading"  src="[vod:picslide]"/></a>
+          <div class="silder_intro f_r">
+            <h3> <strong><a href="[vod:link]">[vod:name]</a></strong> <span>状态：{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span> </h3>
+            <ul>
+              <li><label>类型：</label><span><a href="[vod:typelink]">[vod:typename]</a></span></li>
+              <li><label>导演：</label><span>[vod:directedlink]</span></li>
+              <li><label>主演：</label><span>[vod:starringlink]</span></li>
+            </ul>
+            <p>[<strong>影片介绍</strong>][vod:name][vod:contenttext len=138] ..</p>
+            <a class="silder_play" target="_blank" href="[vod:link]">马上观看</a></div>
+        </li>
+       {/maccms:vod}
+      </ul>
+      <ul class="silder_nav clearfix">
+	  {maccms:vod num=10 type=all start=1 order=desc by=time level=1}
+        <li><a href="[vod:link]"><img class="scrollLoading" data-url="[vod:picthumb]" src="{maccms:path_tpl}images/grey.jpg"/></a></li>
+      {/maccms:vod}
+      </ul>
+    </div>
+    <div class="silderBox"></div>
+</div>
+<script src="{maccms:path_tpl}js/jquery.slides.js" type="text/javascript"></script>
+<div class="syindex">
+<!-- //首页选项卡 -->
+			<div class="maxBox mb10 mt5" id="latest-focus">
+			<!-- //-->
+			<div class="latest-tab">
+	                   <ul>
+	                   <li id="latest1" onmouseover="setTab(1);" class="active">热门影片推荐</li>
+	                   <li id="latest2" onmouseover="setTab(2);" class="">最新电影</li>
+	                   <li id="latest3" onmouseover="setTab(3);" class="">最新电视剧</li>
+	                   <li id="latest4" onmouseover="setTab(4);" class="">最新动漫</li>
+	                   <li id="latest5" onmouseover="setTab(5);" class="">最新综艺</li>
+	                   </ul>
+			</div>
+			<SCRIPT language="javascript" type="text/javascript">function setTab(index) {for (var i=1;i<=5;i++){document.getElementById("latest"+i).className ="";document.getElementById("latest"+index).className ="active";document.getElementById("con_latest_"+i).style.display="none";}document.getElementById ("con_latest_"+index).style.display  ="block";}</SCRIPT>
+			<div class="box box-blue-bold">
+		   <!-- //热门影片推荐-->
+			<div id="con_latest_1" class="active" style="display: block; ">
+	                   <ol class="pic-list">
+                        {maccms:vod num=9 type=all by=time order=desc}
+                       <li><a class="play-pic" href="[vod:link]" title="[vod:name]" ><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" /><label class="bg">&nbsp;</label><label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label></a><p><a href="[vod:link]" title="[vod:name]"  >[vod:name]</a></p></li>
+                        {/maccms:vod}
+                        </ol>					
+		                <ul class="txt-list">
+                        {maccms:vod num=18 type=all by=time order=desc start=8}
+                        <li><span>[vod:numjoin]</span><a href="[vod:link]" title="[vod:name]" >[vod:name]</a>/<a class="gray" href="[vod:typelink]" >[vod:typename]</a></li>
+                        {/maccms:vod}
+                        </ul>
+			</div>
+			<!-- //热门影片推荐--结束-->
+			<!-- // 最新电影 -->
+			<div id="con_latest_2" class="fa-hide" style="display: none; ">
+	                   <ol class="pic-list">
+                        {maccms:vod num=9 type=1 by=time order=desc}
+                       <li><a class="play-pic" href="[vod:link]" title="[vod:name]" ><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" /><label class="bg">&nbsp;</label><label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label></a><p><a href="[vod:link]" title="[vod:name]"  >[vod:name]</a></p></li>
+                        {/maccms:vod}
+	                   </ol>
+	                   <ul class="txt-list">
+                        {maccms:vod num=18 type=1 by=time order=desc start=8}
+                       <li><span>[vod:numjoin]</span><a href="[vod:link]" title="[vod:name]" >[vod:name]</a>/<a class="gray" href="[vod:typelink]" >[vod:typename]</a></li>
+                        {/maccms:vod}
+	                   </ul>
+			</div>
+			<!-- //最新电影结束-->
+			<!-- //最新电视剧 -->
+			<div id="con_latest_3" class="fa-hide" style="display: none; ">
+	                   <ol class="pic-list">
+                        {maccms:vod num=9 type=2 by=time order=desc}
+                       <li><a class="play-pic" href="[vod:link]" title="[vod:name]" ><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" /><label class="bg">&nbsp;</label><label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label></a><p><a href="[vod:link]" title="[vod:name]"  >[vod:name]</a></p></li>
+                        {/maccms:vod}
+                        </ol>
+                        <ul class="txt-list">
+                        {maccms:vod num=18 type=2 by=time order=desc start=8}
+                       <li><span>[vod:numjoin]</span><a href="[vod:link]" title="[vod:name]" >[vod:name]</a>/<a class="gray" href="[vod:typelink]" >[vod:typename]</a></li>
+                        {/maccms:vod}
+                        </ul>				
+			</div>
+			<!-- //最新电视剧结束-->
+			<!-- // 最新动漫 -->
+			<div id="con_latest_4" class="fa-hide" style="display: none; ">
+	                   <ol class="pic-list">
+                        {maccms:vod num=9 type=4 by=time order=desc}
+                       <li><a class="play-pic" href="[vod:link]" title="[vod:name]" ><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" /><label class="bg">&nbsp;</label><label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label></a><p><a href="[vod:link]" title="[vod:name]"  >[vod:name]</a></p></li>
+                        {/maccms:vod}
+	                   </ol>
+	                   <ul class="txt-list">
+                        {maccms:vod num=18 type=4 by=time order=desc start=8}
+                       <li><span>[vod:numjoin]</span><a href="[vod:link]" title="[vod:name]" >[vod:name]</a>/<a class="gray" href="[vod:typelink]" >[vod:typename]</a></li>
+                        {/maccms:vod}
+	                   </ul>
+			</div>
+			<!-- //最新电视剧结束-->
+			<!-- // 最新综艺 -->
+			<div id="con_latest_5" class="fa-hide" style="display: none; ">
+	                   <ol class="pic-list">
+                        {maccms:vod num=9 type=3 by=time order=desc}
+                       <li><a class="play-pic" href="[vod:link]" title="[vod:name]" ><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" /><label class="bg">&nbsp;</label><label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label></a><p><a href="[vod:link]" title="[vod:name]"  >[vod:name]</a></p></li>
+                        {/maccms:vod}
+	                   </ol>
+	                   <ul class="txt-list">
+                        {maccms:vod num=18 type=3 by=time order=desc start=8}
+                       <li><span>[vod:numjoin]</span><a href="[vod:link]" title="[vod:name]" >[vod:name]</a>/<a class="gray" href="[vod:typelink]" >[vod:typename]</a></li>
+                        {/maccms:vod}
+	                   </ul>		
+					   			
+			</div>
+			<!-- //最新综艺结束 -->
+			</div>
+			</div>
+			<!-- //首页选项卡结束 style="border: 1px solid blue;"-->
+			
+            <!-- 电影 -->
+	<div class="maxBox mb10" id="Movie">
+	<div class="960Ad"><script src="{maccms:path_ads}index2.js"></script></div>
+		<div class="box ui-yiyi fa-clear">
+			<label class="videoIco"></label>
+			<div class="conBox ui-tab fa-left">
+				<div class="caption fa-clear">
+					<h2 class="hide-txt">
+						{maccms:menu type=1   order=asc}<a href="[menu:link]" target="_blank" class="aMark" title="新上映的电影" id="tv">共<em>[menu:count]</em>部电影</a>{/maccms:menu}
+					</h2>
+					<p class="tv-link">{maccms:menu parent=1}<a href="[menu:link]" target="_self"> [menu:name]</a>{/maccms:menu}</p>
+				</div>
+				<div class="content">
+					<div class="ui-tab-item  fa-clear">
+						<div class="sideRow fa-left">
+						<div class="ui-focus">
+						{maccms:vod num=1  type=1   level=all by=time   order=desc}
+						<a class="play-pic" href="[vod:link]"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" style="display: block; ">
+						<label class="bg"> </label>
+						<label class="time">[vod:name]</label>
+						</a>
+						<ul class="ui-focus-text">
+						<li><strong>导演：</strong>[vod:directedlink]</li>
+						<li><strong>主演：</strong>[vod:starringlink]</li>
+						<li class="desc"><strong>简介：</strong>[vod:name][vod:contenttext len=75] ..</li>
+						</ul>{/maccms:vod}
+						
+						</div><!-- // ui-focus End -->
+						<div class="ui-will">
+						<h4>正在热映</h4>
+						<ul class="ui-will-cnt">
+						    {maccms:matrix  type=6,7,8,9,10 order=asc}
+							<li>
+							<strong class="c_txt2"><a target="_blank" href="[matrix:link]" title="[matrix:name]">[matrix:name]</a>：</strong>
+							{maccms:vod num=12 type=[matrix:id] by=rnd order=desc}
+							<a target="_blank" href="[vod:link]" title="[vod:name]">[vod:name len=10]</a>
+							{/maccms:vod}
+							</li>
+						    {/maccms:matrix}
+						</ul></div><!-- // ui-synch End --></div>
+						<div class="pic-list pic-list-focus">
+							<ul>
+								{maccms:vod num=10  type=1  by=weekhits   order=desc}
+								<li>
+								   <a class="play-pic" href="[vod:link]">
+									<img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" style="display: block; ">
+									<span class="play-icon"> </span>
+									
+									<label class="bg"> </label>
+									<label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label>
+								</a>
+								<p>
+									<a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a>
+								</p>
+								<p class="txt">[vod:starringlink len=10] </p>
+								<p class="txt">
+									<span class="ratbar">
+									<span class="ratbar-item" style="width:{if-A:[vod:score]=1.0}10{elseif-A:[vod:score]=2.0}20{elseif-A:[vod:score]=3.0}30{elseif-A:[vod:score]=4.0}40{elseif-A:[vod:score]=5.0}50{elseif-A:[vod:score]=6.0}60{elseif-A:[vod:score]=7.0}70{elseif-A:[vod:score]=8.0}80{elseif-A:[vod:score]=9.0}90{elseif-A:[vod:score]=10.0}100{else-A}[vod:score]{endif-A}%;"></span>	
+									</span>
+									<strong class="ratbar-num">[vod:score]</strong>
+								</p>
+							</li>{/maccms:vod}								
+							</ul>
+						</div>
+						<!-- // pic-list End -->
+					</div>
+					<!-- // ui-tab-item End -->
+					<div class="mod_b paddingA" id="slideE">
+                    	<div class="th_b">
+                    		<span class="sMark">院线播报</span>
+                    		<p class="pTabList" id="slideE_Tab">
+                    			<a href="javascript:sMarkTab(1,2);" target="_self" name="movie_preview_title" id="movie_preview_title_1" class="selected" title="">正在热映</a>
+                    			<a href="javascript:sMarkTab(2,1);" target="_self" name="movie_preview_title" id="movie_preview_title_2" title="">即将上映</a>
+                    		</p>
+							<SCRIPT language="javascript" type="text/javascript">function sMarkTab(index,TwoNum) {
+							document.getElementById("movie_preview_title_"+index).className ="selected";
+							document.getElementById("movie_preview_title_"+TwoNum).className ="";
+							document.getElementById("movie_preview_content_"+index).style.display="block";
+							document.getElementById("movie_preview_content_"+TwoNum).style.display  ="none";
+							}</SCRIPT>
+                    	<div class="ivy28"></div>
+                    	</div>
+                        <div class="tb_b" id="slideE_Con">
+                        	<ul class="ul_picTxtB ulPic_widthB fa-clear" id="movie_preview_content_1">
+								{maccms:vod num=6 type=1 order=desc  by=monthhits}
+								<li>
+									<a class="play-pic" href="[vod:link]">
+										<img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg"  alt="[vod:name]"  style="display: block; ">
+										<label class="bg"> </label>
+										<label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label>
+									</a>
+									<p>
+										<a href="[vod:link]" title="[vod:name len=10]">[vod:name len=10]</a>
+									</p>
+								</li>{/maccms:vod}
+                           </ul>
+                        	<ul class="ul_picTxtB ulPic_widthB fa-clear" id="movie_preview_content_2">
+								{maccms:vod num=6 type=1 order=desc by=time}
+								<li>
+									<a class="play-pic" href="[vod:link]">
+										<img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg"  alt="[vod:name]"  style="display: block; ">
+										<label class="bg"> </label>
+										<label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label>
+										<i></i>
+									</a>
+									<p>
+										<a href="[vod:link]" title="[vod:name len=10]">[vod:name len=10]</a>
+									</p>
+								</li>{/maccms:vod}
+								
+                             </ul>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<!-- // conBox End  style="border: 1px solid blue;"-->
+			<div class="sideBar fa-right">
+				<div class="ui-top-tab">
+					<div class="caption fa-clear">
+						<h3><span class="">电影</span>热播</h3>
+					</div>
+					<div class="content">
+						<ul class="ul-top">
+							{maccms:vod num=11  type=1   by=hits   order=desc}<li><span><strong>  [vod:time style=m-d] </strong></span> <a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a></li>{/maccms:vod}							
+						</ul>
+					</div>
+				</div>
+				<!-- // topBox End -->
+				<div class="ui-top-tab">
+					<div class="caption fa-clear">
+						<h3><span class="">电影</span>好评</h3>
+					</div>
+					<div class="content">
+						<ul class="ul-top">
+							{maccms:vod num=12  type=1   by=scoreall   order=desc}<li><span><strong>  [vod:scoreall] </strong></span> <a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a></li>{/maccms:vod}							
+						</ul>
+					</div>
+				</div>
+				
+				<!-- // ui-sort End -->
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<!-- 电视 -->
+	<a name="TV"></a>
+	<div class="maxBox mb10" id="tv">
+	<div class="960Ad"><script src="{maccms:path_ads}index3.js"></script></div>
+		<div class="box ui-yiyi fa-clear">
+		<label class="videoIco"></label>
+			<div class="conBox ui-tab fa-left">
+				<div class="caption fa-clear">
+					<h2 class="hide-txt">
+						{maccms:menu type=2   order=asc}<a href="[menu:link]" target="_blank" class="aMark" title="新上映的电影" id="tv">共<em>[menu:count]</em>部电视剧</a>{/maccms:menu}
+					</h2>
+					<p class="tv-link">{maccms:menu parent=2}
+						<a href="[menu:link]" target="_self"> [menu:name]</a>{/maccms:menu}
+					</p>
+				</div>
+				<div class="content">
+					<div class="ui-tab-item  fa-clear">
+						<div class="sideRow fa-left">
+						<div class="ui-focus">
+						{maccms:vod num=1  type=2   level=all by=time   order=desc}
+						<a class="play-pic" href="[vod:link]"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" style="display: block; ">
+						<label class="bg"> </label>
+						<label class="time">[vod:name]</label>
+						</a>
+						<ul class="ui-focus-text">
+						<li><strong>导演：</strong>[vod:directedlink]</li>
+						<li><strong>主演：</strong>[vod:starringlink]</li>
+						<li class="desc"><strong>简介：</strong>[vod:name][vod:contenttext len=75] ..</li>
+						</ul>{/maccms:vod}
+						
+						</div><!-- // ui-focus End -->
+						<div class="ui-will">
+						<h4>正在热映</h4>
+						<ul class="ui-will-cnt">
+						    {maccms:matrix  type=12,13,14,15,16 order=asc}
+							  <li>
+							<strong class="c_txt2"><a target="_blank" href="[matrix:link]" title="[matrix:name]">[matrix:name]</a>：</strong>
+							{maccms:vod num=12 type=[matrix:id] by=rnd order=desc}
+							<a target="_blank" href="[vod:link]" title="[vod:name]">[vod:name len=10]</a>
+							{/maccms:vod}
+							</li>
+						    {/maccms:matrix}
+						</ul>
+						</div><!-- // ui-synch End --></div>
+						<div class="pic-list pic-list-focus">
+							<ul>
+								
+								{maccms:vod num=10  type=2  by=weekhits   order=desc}<li>
+								<a class="play-pic" href="[vod:link]">
+									<img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" style="display: block; ">
+									<span class="play-icon"> </span>
+									<label class="bg"> </label>
+									<label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label>
+								</a>
+								<p>
+									<a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a>
+								</p>
+								<p class="txt">[vod:starringlink len=10] </p>
+								<p class="txt">
+									<span class="ratbar">
+									<span class="ratbar-item" style="width:{if-A:[vod:score]=1.0}10{elseif-A:[vod:score]=2.0}20{elseif-A:[vod:score]=3.0}30{elseif-A:[vod:score]=4.0}40{elseif-A:[vod:score]=5.0}50{elseif-A:[vod:score]=6.0}60{elseif-A:[vod:score]=7.0}70{elseif-A:[vod:score]=8.0}80{elseif-A:[vod:score]=9.0}90{elseif-A:[vod:score]=10.0}100{else-A}[vod:score]{endif-A}%;"></span>
+									</span>
+									<strong class="ratbar-num">[vod:score]</strong>
+								</p>
+							</li>{/maccms:vod}								
+							</ul>
+						</div>
+						<!-- // pic-list End -->
+					</div>
+					<!-- // ui-tab-item End -->
+					<div class="mod_b paddingA" id="slideE">
+                    	<div class="th_b">
+                    		<span class="sMark">院线播报</span>
+                    		<p class="pTabList" id="slideE_Tab">
+                    			<a href="javascript:sMarkTaab(1,2);" target="_self" name="movie1_preview_title" id="movie1_preview_title_1" class="selected" title="">正在热映</a>
+                    			<a href="javascript:sMarkTaab(2,1);" target="_self" name="movie1_preview_title" id="movie1_preview_title_2" title="">即将上映</a>
+                    		</p>
+							<SCRIPT language="javascript" type="text/javascript">function sMarkTaab(index,TwoNum) {
+							document.getElementById("movie1_preview_title_"+index).className ="selected";
+							document.getElementById("movie1_preview_title_"+TwoNum).className ="";
+							document.getElementById("movie1_preview_content_"+index).style.display="block";
+							document.getElementById("movie1_preview_content_"+TwoNum).style.display  ="none";
+							}</SCRIPT>
+                    	<div class="ivy28"></div>
+                    	</div>
+                        <div class="tb_b" id="slideE_Con">
+                        	<ul class="ul_picTxtB ulPic_widthB fa-clear" id="movie1_preview_content_1">
+								{maccms:vod num=6 type=2 order=desc  by=monthhits}
+								<li>
+								
+									<a class="play-pic" href="[vod:link]">
+										<img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]"  style="display: block; ">
+										<label class="bg"> </label>
+										<label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label>
+									</a>
+									<p>
+										<a href="[vod:link]" title="[vod:name len=10]">[vod:name len=10]</a>
+									</p>
+								</li>{/maccms:vod}
+								
+																
+                           </ul>
+                        	<ul class="ul_picTxtB ulPic_widthB fa-clear" id="movie1_preview_content_2">
+								{maccms:vod num=6 type=2 order=desc by=time}
+								<li>
+									<a class="play-pic" href="[vod:link]">
+										<img src="[vod:pic]"  onerror="javascript:this.src='{maccms:path_tpl}fxxx8/fx8.gif';" alt="[vod:name]"  style="display: block; ">
+										<label class="bg"> </label>
+										<label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label>
+									</a>
+									<p>
+										<a href="[vod:link]" title="[vod:name len=10]">[vod:name len=10]</a>
+									</p>
+								</li>{/maccms:vod}
+								
+                             </ul>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<!-- // conBox End -->
+			<div class="sideBar fa-right">
+				<div class="ui-top-tab">
+					<div class="caption fa-clear">
+						<h3><span class="">电视剧</span>热播</h3>
+					</div>
+					<div class="content">
+						<ul class="ul-top">
+							
+							{maccms:vod num=11  type=2   by=hits   order=desc}<li><span><strong>  [vod:time style=m-d] </strong></span> <a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a></li>{/maccms:vod}							
+							
+						</ul>
+					</div>
+				</div>
+				<!-- // topBox End -->
+				<div class="ui-top-tab">
+					<div class="caption fa-clear">
+						<h3><span class="">电视剧</span>好评</h3>
+					</div>
+					<div class="content">
+						<ul class="ul-top">
+							
+							{maccms:vod num=12  type=2   by=scoreall   order=desc}<li><span><strong>  [vod:scoreall] </strong></span> <a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a></li>{/maccms:vod}							
+							
+						</ul>
+					</div>
+				</div>
+				<!-- // ui-sort End -->
+			</div>
+		</div>
+	</div>
+
+	<!-- 动漫 -->
+	<a name="cartoonm" id="cartoonm"></a>
+	<div class="maxBox mb10" id="Cartoon">
+	<div class="960Ad"><script src="{maccms:path_ads}index4.js"></script></div>
+		<div class="box ui-yiyi fa-clear">
+			<label class="videoIco"></label>
+			<div class="conBox ui-tab fa-left">
+				<div class="caption fa-clear">
+					<h2 class="hide-txt">
+						{maccms:menu type=4  order=asc}<a href="[menu:link]" target="_blank" class="aMark" title="好看的动漫" id="tv">共&nbsp;<em>[menu:count]</em>&nbsp;部动漫</a>{/maccms:menu}
+					</h2>
+					<p class="tv-link"><!--A链接-->{maccms:menu parent=4}
+						<a href="[menu:link]" target="_self">[menu:name]</a>{/maccms:menu}
+					</p>		
+				</div>
+				<div class="content">
+					<div class="ui-tab-item fa-clear">
+						<ol class="pic-list pic-list-focus">
+							
+								{maccms:vod num=14  type=4  by=weekhits   order=desc}<li>
+								<a class="play-pic" href="[vod:link]">
+									<img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" style="display: block; ">
+									<span class="play-icon"> </span>
+									<label class="bg"> </label>
+									<label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label>
+								</a>
+								<p>
+									<a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a>
+								</p>
+								<p class="txt">[vod:starringlink len=10] </p>
+								<p class="txt">
+									<span class="ratbar">
+									<span class="ratbar-item" style="width:{if-A:[vod:score]=1.0}10{elseif-A:[vod:score]=2.0}20{elseif-A:[vod:score]=3.0}30{elseif-A:[vod:score]=4.0}40{elseif-A:[vod:score]=5.0}50{elseif-A:[vod:score]=6.0}60{elseif-A:[vod:score]=7.0}70{elseif-A:[vod:score]=8.0}80{elseif-A:[vod:score]=9.0}90{elseif-A:[vod:score]=10.0}100{else-A}[vod:score]{endif-A}%;"></span>
+									</span>
+									<strong class="ratbar-num"> [vod:score] </strong>
+								</p>
+							</li>{/maccms:vod}							
+						</ol>
+						<!-- // pic-list End -->
+					</div>
+					<!-- // ui-tab-item End -->
+					<div class="mod_b paddingA" id="slideE">
+                    	<div class="th_b">
+                    		<span class="sMark">今日更新</span>
+                    		<p class="pTabList" id="slideE_Tab">
+                    			<a href="javascript:;" tab="0">星期一</a>
+                    			<a href="javascript:;" tab="1">星期二</a>
+                    			<a href="javascript:;" tab="2">星期三</a>
+                    			<a href="javascript:;" tab="3">星期四</a>
+                    			<a href="javascript:;" tab="4">星期五</a>
+                    			<a href="javascript:;" tab="5">星期六</a>
+                    			<a href="javascript:;" tab="6">星期日</a>
+                    		</p>
+                    	<div class="ivy28"></div>
+                    	</div>
+                        <div class="tb_b" id="slideE_Con"  style="padding-top:7px;">
+                        	<ul class="ul_Cartoon fa-clear" id="Cartoon_1">
+								{maccms:vod num=15 type=4  by=time   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+							
+                            </ul>
+							<ul class="ul_Cartoon fa-clear" id="Cartoon_2">
+								
+								{maccms:vod num=15 type=4  by=hits order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}								
+								
+                            </ul>
+							<ul class="ul_Cartoon fa-clear" id="Cartoon_3">
+								
+								{maccms:vod num=15 type=4  by=score   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+								
+                            </ul>
+							<ul class="ul_Cartoon fa-clear" id="Cartoon_4">
+								
+								{maccms:vod num=15 type=4  by=monthhits   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+								
+                            </ul>
+							<ul class="ul_Cartoon fa-clear" id="Cartoon_5">
+								
+								{maccms:vod num=15 type=4  by=weekhits   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+							
+                            </ul>
+							<ul class="ul_Cartoon fa-clear" id="Cartoon_6">
+								
+								{maccms:vod num=15 type=4  by=level   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+								
+                            </ul>
+							<ul class="ul_Cartoon fa-clear" id="Cartoon_7">
+								
+								{maccms:vod num=15 type=4  by=addtime   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+								
+                            </ul>
+                        </div>
+						<script language="javascript" type="text/javascript">
+							var week = (new Date()).getDay();
+							week=week==0?6:week-1;
+							var reminderTabO1=$('#Cartoon #slideE_Tab a');
+							reminderTabO1.eq(week).addClass('selected').html('今天');
+							$('#Cartoon #slideE_Con ul').eq(week).show();
+							reminderTabO1.mouseover(function() {
+								reminderTabO1.removeClass('selected');
+								$('#Cartoon #slideE_Con ul').hide();
+								$(this).addClass("selected");
+								$('#Cartoon #slideE_Con ul').eq($(this).attr('tab')).show();
+							});
+						</script>
+                    </div>
+				</div>
+			</div>
+			<!-- // conBox End -->
+			<div class="sideBar fa-right">
+				<div class="ui-top-tab">
+					<div class="caption fa-clear">
+						<h3><span class="">动漫</span>热播</h3>
+					</div>
+					<div class="content">
+						<ul class="ul-top">
+							
+							{maccms:vod num=10  type=4   by=time   order=desc}<li><span><strong>[vod:time style=m-d]</strong></span> <a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a></li>{/maccms:vod}							
+							
+						</ul>
+					</div>
+				</div>
+				<!-- // topBox End -->
+				
+								<div class="ui-top-tab">
+					<div class="caption fa-clear">
+						<h3><span class="">动漫</span>好评</h3>
+					</div>
+					<div class="content">
+						<ul class="ul-top">
+							
+							{maccms:vod num=9  type=4   by=scoreall   order=desc}<li><span><strong>[vod:scoreall]</strong></span> <a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a></li>{/maccms:vod}							
+							
+						</ul>
+					</div>
+				</div>
+				<!-- // ui-sort End -->
+			</div>
+		</div>
+	</div>
+<!-- 综艺节目 -->
+	<a name="variety" id="varietym"></a>
+	<div class="maxBox mb10" id="Variety">
+	<div class="960Ad"><script src="{maccms:path_ads}index1.js"></script></div>
+		<div class="box ui-yiyi fa-clear">
+			<label class="videoIco"></label>
+			<div class="conBox ui-tab fa-left">
+				<div class="caption fa-clear">
+					<h2 class="hide-txt">
+						{maccms:menu type=3  order=asc}<a href="[menu:link]" target="_blank" class="aMark" title="好看的综艺节目" id="tv">共&nbsp;<em>[menu:count]</em>&nbsp;部综艺节目</a>{/maccms:menu}
+					</h2>
+					<p class="tv-link">{maccms:menu parent=3}<a href="[menu:link]" target="_self">[menu:name]</a>{/maccms:menu}</p>
+				</div>
+				<div class="content">
+					<div class="ui-tab-item fa-clear">
+						<ol class="pic-list pic-list-focus">
+							
+								{maccms:vod num=14  type=3 by=weekhits   order=desc}<li>
+								<a class="play-pic" href="[vod:link]">
+									<img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}images/grey.jpg" alt="[vod:name]" style="display: block; ">
+									<span class="play-icon"> </span>
+									<label class="bg"> </label>
+									<label class="time">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</label>
+								</a>
+								<p>
+									<a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a>
+								</p>
+								<p class="txt">[vod:starringlink len=10] </p>
+								<p class="txt">
+									<span class="ratbar">
+									<span class="ratbar-item" style="width:{if-A:[vod:score]=1.0}10{elseif-A:[vod:score]=2.0}20{elseif-A:[vod:score]=3.0}30{elseif-A:[vod:score]=4.0}40{elseif-A:[vod:score]=5.0}50{elseif-A:[vod:score]=6.0}60{elseif-A:[vod:score]=7.0}70{elseif-A:[vod:score]=8.0}80{elseif-A:[vod:score]=9.0}90{elseif-A:[vod:score]=10.0}100{else-A}[vod:score]{endif-A}%;"></span>
+									</span>
+									<strong class="ratbar-num">[vod:score] </strong>
+								</p>
+							</li>{/maccms:vod}							
+						</ol>
+						<!-- // pic-list End -->
+					</div>
+					<!-- // ui-tab-item End -->
+					<div class="mod_b paddingA">
+                    	<div class="th_b">
+                    		<span class="sMark">今日更新</span>
+                    		<p class="pTabList" id="VarietySlideE_Tab">
+                    			<a href="javascript:;" tab="0">星期一</a>
+                    			<a href="javascript:;" tab="1">星期二</a>
+                    			<a href="javascript:;" tab="2">星期三</a>
+                    			<a href="javascript:;" tab="3">星期四</a>
+                    			<a href="javascript:;" tab="4">星期五</a>
+                    			<a href="javascript:;" tab="5">星期六</a>
+                    			<a href="javascript:;" tab="6">星期日</a>
+                    		</p>
+                    	<div class="ivy28"></div>
+                    	</div>
+                        <div class="tb_b" id="VarietySlideE_Con"  style="padding-top:7px;">
+                        	<ul class="ul_Variety fa-clear" id="Variety_1">
+								{maccms:vod num=15 type=3  by=time   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+							
+                            </ul>
+							<ul class="ul_Variety fa-clear" id="Variety_2">								
+								{maccms:vod num=15 type=3 by=hits order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}								
+								
+                            </ul>
+							<ul class="ul_Variety fa-clear" id="Variety_3">								
+								{maccms:vod num=15 type=3  by=score   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+								
+                            </ul>
+							<ul class="ul_Variety fa-clear" id="Variety_4">								
+								{maccms:vod num=15 type=3  by=monthhits   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+								
+                            </ul>
+							<ul class="ul_Variety fa-clear" id="Variety_5">								
+								{maccms:vod num=15 type=3  by=weekhits   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+							
+                            </ul>
+							<ul class="ul_Variety fa-clear" id="Variety_6">								
+								{maccms:vod num=15 type=3 by=level   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+								
+                            </ul>
+							<ul class="ul_Variety fa-clear" id="Variety_7">								
+								{maccms:vod num=15 type=3  by=addtime   order=desc}
+								<li><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></li>{/maccms:vod}
+								
+                            </ul>
+                        </div>
+						<script language="javascript" type="text/javascript">
+							var reminderTabO2=$("#VarietySlideE_Tab a");
+							reminderTabO2.eq(week).addClass('selected').html('今天');
+							$('#VarietySlideE_Con ul').eq(week).show();
+							reminderTabO2.mouseover(function() {
+								reminderTabO2.removeClass('selected');
+								$('#VarietySlideE_Con ul').hide();
+								$(this).addClass("selected");
+								$('#VarietySlideE_Con ul').eq($(this).attr('tab')).show();
+							});
+						</script>
+                    </div>
+				</div>
+			</div>
+			<!-- // conBox End -->
+			<div class="sideBar fa-right">
+				<div class="ui-top-tab">
+					<div class="caption fa-clear">
+						<h3><span class="">综艺</span>热播</h3>
+					</div>
+					<div class="content">
+						<ul class="ul-top">
+							{maccms:vod num=10  type=3   by=time   order=desc}<li><span><strong>[vod:time style=m-d]</strong></span> <a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a></li>{/maccms:vod}						
+						</ul>
+					</div>
+					</div>
+				<!-- // topBox End -->
+		         <div class="ui-top-tab">
+					<div class="caption fa-clear">
+						<h3><span class="">综艺</span>好评</h3>
+					</div>
+					<div class="content">
+						<ul class="ul-top">
+							{maccms:vod num=9  type=3   by=scoreall   order=desc}<li><span><strong>[vod:scoreall]</strong></span> <a href="[vod:link]" title="[vod:name]">[vod:name len=10]</a></li>{/maccms:vod}						
+						</ul>
+					</div>
+					</div>
+				<!-- // ui-sort End -->
+			</div>
+		</div>
+	</div>
+<div class="maxBox listc">
+    <div class="box">
+		<div class="silder-box" id="index-silder">
+	    	<ol class="index-list">
+				<li>
+						<dl>
+						<dt>电视剧</dt>
+						{maccms:menu parent=2}
+						<dd><a href="[menu:link]" >[menu:name]</a></dd>
+						{/maccms:menu}
+						</dl>
+				</li>
+				<li>
+						<dl>
+						<dt>电影</dt>
+						{maccms:menu parent=1}
+						<dd><a href="[menu:link]" >[menu:name]</a></dd>
+						{/maccms:menu}
+						</dl>
+				</li>
+				<li>
+						<dl class="dm">
+						<dt>动漫动画</dt>
+						{maccms:menu parent=4}
+						<dd><a href="[menu:link]" >[menu:name]</a></dd>
+						{/maccms:menu}
+						</dl>
+				</li>
+
+				<li>
+						<dl class="zy">
+						<dt>综艺娱乐</dt>
+						{maccms:menu parent=3}
+						<dd><a href="[menu:link]" target="_blank">[menu:name]</a></dd>
+						{/maccms:menu}
+						</dl>
+				</li>
+			</ol>
+		</div>
+				<div class="index-search fa-clear">
+					<div class="FormSearch">
+						<form action="{maccms:link_search_vod}" method="post">
+							<div class="searchForm clearfix">
+								<input class="searchInput" type="text" x-webkit-speech="" autocomplete="off" name="wd" id="wd" value="请在此处输入影片片名或演员名称。" onfocus="if(this.value=='请在此处输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片片名或演员名称。';};">
+								<input type="submit" class="searchinput" value="搜索">
+							</div>
+						</form>
+					</div>
+					<div class="hotKeys fa-right">
+						<strong>
+							热门搜索：
+						</strong>
+						{maccms:vod num=10 type=1 level=all by=time order=desc}
+						<a href="[vod:link]" target="_blank">[vod:name len=5]</a>
+						{/maccms:vod} 
+					</div>
+				</div><!-- index-search -->
+			</div>
+		</div>
+</div><!-- syindex -->
+{maccms:foot}
+<script language=JavaScript>
+document.oncontextmenu=new Function("event.returnValue=false;");
+document.onselectstart=new Function("event.returnValue=false;");
+</script>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"left","bdTop":"236.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</body>
+</html>

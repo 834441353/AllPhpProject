@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>全部数据-{seacms:sitename}</title>
+<meta name="keywords" content="全部数据-{seacms:sitename}" />
+<meta name="description" content="全部数据-{seacms:sitename}" />
+{seacms:load inc.html} 
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+		<div class="letter mb clearfix">
+			<ul>
+		  {seacms:lettercaslist}
+          <li{if:"[lettercaslist:value]"=="0-9"} class="zi9"{end if}><a href="#[lettercaslist:value]">[lettercaslist:value]</a></li>
+          {/seacms:lettercaslist}
+            </ul>
+		</div>
+		{seacms:arealist letter=all}
+		<div id="[arealist:typename]" class="vmap mb clearfix">
+			<div class="zm"></div><span class="zm1">[arealist:typename]</span>
+				<ul>
+				{seacms:videolist num=100 order=time letter=[arealist:typename]}
+				<li class="bv{if:[videolist:i]% 3==0} m3{end if}"><a href="[videolist:link]" title="[videolist:name]"><span class="vbz">{if:[videolist:typeid]<13}[videolist:note]{else}{subif:[videolist:state]<>0}至[videolist:state]{end subif}{subif:[videolist:state]>999}期{end subif}{subif:[videolist:state]<1000 && [videolist:state]<>0}集{end subif}{subif:[videolist:state]<>0 && "[videolist:vodtotal]"<>""}/{end subif}{subif:"[videolist:vodtotal]"<>""}共[videolist:vodtotal]集{end subif}{end if}</span>[videolist:name]</a></li>
+				 {/seacms:videolist}			
+				</ul>
+		</div>
+        {/seacms:arealist}		
+</div>
+{seacms:foot}
+</body>
+</html>

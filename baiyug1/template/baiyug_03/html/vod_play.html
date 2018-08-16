@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>正在播放 [vod:name] [vod:playname]</title>
+{maccms:include}
+{maccms:xubao}
+{maccms:qbfq}
+{maccms:viptan}
+{maccms:putan}
+{maccms:adgg}
+{maccms:pbts}
+<link href="{maccms:path_tpl}css/newplay.css" rel="stylesheet" type="text/css" />
+<link href="{maccms:path_tpl}css/play_base.css" rel="stylesheet" type="text/css" />
+</head><body id="cyplay">
+{maccms:head}
+<div class="container player" style="margin-top:10px;">
+  <div class="row">
+    <div class="col-sm-12  video-tags"> <span class="tag-title-sm">[vod:textlink]</span> </div>
+  </div>
+  <!-- 播放器开始 -->
+  <div class="player_container" style="margin-left:-50px;">
+    <div class="mod_player_section cf player_section_barrage" >
+      <div class="mod_player">
+        <div id="box"> [vod:playerinfo][vod:player] </div>
+      </div>
+      <div class="mod_player_side _switch _switchpanel">
+        <div class="mod_player_side_inner" id="fullplaylist">
+          <div class="mod_player_tabcont">
+            <div class="tabcont tabcont_in">
+              <div class="tabcont_box_3">
+                <div class="player_top">
+                  <h3 class="player_title">热门相关 <span class="title_score _smartscore"></span> </h3>
+                </div>
+                <div class="scroll_wrap">
+                  <div class="wrap_cont">
+                    <div class="mod_figures mod_figure_h mod_figure_h_115 mod_figures_item">
+                      <ul class="figures_list _imgVideoList">
+                        {maccms:vod num=20 type=current by=hits order=desc}
+                        <li class="list_item"> <a href="[vod:link]" class="figure _videolink _pFigure"   > <img src="[vod:pic]" alt="[vod:name]"   title="[vod:name]"> <span class="figure_mask" ><em class="mask_txt"><span class="mask_inner">观看：[vod:hits]</span></em></span> </a> <strong class="figure_title figure_title_two_row"><a href="[vod:link]" class="_videolink"    title="[vod:name]">[vod:name]</a></strong>
+                          <div class="figure_info"> <span class="figure_info_play"><i class="ico_play_12"></i>
+                            <p class="info_inner _playnum">主演: [vod:starring len=18]..</p>
+                            </span> </div>
+                        </li>
+                        {/maccms:vod}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 播放器结束 --> 
+  
+  {maccms:play}
+  <div class="row playlist">
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading"> <span class="panel-title">{if-A:[play:from]=youku}优酷视频{elseif-A:[play:from]=xigua}西瓜影音{elseif-A:[play:from]=kankan}迅雷看看
+          {elseif-A:[play:from]=56}我乐视频{elseif-A:[play:from]=tudouhd}土豆(高清)		 
+          {elseif-A:[play:from]=sinahd}新浪(高清)
+          {elseif-A:[play:from]=ku6hd}酷6(高清)
+          {elseif-A:[play:from]=sohuhd}搜狐(高清)
+          {elseif-A:[play:from]=letv}乐视视频
+          {elseif-A:[play:from]=qiyi}奇艺视频	
+          {elseif-A:[play:from]=sohu}搜狐视频
+          {elseif-A:[play:from]=qq}腾讯视频
+          {elseif-A:[play:from]=pptv}pptv视频
+          {elseif-A:[play:from]=mgtv}芒果TV
+          {elseif-A:[play:from]=bilibili}bilibili
+          {elseif-A:[play:from]=tudou}土豆视频
+          {elseif-A:[play:from]=iva}视频云解析
+          {elseif-A:[play:from]=xfplay}先锋影音
+          {elseif-A:[play:from]=jjvod}吉吉影音
+          {elseif-A:[play:from]=ffhd}非凡影音		 
+          {endif-A}[play:server]在线观看</span> <span class="pull-right panel-intro">[[play:tip]]</span> </div>
+        <div class="panel-body video-play-src "> {maccms:url order=asc} <a title='[url:name]' href='[url:link]'>[url:name]</a>{/maccms:url} </div>
+      </div>
+    </div>
+  </div>
+  {/maccms:play}
+  
+  
+  <!-- 在线播放列表开始 --> 
+  {maccms:play}
+  <div class="row">
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading"> <span class="panel-title">{if-A:[play:from]=youku}优酷视频{elseif-A:[play:from]=xigua}西瓜影音{elseif-A:[play:from]=kankan}迅雷看看
+          {elseif-A:[play:from]=56}我乐视频{elseif-A:[play:from]=tudouhd}土豆(高清)		 
+          {elseif-A:[play:from]=sinahd}新浪(高清)
+          {elseif-A:[play:from]=ku6hd}酷6(高清)
+          {elseif-A:[play:from]=sohuhd}搜狐(高清)
+          {elseif-A:[play:from]=letv}乐视视频
+          {elseif-A:[play:from]=qiyi}奇艺视频	
+          {elseif-A:[play:from]=sohu}搜狐视频
+          {elseif-A:[play:from]=qq}腾讯视频
+          {elseif-A:[play:from]=pptv}pptv视频
+          {elseif-A:[play:from]=mgtv}芒果TV
+          {elseif-A:[play:from]=bilibili}bilibili
+          {elseif-A:[play:from]=tudou}土豆视频
+          {elseif-A:[play:from]=iva}视频云解析
+          {elseif-A:[play:from]=xfplay}先锋影音
+          {elseif-A:[play:from]=jjvod}吉吉影音
+          {elseif-A:[play:from]=ffhd}非凡影音		 
+          {endif-A}[play:server]在线观看</span> <span class="pull-right panel-intro">[[play:tip]]</span> </div>
+        <div class="panel-body video-play-src "> {maccms:url order=asc} <a title='[url:name]' href='[url:link]'>[url:name]</a>{/maccms:url} </div>
+      </div>
+    </div>
+  </div>
+  {/maccms:play} 
+  
+  <!-- 在线播放列表结束--> 
+            
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading"> <span class="panel-title">[vod:name]剧情介绍</span> </div>
+        <div class="panel-body video-play-src ">
+          <p class="text-left"><strong>《[vod:name]》在线观看</strong>：<strong id="des"> [vod:content] </strong><br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--div class="row"> ###广告 </div--> 
+</div>
+{maccms:foot}
+</body>
+</html>

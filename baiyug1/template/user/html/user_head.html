@@ -1,0 +1,38 @@
+<!--导航开始-->
+<div class="wrapper">
+<div class="mask" id="mask_box"></div>
+<header class="headerbar">
+      <section class="headBox">
+        <a class="pull-left logo" href="/" title="">
+          <i>
+            <img src="/template/user/images/logo.png" alt="" title=""></i>
+        </a>
+        <a href="index.php?m=user-logout-flag-main.html" rel="nofollow" class="app_down pull-right">
+          <span>退出登录</span></a>
+        <a href="/" rel="nofollow" class="zui-icon iconfont icon-lishijilu pull-right"></a>
+        <a href="/index.php?m=vod-search" rel="nofollow" class="zui-icon iconfont icon-sousuo pull-right"></a>
+      </section>
+</header>
+<div class="subNavheader">
+<nav class="subNav globalPadding" id="nav_menu" style="display:block">
+  <div class="con clearfix">
+    <p> <a{if-A:{maccms:siteaid}=10} class="cur" {endif-A} href="/" onclick="_dct_('dh_m_index');" target="_self">首页</a> {maccms:menu type=parent order=asc table=vod}<a href="[menu:link]" {if-A:{maccms:curvodtypeid}=[menu:id]}class="cur"{endif-A} {if-A:[menu:id]=1}onclick="_dct_('dh_m_dy');"{endif-A}{if-A:[menu:id]=2}onclick="_dct_('dh_m_tv');"{endif-A}{if-A:[menu:id]=4}onclick="_dct_('dh_m_dm');" {endif-A}{if-A:[menu:id]=3}onclick="_dct_('dh_m_ze');"{endif-A}{if-A:[menu:id]=18}onclick="_dct_('dh_m_vip');"{endif-A}{if-A:[menu:id]=36}onclick="_dct_('dh_m_vdy');"{endif-A} target="_self" >[menu:name]</a> {/maccms:menu}</p>
+  </div>
+  <div class="con clearfix">
+    <p> <a class="cur" href="/index.php?m=user-index.html" onclick="_dct_('dh_m_index');" target="_self">我的</a> 
+		<a class="cur" href="/index.php?m=user-upgrade.html" onclick="_dct_('dh_m_index');" target="_self">升级</a>
+		<a class="cur" href="/index.php?m=user-pay.html" onclick="_dct_('dh_m_index');" target="_self">充值</a>
+		<a class="cur" href="/index.php?m=user-downs.html" onclick="_dct_('dh_m_index');" target="_self">下载</a>
+		<a class="cur" href="/index.php?m=user-plays.html" onclick="_dct_('dh_m_index');" target="_self">播放记录</a>
+		
+	</p>
+ </div>
+</nav>
+
+</div>
+<!--导航结束-->
+
+
+
+
+<br>

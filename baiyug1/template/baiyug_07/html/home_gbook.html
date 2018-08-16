@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>留言 - {maccms:name}</title>
+<meta name="keywords" content="《[vod:name]》高清下载,《[vod:name]》在线观看,《[vod:name]》百度影音" />
+<meta name="description" content="[vod:name]剧情:[vod:contenttext len=60]" />
+<meta property="qc:admins" content="5040353377677066375" />
+<link href="{maccms:path_tpl}css/xing_allstyle.css" rel="stylesheet" />
+{maccms:include}
+<script language="javascript">var Root='/';var Sid='1';var Cid='15';var SiteShortName='{maccms:name}';var Id='337';</script>
+<script language="javascript" type="text/javascript" src="{maccms:path_tpl}js/youmtvjs.js" charset="utf-8"></script>
+<script language="javascript" src="{maccms:path_tpl}js/youmtv-tab.js" charset="utf-8"></script>
+</head>
+<body>
+{maccms:head} <div class="topLine"></div>
+<div class="container">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd><a href="/">首页</a>&nbsp;»&nbsp;留言</dd>
+			</dl>
+		</div>
+</div>
+<div class="warp">
+<div class="gbook">
+<!--留言列表-->
+<div class="gbookList">
+<ul>
+ {maccms:gbook pagesize=10 order=desc by=time}
+<li>
+<div class="gblist">
+<div class="faceImg"><p>[gbook:id]</p><p>留言</eq></p><b></b></div>
+<div class="text">
+<div class="lc"><span class="time">[gbook:time]</span><!--第[gbook:num]楼：--><strong><a href="#" >[gbook:name]</a></strong><font style="color:[gbook:color];">（[gbook:ip]）</font></div>
+<div class="comText">[gbook:content]</div>
+{if-B:!isN("[gbook:reply]")}
+<div class="reCont">
+<div class="reTitle">管理员回复：</div>
+<div>[gbook:reply]<br /></div>
+<b></b>
+</div>{endif-B}
+</div>
+</div>
+<div class="gbBtmr"></div>
+</li>
+{/maccms:gbook}
+<li>
+</ul>
+<div class="pages">{maccms:pages len=6}</div>
+</div>
+ 
+ 
+												<div class="rgbbox">
+												<form class="cmt_form clearfix" action="{maccms:path}index.php?m=gbook-save" method="post">
+												<div class="gbform">
+												<div class="formbox">
+												<span><label>昵称：</label><input class="gbtext" id="g_name" name="g_name" type="text" value="游客"></span>
+												<p class="fl clearfix">
+                                                <img onclick="MAC.AddEm('g_content',1);" src="/images/face/1.gif">
+												<img onclick="MAC.AddEm('g_content',2);" src="/images/face/2.gif">
+												<img onclick="MAC.AddEm('g_content',3);" src="/images/face/3.gif">
+												<img onclick="MAC.AddEm('g_content',4);" src="/images/face/4.gif">
+												<img onclick="MAC.AddEm('g_content',5);" src="/images/face/5.gif">
+												<img onclick="MAC.AddEm('g_content',6);" src="/images/face/6.gif">
+												<img onclick="MAC.AddEm('g_content',7);" src="/images/face/7.gif">
+												<img onclick="MAC.AddEm('g_content',8);" src="/images/face/8.gif">
+												<img onclick="MAC.AddEm('g_content',9);" src="/images/face/9.gif">
+												<img onclick="MAC.AddEm('g_content',10);" src="/images/face/10.gif">
+												<img onclick="MAC.AddEm('g_content',11);" src="/images/face/11.gif">
+												<img onclick="MAC.AddEm('g_content',12);" src="/images/face/12.gif">
+												<img onclick="MAC.AddEm('g_content',13);" src="/images/face/13.gif">
+												<img onclick="MAC.AddEm('g_content',14);" src="/images/face/14.gif">
+												<img onclick="MAC.AddEm('g_content',15);" src="/images/face/15.gif">
+												<img onclick="MAC.AddEm('g_content',16);" src="/images/face/16.gif">
+                                                <span class="stext"><textarea id="g_content" name="g_content" class="gbcontent"  onKeyup="MAC.Remaining(this,200,'g_remaining')" onfocus="if(this.value=='请在这里发表您的个人看法，最多200个字。'){this.value='';}" onblur="if(this.value==''){this.value='请在这里发表您的个人看法，最多200个字。';};">请在这里发表您的个人看法，最多200个字。</textarea></span>
+												</p>
+												</div>
+                                                <div class="inputitembox">
+                                                <div class="vcode">
+                                                验证码:<input type="text" id="g_code" name="g_code" class="cmt_text"/>&nbsp;&nbsp;
+                                                <img id="g_code_img" class="cmt_verify" src="/inc/common/code.php?a=gbook&s=" title="看不清楚? 换一张！" onClick="src='/inc/common/code.php?a=gbook&s='+Math.random()"/>
+                                                <input class="cmt_post" type="submit" value="发布" >
+                                                </div>
+                                                </div>
+												</div>
+												</form>
+												</div>
+</div>
+</div>
+</div>
+</div>
+{maccms:foot}
+</body>
+</html>

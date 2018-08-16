@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>《[vod:name]》[vod:remarks][vod:from]在线观看 - [vod:typename] - {maccms:name}</title>
+{maccms:include}
+[vod:history]
+</head>
+<body>
+{maccms:head}
+<div class="container">
+  <div class="video-content">
+    <div class="row ">
+      <div class="col-sm-12  video-tags"> <span class="tag-title-sm">[vod:textlink]</span> </div>
+    </div>
+    <div class="row">
+      <div class="pull-left">
+        <div class="clearfix">
+          <div class="pull-left content-img" style="background:url([vod:pic]) no-repeat center center;background-size:2000%;"> <img src="[vod:pic]" title="[vod:name]" alt="[vod:name]"  class="content-pic" > </div>
+          <div class="pull-left content-info" >
+            <p class="content-title" >[vod:name]</p><br>
+            <p class="content-actors">主　演： [vod:starringlink]</p>
+            <p  class="content-des"> 导演: [vod:directedlink] 类型: [vod:classlink] 语言: [vod:langlink]
+               <br>
+               地区: [vod:arealink]<br> 
+              上映日期: [vod:yearlink] <br><br>
+			   <span class="text" id="smallContent">[vod:contenttext len=300]....<a href="javascript:" onClick="document.all.fullContent.style.display=(document.all.fullContent.style.display=='none')?'':'none';document.all.smallContent.style.display=(document.all.smallContent.style.display=='none')?'':'none'" >【查看详情】</a></span> <span class="text" id="fullContent" style="display:none;">[vod:contenttext]<a href="javascript:" onClick="document.all.fullContent.style.display=(document.all.fullContent.style.display=='none')?'':'none';document.all.smallContent.style.display=(document.all.smallContent.style.display=='none')?'':'none'" >【收起详情】</a></span>
+			  
+			  </p>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="pull-left">
+            <div class="clearfix">
+              <div class="pull-left video-eval"> [vod:digg] </div>
+            </div>
+          </div>
+		  
+		  
+        </div>
+      </div>
+	  
+	  <div class="pull-right">
+	  
+          </div>
+    </div>
+    <div class="row ">
+      <div class="col-md-12">
+        <hr class="cydy003-hr">
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:10px;margin-bottom:10px;"> </div>
+  <!-- 在线播放列表开始 --> 
+  {maccms:play}
+  <div class="row">
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading"> <span class="panel-title">{if-A:[play:from]=youku}优酷视频{elseif-A:[play:from]=xigua}西瓜影音{elseif-A:[play:from]=kankan}迅雷看看
+          {elseif-A:[play:from]=56}我乐视频{elseif-A:[play:from]=tudouhd}土豆(高清)		 
+          {elseif-A:[play:from]=sinahd}新浪(高清)
+          {elseif-A:[play:from]=ku6hd}酷6(高清)
+          {elseif-A:[play:from]=sohuhd}搜狐(高清)
+          {elseif-A:[play:from]=letv}乐视视频
+          {elseif-A:[play:from]=qiyi}奇艺视频	
+          {elseif-A:[play:from]=sohu}搜狐视频
+          {elseif-A:[play:from]=qq}腾讯视频
+          {elseif-A:[play:from]=pptv}pptv视频
+          {elseif-A:[play:from]=mgtv}芒果TV
+          {elseif-A:[play:from]=bilibili}bilibili
+          {elseif-A:[play:from]=tudou}土豆视频
+          {elseif-A:[play:from]=iva}视频云解析
+          {elseif-A:[play:from]=xfplay}先锋影音
+          {elseif-A:[play:from]=jjvod}吉吉影音
+          {elseif-A:[play:from]=ffhd}非凡影音		 
+          {endif-A}[play:server]在线观看</span> <span class="pull-right panel-intro">[[play:tip]]</span> </div>
+        <div class="panel-body video-play-src "> {maccms:url order=asc} <a title='[url:name]' href='[url:link]'>[url:name]</a>{/maccms:url} </div>
+      </div>
+    </div>
+  </div>
+  {/maccms:play} 
+  
+  <!-- 在线播放列表结束--> 
+  
+  <!-- 下载列表开始 --> 
+  
+  <script src="{maccms:path}xl/function-1.0.3.js"></script> 
+  <script src="{maccms:path}xl/xunlei_3.js"></script> 
+  <script src="{maccms:path}xl/urlconvent.js"></script> 
+  <script src="{maccms:path}xl/webxunlei.js" type="text/javascript" ></script> 
+  <script src="{maccms:path}xl/xflib2.0.js" type="text/javascript"></script> 
+  {maccms:down}
+  <div class="row">
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading"> <span class="panel-title">[vod:name][down:from]观看</span> </div>
+        <div class="panel-body video-download-src" id="jishu">
+          <ul class="downurl" id="ul[down:num]" style="padding-left:0;">
+            <script>
+			var downurls="{maccms:url order=asc}[url:name]$[url:path]#{/maccms:url}";
+			var downarr=downurls.split('#');
+			var downinfo,ys_url,thunder_url,qq_url,yb_url,str;
+			for(i=0;i<downarr.length-1;i++){
+				downinfo = downarr[i].split('$');
+				ys_url=urlconvert(downinfo[1],'ys');thunder_url=urlconvert(ys_url,'xl');qq_url=urlconvert(ys_url,'qq');
+				yb_url = thunder_url;
+				if(ys_url.indexOf('ed2k')>-1 || ys_url.indexOf('magnet')>-1){
+					yb_url = encodeURIComponent(decodeURIComponent(ys_url));
+				}
+				str = '<LI class="clearfix"><DIV class="downurl-addr pull-left"><INPUT name="CopyAddr[down:num]" type="checkbox" value="' + thunder_url + '"></div><div class="pull-left text-center downurl-tag"><SPAN id="s[down:num]p'+downinfo[0]+'">'+downinfo[0]+'</SPAN></div><div class="pull-right"><div class="downurl-text"><INPUT id="lin[down:num]k'+downinfo[0]+'" class="form-control" type="text" value="' + thunder_url + '"></div> <a class="btn btn-primary" id="[down:num]thUrlid'+downinfo[0]+'" href="' + thunder_url + '" thunderHref="' + thunder_url + '" thunderPid="38042" thunderResTitle="" class="thunder">迅雷下载</a><a class="btn btn-warning" target="_self" href="javascript:void(0);return false;" qhref="' + qq_url + '" onclick="XFLIB.startDownload(this,event,21590)" oncontextmenu="OnContextClick(this, event)">旋风下载</a> <A title="迅雷影音" class="btn btn-danger" onclick="javascript:start(\'' + thunder_url + '\');" href="#" target="_self">迅雷影音</A><A class="btn btn-success" title="云播点播" href="http://www.966tv.com/api.php?url=' + yb_url + '" target=_blank>云播点播</A></DIV></LI>';
+				document.write(str);
+			}			
+		</script>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {/maccms:down}   
+  <!-- 下载列表结束 -->   
+</div>
+
+<!--推荐模块-->
+<div class="video-list recommend">
+  <div class="row video-tags">
+    <h2 class="tag-title">热门视频推荐</h2>
+  </div>
+  <ul>
+    {maccms:vod num=20 type=all order=desc by=hits}
+    <li><a href="[vod:link]">[vod:name]</a></li>
+    {/maccms:vod}
+  </ul>
+</div>
+{maccms:foot}
+</body>
+</html>

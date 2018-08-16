@@ -1,0 +1,37 @@
+<div class="xing_top">
+<ul>
+	<li class="xing_top_left"><img src="{maccms:path_tpl}images/logo.png" width="200" height="60" alt="{maccms:name}" /></li>
+	<li class="xing_top_center">
+	<div class="search">
+             <div class="search-inner">
+                 <form action="{maccms:link_search_vod}" method="post">
+                    <input type="text" x-webkit-speech="" autocomplete="off" name="wd" id="wd" class="search-text" onblur="if(this.value==''){ this.value='精彩影片任你搜索';this.style.color='#cfcdcd';}" onfocus="if(this.value=='精彩影片任你搜索'){this.value='';this.style.color='';}" value="精彩影片任你搜索">
+                    <input type="hidden" name="submit" value="search">
+                    <input type="submit" class="search-btn" value="搜索">
+                 </form>
+             </div>
+          </div>
+	</li>
+	<li class="xing_top_right">
+<div class="topright">
+    <ul><li>今日更新：<strong>{maccms:count_vod_day}</strong></li></ul>
+    <ul><li>{maccms:name}影片共有：<strong>{maccms:count_vod_all}</strong></li></ul>
+	<ul><li><a href="javascript:window.external.addFavorite('http://{maccms:url}','{maccms:name}');">收藏本站</a> | <a class="ge" onClick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://{maccms:url}');" href="#" id="topmenu1" accesskey="1">设为首页</a> | <a href="{maccms:link_gbook}">留言求片</a> </li></ul>
+</div>
+</li>
+</ul>
+<div  style="clear:both"></div>
+</div>
+<div  class="sddm">
+<ul id="sddm">
+	<li><a href="/">首页</a></li>
+{maccms:matrix table=vod type=parent}
+	<li><a href="[matrix:link]" onmouseover="mopen('m[matrix:num]')" onmouseout="mclosetime()">[matrix:name]</a>
+		<div id="m[matrix:num]" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        {maccms:menu type=child parent=[matrix:id] order=asc table=vod}<a href="[menu:link]">[menu:name]</a>{/maccms:menu}
+		</div>
+	</li>
+{/maccms:matrix}
+</ul>
+<div  style="clear:both"></div>
+</div>

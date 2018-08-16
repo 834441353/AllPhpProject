@@ -1,0 +1,272 @@
+{__NOLAYOUT__}
+<layout name="Cart/cartlayout"/>
+
+	{//flow2专用文件}
+	<link rel="stylesheet" href="__HOME__/style/fillin.css" type="text/css">
+	<script type="text/javascript" src="__HOME__/js/cart2.js"></script>
+
+	<div style="clear:both;"></div>
+
+	<!-- 主体部分 start -->
+	<div class="fillin w990 bc mt15">
+		<div class="fillin_hd">
+			<h2>填写并核对订单信息</h2>
+		</div>
+		<form  action="" method="post">
+
+		<div class="fillin_bd">
+			<!-- 收货人信息  start-->
+			<div class="address">
+				<h3>收货人信息 <a href="javascript:;" id="address_modify">[修改]</a></h3>
+				<div class="address_info">
+					<p>王超平  13555555555 </p>
+					<p>北京 昌平区 西三旗 建材城西路金燕龙办公楼一层 </p>
+				</div>
+
+				<div class="address_select none">
+					<ul>
+						<li class="cur">
+							<input type="radio" name="address" value="00009" checked="checked" />王超平 北京市 昌平区 建材城西路金燕龙办公楼一层 13555555555
+							<a href="">设为默认地址</a>
+							<a href="">编辑</a>
+							<a href="">删除</a>
+						</li>
+						<li>
+							<input type="radio" name="address" value="00008" />王超平 湖北省 武汉市  武昌 关山光谷软件园1号201 13333333333
+							<a href="">设为默认地址</a>
+							<a href="">编辑</a>
+							<a href="">删除</a>
+						</li>
+						<li><input type="radio" name="address" class="new_address"  />使用新地址</li>
+					</ul>
+					<div action="" class="none" name="address_form">
+						<ul>
+							<li>
+								<label for=""><span>*</span>收 货 人：</label>
+								<input type="text" name="" class="txt" />
+							</li>
+							<li>
+								<label for=""><span>*</span>所在地区：</label>
+								<select name="" id="">
+									<option value="">请选择</option>
+									<option value="">北京</option>
+									<option value="">上海</option>
+									<option value="">天津</option>
+									<option value="">重庆</option>
+									<option value="">武汉</option>
+								</select>
+
+								<select name="" id="">
+									<option value="">请选择</option>
+									<option value="">朝阳区</option>
+									<option value="">东城区</option>
+									<option value="">西城区</option>
+									<option value="">海淀区</option>
+									<option value="">昌平区</option>
+								</select>
+
+								<select name="" id="">
+									<option value="">请选择</option>
+									<option value="">西二旗</option>
+									<option value="">西三旗</option>
+									<option value="">三环以内</option>
+								</select>
+							</li>
+							<li>
+								<label for=""><span>*</span>详细地址：</label>
+								<input type="text" name="" class="txt address"  />
+							</li>
+							<li>
+								<label for=""><span>*</span>手机号码：</label>
+								<input type="text" name="" class="txt" />
+							</li>
+						</ul>
+					</div>
+					<a href="" class="confirm_btn"><span>保存收货人信息</span></a>
+				</div>
+			</div>
+			<!-- 收货人信息  end-->
+
+			<!-- 配送方式 start -->
+			<div class="delivery">
+				<h3>送货方式 <a href="javascript:;" id="delivery_modify">[修改]</a></h3>
+				<div class="delivery_info">
+					<p>普通快递送货上门</p>
+					<p>送货时间不限</p>
+				</div>
+
+				<div class="delivery_select none">
+					<table>
+						<thead>
+							<tr>
+								<th class="col1">送货方式</th>
+								<th class="col2">运费</th>
+								<th class="col3">运费标准</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="cur">
+								<td>
+									<input type="radio" name="" checked="checked" />普通快递送货上门
+									<select name="" id="">
+										<option value="">时间不限</option>
+										<option value="">工作日，周一到周五</option>
+										<option value="">周六日及公众假期</option>
+									</select>
+								</td>
+								<td>￥10.00</td>
+								<td>每张订单不满499.00元,运费15.00元, 订单4...</td>
+							</tr>
+							<tr>
+
+								<td><input type="radio" name="delivery" />特快专递</td>
+								<td>￥40.00</td>
+								<td>每张订单不满499.00元,运费40.00元, 订单4...</td>
+							</tr>
+							<tr>
+
+								<td><input type="radio" name="delivery" />加急快递送货上门</td>
+								<td>￥40.00</td>
+								<td>每张订单不满499.00元,运费40.00元, 订单4...</td>
+							</tr>
+							<tr>
+
+								<td><input type="radio" name="delivery" />平邮</td>
+								<td>￥10.00</td>
+								<td>每张订单不满499.00元,运费15.00元, 订单4...</td>
+							</tr>
+						</tbody>
+					</table>
+					<a href="" class="confirm_btn"><span>确认送货方式</span></a>
+				</div>
+			</div>
+			<!-- 配送方式 end -->
+
+			<!-- 支付方式  start-->
+			<div class="pay">
+				<h3>支付方式 <a href="javascript:;" id="pay_modify">[修改]</a></h3>
+				<div class="pay_info">
+					<p>在线支付</p>
+				</div>
+
+				<div class="pay_select none">
+					<table>
+						<tr class="cur">
+							<td class="col1"><input type="radio" name="pay" value="0" checked="checked" />支付宝</td>
+						</tr>
+						<tr>
+							<td class="col1"><input type="radio" name="pay" value="1" />微信支付</td>
+						</tr>
+						<tr>
+							<td class="col1"><input type="radio" name="pay" value="2" />银行卡快捷支付</td>
+						</tr>
+					</table>
+					<a href="javascript:;" class="confirm_btn"><span>确认支付方式</span></a>
+				</div>
+			</div>
+			<!-- 支付方式  end-->
+
+			<!-- 发票信息 start-->
+			<div class="receipt">
+				<h3>发票信息 <a href="javascript:;" id="receipt_modify">[修改]</a></h3>
+				<div class="receipt_info">
+					<p>个人发票</p>
+					<p>内容：明细</p>
+				</div>
+
+				<div class="receipt_select none">
+					<form action="">
+						<ul>
+							<li>
+								<label for="">发票抬头：</label>
+								<input type="radio" name="" checked="checked" class="personal" />个人
+								<input type="radio" name="" class="company"/>单位
+								<input type="text" class="txt company_input" disabled="disabled" />
+							</li>
+							<li>
+								<label for="">发票内容：</label>
+								<input type="radio" name="" checked="checked" />明细
+								<input type="radio" name="" />办公用品
+								<input type="radio" name="" />体育休闲
+								<input type="radio" name="" />耗材
+							</li>
+						</ul>
+					</form>
+					<a href="" class="confirm_btn"><span>确认发票信息</span></a>
+				</div>
+			</div>
+			<!-- 发票信息 end-->
+
+			</form>
+
+			<!-- 商品清单 start -->
+			<div class="goods">
+				<h3>商品清单</h3>
+				<table>
+					<thead>
+						<tr>
+							<th class="col1">商品</th>
+							<th class="col2">规格</th>
+							<th class="col3">价格</th>
+							<th class="col4">数量</th>
+							<th class="col5">小计</th>
+						</tr>
+					</thead>
+					<tbody>
+						{//遍历购物车信息数组,输出行}
+						<volist name="infos" id="info">
+							<tr>
+								<td class="col1"><a href=""><img src="{$info.goods_small_logo|ltrim='.'}" alt="暂无图片" /></a>  <strong><a href="">{$info.goods_name}</a></strong></td>
+								<td class="col2">{$info.goods_attrs}</td>
+								<td class="col3">￥<span>{$info.goods_price}</span></td>
+								<td class="col4">{$info.goods_buy_number}</td>
+								<td class="col5">￥<span>{$info.goods_total_price}</span></td>
+							</tr>
+						</volist>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="5">
+								<ul>
+									<li>
+										<span>{$total.number}件商品，总商品金额：</span>
+										<em>￥{$total.price}</em>
+									</li>
+									<li>
+										<span>返现：</span>
+										<em>-￥{$discount|default=0}</em>
+									</li>
+									<li>
+										<span>运费：</span>
+										<em>￥{$freight|default=0}</em>
+									</li>
+									<li>
+										<span>应付总额：</span>
+										<em>￥{$total.price}</em>
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<!-- 商品清单 end -->
+
+		</div>
+
+		<div class="fillin_ft">
+			<a href="javascript:;" id="btnSubmit"><span>提交订单</span></a>
+			<p>应付总额：<strong>￥{$total.price}元</strong></p>
+
+		</div>
+	</div>
+	<!-- 主体部分 end -->
+	<script type="text/javascript">
+		$(function(){
+			$("#btnSubmit").click(function(){
+				$('form').submit();
+			})
+		})
+	</script>
+
+	<div style="clear:both;"></div>

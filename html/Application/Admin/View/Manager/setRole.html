@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link href="__ADMIN__/css/style.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="__ADMIN__/js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">表单</a></li>
+        </ul>
+    </div>
+    <div class="formbody">
+        <div class="formtitle"><span>基本信息</span></div>
+        <form action="" method="post">
+            <ul class="forminfo">
+                <li>
+                    <label>账号</label>
+                    <input name="" value="{$user.mg_name}" disabled="disabled" type="text" class="dfinput" />
+                    <input type="hidden" name="id" value="{$Think.get.id}">
+                </li>
+                <li>
+                  <label>用户角色</label>
+                  <select name="role" class="dfinput">
+                    <option value="0">空闲</option>
+                    {//遍历角色信息显示选项}
+                    <volist name="roles" id="role">
+                      {//判断当前用户的role_id是否为这个选项的value}
+                      <option
+                        <if condition="$user.role_id == $role.role_id ">selected="selected"</if>
+                       value="{$role.role_id}">{$role.role_name}</option>
+                    </volist>
+                  </select>
+                  <i></i>
+                </li>
+                <li>
+                    <label>&nbsp;</label>
+                    <input name="" id="btnSubmit" type="button" class="btn" value="确认创建" />
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+//jQuery代码
+$(function(){
+  $("#btnSubmit").click(function(){
+    $('form').submit();
+  })
+})
+</script>
+
+</html>

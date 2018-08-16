@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>新闻中心首页_{maccms:name}</title>
+<meta name="keywords" content="新闻,时事,时政,国际,国内,社会,法治,聚焦,评论,文化,教育,新视点,深度,网评,专题,环球,传播,论坛,图片,军事,焦点,排行,环保,校园,法治,奇闻,真情" />
+<meta name="description" content="新闻中心是{maccms:name}最重要的频道之一,24小时滚动报道国内、国际及社会新闻。每日编发新闻数以万计。包括即日的国内外不同类型的新闻与评论,人物专题,图库。" />
+{maccms:load inc.html} 
+</head>
+<body>
+{maccms:head}
+<div class="wrap">
+	<div class="h2 clearfix"><a href="{maccms:indexlink}">首页</a> > <a href="{maccms:newslink}">新闻首页</a></div>
+{maccms:matrix table=art parent=0}
+<div class="n-index mb clearfix">
+  <div class="ntitle"><a href="[matrix:link]" class="more">更多&gt;&gt;</a><span>[matrix:name]</span></div>
+	  <ul>
+	  {maccms:art num=10 order=desc by=time type=[matrix:id]}
+		<li>
+		  <a href="[art:link]"><em>[art:num].</em>[art:name]</a>
+		</li>
+		{/maccms:art} 
+	  </ul>
+ </div>
+{/maccms:matrix}
+</div>
+{maccms:foot}
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>基本资料 - 会员中心 -{maccms:name}</title>
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+
+<link href="/template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="/template/user/css/i.css?20120915" type="text/css" rel="stylesheet"/>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="/js/jquery.js"></script>
+<script src="/js/common.js"></script>
+</head>
+
+<body>
+{head}
+			<form id="form1" name="form1" method="post" action="" >
+				<div id="i-profile">
+					<div class="ui-title i-tab-nav-box">
+						<ul class="i-tab-nav fn-clear">
+							<li ><a href="index.php?m=user-index.html" >基本资料</a></li>
+							<li class="line"></li>
+							<li><a href="index.php?m=user-info.html" >修改信息</a></li>
+							<li class="line"></li>
+							<li class="current"><a href="index.php?m=user-popedom.html" >我的权限</a></li>												
+						</ul>
+					</div>
+					<div class="ui-form">
+						<div class="ui-form-item fn-clear">
+	<table class="tbinfo pleft" >
+	<!-- BEGIN row -->
+	<tr>
+	<td width="100" align="right">{t_name}：</td>
+	<td>
+	分类<img src='{maccms:path}images/icons/{chk1}'/>
+	内容<img src='{maccms:path}images/icons/{chk2}'/>
+	播放<img src='{maccms:path}images/icons/{chk3}'/>
+	下载<img src='{maccms:path}images/icons/{chk3}'/>
+	</td></tr>
+	<!-- END row -->
+	</table>	
+						</div>						
+					</div>
+					<!-- // ui-form End -->
+				</div>
+				<!-- // ui-box End -->
+			</form>
+		</div>
+		<!-- // i-cnt End -->
+	</div>
+	<!-- // maxBox End -->
+</div>
+<!-- // wrap End -->
+{foot}
+</body>
+</html>

@@ -1,0 +1,178 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{maccms:name}</title>
+<meta name="keywords" content="{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link rel="shortcut icon" href="{maccms:path_tpl}images/favicon.ico"/>
+<link rel="bookmark" href="{maccms:path_tpl}images/favicon.ico"/>
+
+{maccms:include}
+
+
+</head>
+<body>
+{maccms:head}
+
+
+
+
+
+<!--幻灯-->
+<div class="fullSlide ">
+	<div class="bd">
+		<ul>	
+			{maccms:vod num=20 order=desc by=time type=all level=5}
+			<li _src="url([vod:picslide])">
+				<a href="[vod:link]">
+					<div class="fstext">
+						<p class="wrap">
+							<i class="focus_btn"></i><span class="fsname" >[vod:name]</span><span class="fsdes">剧情：&nbsp;　[vod:contenttext]</span>
+						</p>
+					</div>
+				</a>
+			</li>{/maccms:vod}
+		
+		</ul>
+	</div>
+	<div class="hd"><ul></ul></div>
+	<span class="prev"></span>
+	<span class="next"></span>
+</div><!--fullSlide end-->
+
+
+
+
+<div id="content" class="wrap">
+	
+	{maccms:matrix type=1,2,3,4 table=vod}<section class="ui-box clearfix indexcon">
+
+		<div class="hello-box">
+        
+			<div class="module-head  border-gray">
+				<h2 class="module-title"><i class="iconfont m-r-7 f-s-25 m-t-2">&#xf027e;</i>热门[matrix:name]推荐</h2>		
+                					
+				<ul class="s-title_f12"> 
+				{maccms:menu num=4 parent=[menu:id] order=asc table=vod}<li><a href="[menu:link]" {if-A:"{maccms:curvodtypeid}"=="[menu:id]"} class="on"{endif-A}>[menu:name]</a></li>{/maccms:menu}
+				</ul>				
+									
+				<a class="more" href="[matrix:link]" target="_blank" title="更多">更多</a>
+			</div>
+            
+<!--推荐-->
+         <ul class="sub-list border-gray fn-clear" id="sub-list-tv">			 	
+	 {maccms:vod num=32 type=[matrix:id] start=25 order=desc by=time}<li><a target="_blank" href="[vod:link]">[vod:name]</a></li>{/maccms:vod} 
+		</ul>
+            
+
+			<div class="module-content">
+				<ul class="yun-list clearfix" id="yun-list">		 
+										
+					{maccms:vod num=24 type=[matrix:id] start=1 order=desc by=time}<li class="yun yun-large  border-gray">
+						<a class="yun-link" href="[vod:link]" title="[vod:name]">
+							<div class="img">
+								<img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/noimage.gif" alt="[vod:name]" />
+								
+								<span class="bgb">
+								<i class="bgbbg"></i>
+								<p class="name">[vod:remarks]</p>
+								<p class="other">剧情：[vod:contenttext]</p>
+								</span>
+							</div>
+							<div class="text">
+								<p class="name">[vod:name]</p><p class="actor">主演：[vod:starring]</p>
+							</div>
+						</a>
+					</li>{/maccms:vod}
+								
+					
+				</ul>
+			</div>
+<!--推荐	
+         <ul class="sub-list border-gray fn-clear" id="sub-list-tv">			 	
+				{maccms:vod num=32 type=[matrix:id] start=13 order=desc by=time}<li><a target="_blank" href="[vod:link]">[vod:name]</a></li>{/maccms:vod} 
+		</ul>
+        -->	
+
+		</div>
+	</section>
+	
+<!--广告位放置处
+    <script src="{maccms:path_ads}play1200.js"></script>荐-->
+    {/maccms:matrix}
+	
+	
+
+	<section class="ui-box clearfix" id="ui-topic">
+		
+	</section>
+
+	<section class="ui-box clearfix border-gray" id="directory-focus">
+	
+
+	
+	</section>
+	<section class="ui-box clearfix margin-b10 border-gray" id="links-focus">	
+		<h3><i class="iconfont f-s-16 m-r-5">󰅋</i>友情链接<span class="links-tz"></span></h3>
+		<ul class="links-txt-list clearfix">
+			<li><a href="http://baiyug.cn/" target="_blank">百域阁-影视传媒</a></li>
+			
+		
+ {maccms:link type=font}
+			<li><a href="[link:link]" target="_blank">[link:name]</a></li>
+				{/maccms:link}
+		</ul>
+	</section>
+</div>
+<script type="text/javascript">
+$(".fullSlide").hover(function(){
+    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function(){
+    $(this).find(".prev,.next").fadeOut()
+});
+$(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+
+<!--/Wrap-->
+
+{maccms:foot}
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</body>
+</html>

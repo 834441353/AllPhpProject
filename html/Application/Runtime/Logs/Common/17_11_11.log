@@ -1,0 +1,60 @@
+[ 2017-11-11T00:54:53+08:00 ] 80.82.78.50 http://www.baidu.com/cache/global/img/gs.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+ERR: 无法加载模块:Cache
+
+[ 2017-11-11T08:49:23+08:00 ] 94.102.49.174 http://www.baidu.com/cache/global/img/gs.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+ERR: 无法加载模块:Cache
+
+[ 2017-11-11T10:47:33+08:00 ] 183.237.64.70 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+ERR: 无法加载模块:Favicon
+
+[ 2017-11-11T11:03:40+08:00 ] 110.179.158.151 /stssys.htm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+ERR: 无法加载模块:Stssys
+
+[ 2017-11-11T11:12:54+08:00 ] 183.237.64.70 /index.php/id/10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+ERR: 无法加载模块:Id
+
+[ 2017-11-11T15:40:12+08:00 ] 183.237.64.70 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+ERR: 无法加载模块:Favicon
+
+[ 2017-11-11T18:10:03+08:00 ] 139.162.88.63 http://clientapi.ipip.net/echo.php?info=1234567890
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+ERR: 无法加载模块:Echo
+
+[ 2017-11-11T21:20:40+08:00 ] 140.207.54.80 /ws_sample.php?signature=106df76fdaf644a0b012cc2fd1c4b08068905b7c&echostr=10278136936539356476&timestamp=1510406440&nonce=3093994776
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+ERR: 无法加载模块:Ws_sample
+
+[ 2017-11-11T21:20:48+08:00 ] 140.207.54.79 /ws_sample.php?signature=c52e6567ec62a1ee5d4a4a9e54a82f2baeb810a7&echostr=11292191705199017972&timestamp=1510406448&nonce=406746031
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+ERR: 无法加载模块:Ws_sample
+
+[ 2017-11-11T23:45:54+08:00 ] 80.82.78.50 http://www.baidu.com/cache/global/img/gs.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+ERR: 无法加载模块:Cache
+

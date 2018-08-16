@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{seacms:newssearchword}_{seacms:sitename}</title>
+{seacms:load inc.html}
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+	<h2 class="title mb clearfix">搜索<b class="key">{seacms:newssearchword}</b>共<b class="num">{seacms:newssearchnum}</b>条</h2>
+	<div class="n-list mb clearfix">
+			<ul>
+			  {seacms:newssearchlist size=10}
+			   <li class="mb clearfix">
+			   	<div class="img">
+			   	<a href="[newssearchlist:link]"><img src="[newssearchlist:pic]" alt="[newssearchlist:name]"></a>
+			   	</div>
+			    <div class="text n3 n4 r">
+			    <p class="tit"><a href="[newssearchlist:link]">[newssearchlist:name]</a></p>
+			    <p class="des">[newssearchlist:des len=200]</p>
+			    <p><span class="time"><i class="time-ico"></i>[newssearchlist:time]</span></p>
+			    </div>
+			  </li>
+			  {/seacms:newssearchlist}
+			</ul>
+	</div>
+<div class="page mb clearfix">
+{if:{newssearchlist:page}<>1}<a href="{newssearchlist:firstlink}">1..</a><a href="{newssearchlist:backlink}"><</a>{end if}
+{newssearchlist:pagenumber len=10}
+   {if:{newssearchlist:page}<>[pagenumber:page]}
+    <a href="[pagenumber:link]">[pagenumber:page]</a>
+   {else}
+    <em>[pagenumber:page]</em>
+   {end if}
+{/newssearchlist:pagenumber}
+{if:{newssearchlist:page}<>{newssearchlist:pagecount}}
+<a href="{newssearchlist:nextlink}">></a>
+<a href="{newssearchlist:lastlink}">..{newssearchlist:pagecount}</a>
+{end if}</div>
+</div>
+{seacms:foot}
+</body>
+</html>

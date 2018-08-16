@@ -1,0 +1,158 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>正在播放 [vod:name] [vod:playname]</title>
+<meta name="Keywords" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<meta name="description" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link rel="stylesheet" href="{maccms:path_tpl}css/style..css"/>
+<script>var mv_info = false;</script>
+
+<style type="text/css">
+<!--
+.STYLE1 {font-size: 12px}
+-->
+</style>
+<script type="text/javascript" src="{maccms:path_tpl}js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/common_zt.js" charset="utf-8"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/init.js"></script>
+<!--[if lte IE 6]> 
+<script src="{maccms:path_tpl}js/DD_belatedPNG_0.0.8a.min.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+DD_belatedPNG.fix('.search-text,.watch-box,.watch-list-triangle,.watch-list-ul li i,.search-list-ul li i,.advance-notice-top h3,.program-top i,.more-list-btn i,.go-share-btn,.dcb-episodes-list li a,.anew-filtrate i,.coming-soon i,.logo a,.more-list-box,.watch-icon,.watch-icon2,.search-null-left,.star-search-text,.search-text2,.cartoon-ul li img');
+</script>
+<![endif]-->
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script type="text/javascript" src="{maccms:path_tpl}js/home.js"></script>
+<script src="{maccms:path}js/jq/jquery.lazyload.js"></script>
+<script src="{maccms:path}js/jq/jquery.autocomplete.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?73e10a67a0f415b23c0a1461dfd87341";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<body class="channel4">
+{maccms:head}
+{maccms:xubao}
+{maccms:qbfq}
+{maccms:viptan}
+{maccms:putan}
+{maccms:adgg}
+{maccms:pbts}
+
+<div id="endplay">
+<div class="player">
+<div id="play">
+<div class="ptitle"><p class="name">当前位置：[vod:textlink]  [vod:playname]</p></div>
+<div id="player" class="player">[vod:playerinfo][vod:player]</div>
+ </div>
+</div>
+</div>
+<div id="playmain">
+{maccms:play from=current}
+            <div class="details-con3-head">
+                <ul class="fch1 dch1">
+                   <li class="active-style8"><i></i>[play:show]</li>
+				   </ul>
+            </div>
+             <div class="details-con3-body">
+                <div class="dcb" style="display:block;">
+                  <div class="you-likes">
+              <div class="details-con2-wrap">
+                 <ul class="details-con2-list">
+               {maccms:url order=asc}
+                 <li ><a href="[url:link]" target="_blank">[url:name]</a>{/maccms:url}</a></li>
+                </ul>																	   
+               </div>
+               </div>                 	   
+             </div>
+			{/maccms:play}   
+
+          </div><!--details-con2-->
+
+          <div class="details-con3">
+            <div class="details-con3-head">
+                <ul class="fch1 dch1">
+                   <li class="active-style8"><i></i>猜你喜欢作品</li>
+                   <li>相关导演作品</li>                   <li>相关主演作品</li>                                </ul>
+            </div>
+
+             <div class="details-con3-body">
+                <div class="dcb" style="display:block;">
+                  <div class="you-like">
+                    <ul class="fcb-ul">
+                       
+                      {maccms:vod num=5 by=rnd type=current order=desc}
+                       <li>
+                         <a href="[vod:link]" class="fcb-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}img/loading.gif" width="160" height="220" alt="[vod:name]"></a>
+                         <div class="movie-headline1"><a href="[vod:link]">[vod:name]</a></div>
+                       </li>
+                          {/maccms:vod}
+                    </ul>
+                  </div>
+                </div><!--dcb-->
+
+                                <div class="dcb">
+                  <div class="you-like">
+                    <ul class="fcb-ul">
+                      
+                       {maccms:vod num=5 similar=directed order=desc}
+                       <li>
+                         <a href="[vod:link]" class="fcb-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}img/loading.gif" width="160" height="220" alt="[vod:name]"></a>
+                         <div class="movie-headline1"><a href="[vod:link]">[vod:name]</a></div>
+                       </li>
+                          {/maccms:vod}
+                    </ul>
+                  </div>
+                </div><!--dcb2-->
+                                
+                                <div class="dcb">
+                  <div class="you-like">
+                    <ul class="fcb-ul">
+                       {maccms:vod num=5 similar=starring order=desc}
+                       <li>
+                         <a href="[vod:link]" class="fcb-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" src="{maccms:path_tpl}img/loading.gif" width="160" height="220" alt="[vod:name]"></a>
+                         <div class="movie-headline1"><a href="[vod:link]">[vod:name]</a></div>
+                       </li>
+                          {/maccms:vod}
+                    </ul>
+                  </div>
+                </div><!--dcb3-->
+                                
+             </div><!--details-con3-body-->
+          </div><!--details-con2-->
+		  		   <div class="details-con3 mt20">
+             <div class="details-con3-head">
+                <ul class="fch1 dch1">
+                   <li class="active-style8"><i></i>用户评论</li>
+               </ul>
+             </div><!--details-con3-head-->
+
+             <div class="details-con3-body">
+                             <div class="dcb" style="display:block;">
+                 <div class="dcb-show-pic-wrap" id="comments">
+                
+               <div id="comment" class="comment">[vod:comment]</div>
+
+                  
+                  </div>
+               </div><!--dcb-->
+                              
+             </div><!--details-con3-body-->
+          </div><!--details-con2-->
+
+       </div><!--details-left-->
+
+<!--/main-->
+{maccms:foot}
+<script type="text/javascript" src="{maccms:path_tpl}images/IE6Top.js"></script>
+</body>
+</html>

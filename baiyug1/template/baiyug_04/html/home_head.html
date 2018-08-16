@@ -1,0 +1,107 @@
+<div class="topall">
+<div class="wrap head clearfix">
+  <ul class="logo"><a href="http://{maccms:url}"><i class="logobg png"></i></a></ul>
+  <ul class="nav-pc-2">
+<!--
+    <li class="js1"><i class="ico pc1bg png"></i><i class="ico pc2bg png"></i><b class="navb">导航</b>
+-->
+      <div class="nav-down-pc filter shadow js2 clearfix">
+        <ul>
+    {maccms:menu type=all}
+        <li><a href="[menu:link]"{if-A:"{maccms:curvodtypeid}"=="[menu:id]"} class="on"{endif-A}>[menu:name]</a></li>
+      {/maccms:menu}
+	  <li><a href="{maccms:path}allmovie.html">全部影片</a></li>
+
+      </ul>
+     </div>
+      </li>
+    </ul>
+    
+    
+    
+    
+<!--手机导航--> 
+  <ul class="nav-mb">
+    <li class="nav-sj"><b class="navb">影院中心</b></li>
+    <li class=""><a href="http://shang.qq.com/wpa/qunwpa?idkey=d79a931b07c798ff3f8f6254d4504264db368400f0e663d66a1b259f3065ac7d"><b class="navb">交流中心</b></a></li> 
+    <li class="nav-sh"><b class="navb">影片搜索</b></li>  
+  </ul>
+  
+ 
+<!--电脑导航--> 
+  <ul class="nav-pc">
+      <li><b class="navb"><a class="now" href="{maccms:link_index}">首页</a></b></li>
+     
+     
+<!--电视剧-->
+      <li class="js1">
+        <b class="navb">{maccms:menu type=2 order=asc table=vod}<a href="[menu:link]"{if-A:"{maccms:curvodtypeid}"=="[menu:id]"} class="on"{endif-A}>[menu:name]<i class="ico sjbgs png"></i><i class="ico sjbgx png"></i></a>{/maccms:menu}</b>
+        <div class="nav-down shadow filter js2 clearfix">
+        <ul>
+      {maccms:menu parent=2 order=asc table=vod}    
+        <li><a href="[menu:link]"{if-A:"{maccms:curvodtypeid}"=="[menu:id]"} class="on"{endif-A}>[menu:name]</a></li>
+      {/maccms:menu}
+        </ul>
+        </div>
+      </li>
+            
+<!--电影-->
+      <li class="js1">
+        <b class="navb">{maccms:menu type=1 order=asc table=vod}<a href="[menu:link]"{if-A:"{maccms:curvodtypeid}"=="[menu:id]"} class="on"{endif-A}>[menu:name]<i class="ico sjbgs png"></i><i class="ico sjbgx png"></i></a>{/maccms:menu}</b>
+        <div class="nav-down shadow filter js2 clearfix">
+        <ul>
+      {maccms:menu parent=1 order=asc table=vod}    
+        <li><a href="[menu:link]"{if-A:"{maccms:curvodtypeid}"=="[menu:id]"} class="on"{endif-A}>[menu:name]</a></li>
+      {/maccms:menu}
+        </ul>
+        </div>
+      </li>
+
+
+
+<!--综艺、动漫-->
+      {maccms:menu type=3,4}
+      <li>
+        <b class="navb"><a href="[menu:link]"{if-A:"{maccms:curvodtypeid}"=="[menu:id]"} class="on"{endif-A}>[menu:name]</a></b>
+      </li>
+      {/maccms:menu}
+  
+    </ul>
+    <ul class="login">
+      <li class="js1"><a class="bar_login" id="login" href="{maccms:path}index.php?m=user-index.html" ><i class="bglogin png"></i></a>
+        <!--<div class="loginon filter shadow js2"><a href="{maccms:path}index.php?m=user-index.html"></div>-->
+      </li>
+    </ul>
+    <ul class="ls">
+      <li class="js1"><a class="ls1" id="history" href="javascript:void(0);" >观看记录</a>
+      <div class="lsjl filter shadow js2"><script type="text/javascript" src="/js/history.js"></script><script type="text/javascript">$MH.limit=10;$MH.WriteHistoryBox(180,170,'font');$MH.recordHistory({name:'{playpage:name}',link:'{playpage:url}',pic:'{playpage:pic}'})</script></div>
+      </li>
+    </ul>
+    <ul class="search sh">
+      <form name="formsearch" id="formsearch" action='{maccms:link_search_vod}' method="post"  target="_self" autocomplete="off">
+          <!--<input class="input" name="searchword" type="text" id="keyword" placeholder="输入影片或演员名称搜索"/>-->
+		  <input class="input" name="wd" type="text" id="wd" placeholder="输入影片或演员名称搜索"/>
+         
+          <input class="ico imgbt1 png" type="submit" value=""/>
+          <input class="ico imgbt2 png" type="submit" value=""/>
+      </form>
+    </ul>
+    <div class="nav-down-mb filter shadow clearfix">
+      <ul> 
+    {maccms:menu type=all}
+        <li><a href="[menu:link]"{if-A:"{maccms:curvodtypeid}"=="[menu:id]"} class="on"{endif-A}>[menu:name]</a></li>
+      {/maccms:menu}
+
+
+    </ul>
+    </div> 
+    <div class="search-mb filter shadow">
+      <div class="shall clearfix">
+      <form name="formsearch" id="formsearch" action='{maccms:link_search_vod}' method="post"  target="_self" autocomplete="off">
+          <input class="input" name="wd" type="text" id="wd" placeholder="输入影片或演员名称搜索"/>
+          <input class="imgbt" type="submit" value="搜索"/>
+      </form>
+    </div>
+  </div> 
+</div>
+</div>

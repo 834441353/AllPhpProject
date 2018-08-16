@@ -1,0 +1,5 @@
+微信对接,?m=system-configweixin
+定时任务采集,?m=system-timming
+百域阁影片采集,?m=collect-list-ac2--hour--xt-1-ct--group--flag-utvs_-apiurl-http://baiyug.cn/inc/api.php
+网站设置,?m=system-config
+视频管理,?m=vod-list

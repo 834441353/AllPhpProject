@@ -1,0 +1,36 @@
+<!--集数列表代码-开始-->
+<!--          <div class="box_tt box_tt_tab">
+			{maccms:play}
+                <h2 id="nav_[play:from]" rel="play_tag" data="[play:from]" class="nav_[play:num]">[play:show]<span>[play:urlcount]</span></h2>
+				{/maccms:play}
+                </div>
+-->			
+		{maccms:play}
+            <div class="box_con box_[play:num]" id="box_[play:from]" style="display:none">
+                <div class="playtips">
+                    <p>[play:show]在线观看</p>
+                    <div class="option_down"><a href="#" target="_blank">温馨提醒您：[play:tip]</a>
+                    </div>
+                </div>
+				{if-B:"[play:urlcount]">"0"}
+                 <div class="control">
+                    <div class="videolist">	<span id="tab_[play:from]"></span>
+                    </div>
+            </div>
+			{endif-B}
+            <ul class="showplayul" id="list_[play:from]" rel="symax_player" data="[play:from]" order="desc" limit="20">
+			{maccms:url order=asc}
+                <li><a href="[url:link]" title="[url:name]" target="_blank"  class="bk" id="[play:from]_[url:num]">[url:name]</a>
+              </li>
+			  {/maccms:url}
+              </ul>
+			  {if-C:"[play:urlcount]">"20"}
+			  <div class="playtips playtips_bottom">
+                    <p></p>
+                    <div class="turnlist" id="turn_[play:from]"></div>
+                </div>
+				{endif-C}
+        </div>
+		{/maccms:play}
+        </div>
+<!--集数列表代码-结束-->

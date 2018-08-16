@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{seacms:sitename}-高级搜索</title>
+<meta name="keywords" content="{seacms:searchword},{seacms:sitename}" />
+<meta name="description" content="{seacms:searchword},{seacms:sitename}" />
+{seacms:load inc.html} 
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+  <div class="sy-all clearfix">
+  <div class="sy-title clearfix">
+    <div class="text">{if:{searchpage:typename}<>全部}<em>{searchpage:typename}</em>{end if}
+      {if:{searchpage:jq}<>全部}<em>{searchpage:jq}</em>{end if}
+      {if:{searchpage:year}<>全部}<em>{searchpage:year}</em>{end if}
+      {if:{searchpage:area}<>全部}<em>{searchpage:area}</em>{end if}
+    </div> 
+    <div class="more sbtn">
+      <b class="more1"><i class="name">展开</i><i class="ico sybg1 png"></i></b>
+      <b class="more2"><i class="name">收起</i><i class="ico sybg2 png"></i></b>
+    </div> 
+  </div>
+  <div class="sy scon clearfix">
+          <dl class="clearfix"><dt>按分类：</dt>
+              <dd>{seacms:typeitemlist}
+          <a href="[typeitemlist:link]"{if:{searchpage:typename}==[typeitemlist:value]} class="on"{end if}>[typeitemlist:value]</a>{/seacms:typeitemlist}</dd>
+          </dl>
+          <dl class="clearfix"><dt>按剧情：</dt>
+              <dd>{seacms:jqitemlist}
+          <a href="[jqitemlist:link]"{if:[jqitemlist:value]=={searchpage:jq}} class="on"{end if}>[jqitemlist:value]</a>{/seacms:jqitemlist}</dd>
+          </dl>
+          <dl class="clearfix"><dt>按年代：</dt>
+              <dd>{seacms:yearitemlist}
+          <a href="[yearitemlist:link]"{if:[yearitemlist:value]=={searchpage:year}} class="on"{end if}>{if:[yearitemlist:value]==more}更早{else}[yearitemlist:value]{end if}</a>{/seacms:yearitemlist}</dd>
+          </dl>
+          <dl class="area clearfix"><dt>按地区：</dt>
+              <dd>{seacms:areaitemlist}
+          <a href="[areaitemlist:link]"{if:[areaitemlist:value]=={searchpage:area}} class="on"{end if}>[areaitemlist:value]</a>{/seacms:areaitemlist}</dd>
+          </dl>
+  </div>
+  </div>
+   <div class="list-tab mb clearfix">
+    <ul>
+      <li><a class="time{if:{searchpage:ordername}==time} on{end if}" href="{searchpage:order-time-link}">最新</a></li>
+      <li><a class="rq{if:{searchpage:ordername}==hit} on{end if}" href="{searchpage:order-hit-link}">人气</a></li>
+      <li><a class="tj{if:{searchpage:ordername}==commend} on{end if}" href="{searchpage:order-commend-link}">推荐</a></li>
+    </ul>
+   </div>
+   <div class="index-tj mb clearfix">
+    <ul>
+      {seacms:cascadelist size=30 type=current order=time}
+      <li class="mb{if:[cascadelist:i]%3==0} m3{end if}{if:[cascadelist:i]%5==0} m5{end if}">
+        <a class="li-hv" href="[cascadelist:link]" title="[cascadelist:name]">
+        <div class="img">
+          <img class="lazy" data-original="[cascadelist:pic]" src="/{seacms:sitepath}pic/load.gif" alt="[cascadelist:name]">
+          <b class="bg1"></b>
+          <b class="play-hv"></b>
+          <b class="sjbg2 png"></b>
+          <p class="bz">{if:[cascadelist:typeid]<13}[cascadelist:note]{else}{subif:[cascadelist:state]<>0}至[cascadelist:state]{end subif}{subif:[cascadelist:state]>999}期{end subif}{subif:[cascadelist:state]<1000 && [cascadelist:state]<>0}集{end subif}{subif:[cascadelist:state]<>0 && "[cascadelist:vodtotal]"<>""}/{end subif}{subif:"[cascadelist:vodtotal]"<>""}共[cascadelist:vodtotal]集{end subif}{end if}</p>
+        </div>
+        <div class="text">
+          <p class="name">[cascadelist:name]</p>
+          <p class="zy">[cascadelist:nolinkactor]</p>
+        </div>
+      </a>
+      </li>
+      {/seacms:cascadelist}
+    </ul>
+  </div>
+   <div class="page mb clearfix">
+{if:{cascadelist:page}<>1}<a href="{cascadelist:firstlink}">1..</a>
+<a href="{cascadelist:backlink}"><</a>{end if}
+{cascadelist:pagenumber len=8}
+{if:{cascadelist:page}<>[pagenumber:page]}
+<a href="[pagenumber:link]">[pagenumber:page]</a>
+{else}
+<em>[pagenumber:page]</em>
+{end if}
+{/cascadelist:pagenumber}
+{if:{cascadelist:page}<>{cascadelist:pagecount}}
+<a href="{cascadelist:nextlink}">></a>
+<a href="{cascadelist:lastlink}">..{cascadelist:pagecount}</a>
+{end if}
+</div> 
+</div>  
+{seacms:foot}
+</body>
+</html>

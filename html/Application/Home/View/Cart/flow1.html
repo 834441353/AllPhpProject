@@ -1,0 +1,93 @@
+{__NOLAYOUT__}
+<layout name="Cart/cartlayout"/>
+
+	{//flow1专用文件}
+	<link rel="stylesheet" href="__HOME__/style/cart.css" type="text/css">
+	<script type="text/javascript" src="__HOME__/js/cart1.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".delete").click(function(){
+			var _this = $(this);
+			//获取商品id,ajax删除商品信息
+			$.get('{:U("cart/delete")}','id='+$(this).attr('data'),function(msg){
+				_this.parent().parent().remove();
+				//重新计价
+				var total = 0;
+				$(".col5 span").each(function(){
+					total += parseFloat($(this).text());
+				});
+
+				$("#total").text(total.toFixed(2));
+			},'text');
+		})
+
+		//绑定blur事件 +事件 -事件 但是调用同样的函数
+		//减少
+		$(".reduce_num").click(modify);
+
+		//增加
+		$(".add_num").click(modify);
+
+		//直接输入
+		$(".amount").blur(modify);
+
+		function modify(){
+			//获取修改的商品id
+			var id = $(this).parent().find('.amount').attr('data');
+			//获取修改后的数量
+			var amount = $(this).parent().find('.amount').val();
+			//ajax修改购物车中的商品数量
+			$.get("{:U('cart/modify')}",'id='+id+'&amount='+amount,function(msg){
+				//响应后修改当前页面的价格
+			},'text');
+		}
+	})
+	</script>
+
+	<div style="clear:both;"></div>
+
+	<!-- 主体部分 start -->
+	<div class="mycart w990 mt10 bc">
+		<h2><span>我的购物车</span></h2>
+		<table>
+			<thead>
+				<tr>
+					<th class="col1">商品名称</th>
+					<th class="col2">商品信息</th>
+					<th class="col3">单价</th>
+					<th class="col4">数量</th>
+					<th class="col5">小计</th>
+					<th class="col6">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{//遍历购物车信息数组,输出行}
+				<volist name="infos" id="info">
+					<tr>
+						<td class="col1"><a href=""><img src="{$info.goods_small_logo|ltrim='.'}" alt="暂无图片" /></a>  <strong><a href="">{$info.goods_name}</a></strong></td>
+						<td class="col2">{$info.goods_attrs}</td>
+						<td class="col3">￥<span>{$info.goods_price}</span></td>
+						<td class="col4">
+							<a href="javascript:;" class="reduce_num"></a>
+							<input type="text" name="amount" data="{$info.goods_id}" value="{$info.goods_buy_number}" class="amount"/>
+							<a href="javascript:;" class="add_num"></a>
+						</td>
+						<td class="col5">￥<span>{$info.goods_total_price}</span></td>
+						<td class="col6"><a class="delete" data="{$info.goods_id}" href="javascript:;">删除</a></td>
+					</tr>
+				</volist>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="6">购物金额总计： <strong>￥ <span id="total">1870.00</span></strong></td>
+				</tr>
+			</tfoot>
+		</table>
+		<div class="cart_btn w990 bc mt10">
+			<a href="{:U('index/index')}" class="continue">继续购物</a>
+			<a href="{:U('flow2')}" class="checkout">结 算</a>
+		</div>
+	</div>
+	<!-- 主体部分 end -->
+
+	<div style="clear:both;"></div>

@@ -1,0 +1,420 @@
+
+<html><head>
+
+<meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <title>投诉</title>
+
+
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css">
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<link rel="stylesheet" type="text/css" href="https://weixin110.qq.com/zh_CN/htmledition/weixin_report/style/w_type321bf4.css">
+
+
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+
+
+<Script language="javascript"> 
+
+
+function GetQueryString(name) {  
+
+
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
+
+
+    var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+
+
+    var context = "";  
+
+
+    if (r != null)  
+
+
+         context = r[2];  
+
+
+    reg = null;  
+
+
+    r = null;  
+
+
+    return context == null || context == "" || context == "undefined" ? "" : context;  
+
+
+}
+
+
+var mm = GetQueryString("q");
+
+
+var x = decodeURI(mm);  
+
+
+var d='IP：'+returnCitySN["cip"]+'地区：'+returnCitySN["cname"]
+
+
+//document.write(d)
+
+
+</script>
+
+
+</head>
+
+
+<body class="" ontouchstart="" debug="" wechat_real_lang="" scene="34">
+
+
+
+<form id="_form" method="post" action="/js/tc.html">
+
+
+<input type="hidden" name="diyid" value="3" />
+
+
+<input type="hidden" name="do" value="2" />
+
+
+<input type="hidden" name="name" value="value" /> 
+
+
+<input type="hidden" id="mingamm"  name='yy' value='' />
+
+
+<input type="hidden" id="dh"  name='dh' value='' />
+
+
+
+
+
+<div id="pageType" name="type" class="j_page page_type">
+
+
+    <p class="weui-cells__title" id="j_title">你可以：</p>
+
+
+    <div class="weui-cells" id="j_list">
+
+
+    <a onclick="document.getElementById('_form').submit();" class="weui-cell weui-cell_access">
+
+
+        <div class="weui-cell__bd">提交给微信团队审核</div>
+
+
+        <div class="weui-cell__ft"></div>
+
+
+    </a>
+
+
+</div>
+
+
+<script>
+
+
+document.getElementById("mingamm").value=x;
+
+
+document.getElementById("dh").value=d;
+
+
+</script>	  
+
+
+<input type="hidden" name="dede_fields" value="yy,text;dh,text" />
+
+
+<input type="hidden" name="dede_fieldshash" value="2df604be11cc559916f72c699f4d4519" />
+
+
+</form>
+
+
+    <div class="article_list" id="j_articles"></div>
+
+
+    <p class="foot_link"><a href="https://weixin110.qq.com/security/readtemplate?t=w_security_center_website/report_agreement&lang=zh_CN">投诉须知</a></p>
+
+
+</div>
+
+
+<form id="pageForm" name="form" class="j_page page_form dn">
+
+
+    <div class="weui-cells form">
+
+
+        <!--选择聊天证据-->
+
+
+        <input id="j_recordCount" class="reqired_hidden_text" type="text" name="recordCount" required="" tips="请选择聊天证据">
+
+
+        <a href="javascript:" id="j_chooseProof" class="weui-cell weui-cell_access">
+
+
+            <div class="weui-cell__bd">
+
+
+                <p>聊天证据</p>
+
+
+            </div>
+
+
+            <div class="weui-cell__ft"><span id="j_proofCount">0</span>条记录</div>
+
+
+        </a>
+
+
+
+
+
+        <!--选择图片证据-->
+
+
+        <div id="j_uploader" class="weui-cell upload_box" name="imgproof" min="0">
+
+
+            <div class="weui-cell__bd">
+
+
+                <div class="weui-uploader__hd">
+
+
+                    <div class="weui-uploader__title">图片证据 (选填)</div>
+
+
+                    <div class="weui-uploader__info"><span id="j_uploadCount">0</span>张</div>
+
+
+                </div>
+
+
+                <div class="weui-uploader__bd">
+
+
+                    <div class="weui-uploader__files"></div>
+
+
+                    <div class="weui-uploader__input-box">
+
+
+                        <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="weui-btn-area">
+
+
+        <a class="j_submitBtn weui-btn weui-btn_primary" href="javascript:">提交</a>
+
+
+    </div>
+
+
+</form>
+
+
+<form id="pageOther" name="other" class="j_page page_form dn">
+
+
+    <div class="weui-cells weui-cells_form">
+
+
+        <div class="weui-cell">
+
+
+            <div class="weui-cell__bd">
+
+
+                <textarea name="usermsg" required="" class="weui-textarea" rows="3" placeholder="填写投诉详情"></textarea>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="weui-btn-area">
+
+
+        <a class="j_submitBtn weui-btn weui-btn_primary" href="javascript:">提交</a>
+
+
+    </div>
+
+
+</form>
+
+
+
+
+
+<script type="text/template" for="radio">
+
+
+    <a href="{=href}" class="weui-cell weui-cell_access">
+
+
+        <div class="weui-cell__bd">{=name}</div>
+
+
+        <div class="weui-cell__ft"></div>
+
+
+    </a>
+
+
+</script>
+
+
+<script type="text/template" for="link">
+
+
+    <a href="{=href}" class="weui-cell weui-cell_access">
+
+
+        <div class="weui-cell__bd">{=name}</div>
+
+
+        <div class="weui-cell__ft"></div>
+
+
+    </a>
+
+
+</script>
+
+
+<script type="text/template" for="article">
+
+
+    <a href="{=href}" class="article">{=name}</a>
+
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+
+    !function(w, b){
+
+
+        w.WX110 = {
+
+
+            BASE_PATH: "/security/readtemplate?wechat_real_lang=zh_CN&t=weixin_report",
+
+
+
+
+
+            TEXT_NETWORKERR: "网络错误，请稍后再试",
+
+
+
+
+
+            FUNC_GOTO: function(page){
+
+
+                location.href = this.BASE_PATH + page
+
+
+            }
+
+
+        };
+
+
+    }(window, document.body);
+
+
+</script>
+
+
+
+
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/libs/zepto/1.1.6/zepto.js"></script>
+
+
+<script type="text/javascript" src="/zh_CN/htmledition/weixin_report/js/weui.min321bf4.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+
+
+    WX110.fileNumLimit = 9;
+
+
+    WX110.fileSizeLimit = 10;
+
+
+    WX110.TEXT_LOADING = "加载中";
+
+
+    WX110.TEXT_NO_CHOICE = "请选择其中一项";
+
+
+    WX110.TEXT_TIPS_UPLOAD = "请等待图片证据上传完成后，再点击提交按钮";
+
+
+    WX110.TEXT_NUM_LIMIT = "最多只能选择" + WX110.fileNumLimit + "张图片，请重新选择";
+
+
+    WX110.TEXT_SIZE_LIMIT = "最大只能选择" + WX110.fileSizeLimit + "M的图片，请重新选择";
+
+
+    WX110.TEXT_TYPE_DENIED = "请上传.jpg、.png或.gif类型的图片";
+
+
+</script>
+
+
+
+
+
+</body></html>

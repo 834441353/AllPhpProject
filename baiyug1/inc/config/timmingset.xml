@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timmings>
+	
+
+
+
+
+
+
+
+
+
+
+<timming><name>定时采集当天</name><des>定时采集当天</des><status>0</status><file>collect.php</file><paramets>collect-cj-ac2-day-xt-1-ct--group--flag-utvs_-hour-24-apiurl-http://baiyug.cn/inc/api.php</paramets><weeks>1,2,3,4,5,6,0</weeks><hours>00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23</hours><runtime>1520558135</runtime></timming></timmings>

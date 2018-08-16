@@ -1,0 +1,124 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>[vod:name] [vod:playname] -{if-A:[vod:type]=3}[vod:playtitle]-{endif-A}在线观看 - {maccms:name}</title>
+<meta name="Keywords" content="[vod:name]高清点播免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<meta name="description" content="[vod:contenttext]" />
+<script src="{maccms:path_tpl}js/myplay.js"></script>
+<script>var playn='[vod:name]', playp='[vod:remarks]';</script>
+ 
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<div id="dtextlink" class="wrap border-gray fn-clear">
+
+		<div class="textlink fn-left"><strong>您所在的位置：</strong><a href='/' >首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href='[vod:typelink]'>[vod:textlink]</a></div>
+
+</div>
+<style>
+
+</style>
+
+<div id="content" class="wrap clearfix">
+
+<div class="wrap">
+
+	<div class="player">[vod:playerinfo][vod:player]</div>
+	<div class="playding mb clearfix" style="">
+						
+					</div>
+		<div class="ui-box border-gray clearfix">
+		<div class="playfrom jsfrom tab1 clearfix">
+			<span class="laiyuan">播放地址&nbsp;<i class="arrow"></i></span>
+			<ul>
+				
+{maccms:play} <li id="tab[play:num]" onclick="setTab('tab','stab',[play:num],5)"><i class="playerico ico-[play:show]"></i><span class="f">[play:show]</span></li>{/maccms:play}				
+
+			</ul>
+		</div>
+		
+		<!--集数列表-开始-->
+		{maccms:play}
+		<div id="stab[play:num]" class="playlist jsplist clearfix">
+			  <ul class="video-play-src">
+				<!--把playul改成了video-play-src-->
+{maccms:url order=asc}<li><a title='[url:name]' href='[url:link]' target="_self">[url:name]</a></li>{/maccms:url}
+			</ul>
+		</div>
+		{/maccms:play}
+		<!--集数列表-结束-->
+		
+			
+	</div>
+		
+			
+	</div>
+	<div class="ui-box  border-gray  fn-clear relative">
+			
+	</div>	
+	<div class="ui-box clearfix" id="detailcnxh">	
+		<div class="playfrom jsfrom tab1 border-gray clearfix">
+			<span class="laiyuan">猜你喜欢&nbsp;<i class="arrow"></i></span>
+			<ul>
+
+			</ul>
+		</div>
+		<div class="hello-box clearfix">
+			<div class="module-content">
+				<ul class="yun-list clearfix" id="yun-list">		
+						
+					{maccms:vod num=6 type=current order=desc by=hits}<li class="yun yun-large  border-gray">
+						<a class="yun-link" href="[vod:link]" title="[vod:name]">
+							<div class="img">
+								<img class="lazy" src="[vod:pic]" alt="[vod:name]">
+								
+								<span class="bgb">
+								<i class="bgbbg"></i>
+								<p class="name">[vod:remarks]</p>
+								<p class="other">剧情：[vod:contenttext]</p>
+								</span>
+							</div>
+							<div class="text">
+								<p class="name">[vod:name]</p><p class="actor">主演：[vod:starring]</p>
+							</div>
+						</a>
+					</li>{/maccms:vod}
+						
+					
+				</ul>
+			</div>
+		</div>		
+	</div>	
+	<div class="ui-box border-gray clearfix">	
+		<div class="playfrom jsfrom tab1 clearfix">
+			<span class="laiyuan">评论&nbsp;<i class="arrow"></i></span>
+		</div>
+
+		
+		
+		<!--PC和WAP自适应版  畅言留言代码安装-->
+<div id="SOHUCS" sid="29638" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysKCLho7'; 
+var conf = 'prod_d5d214c3321937cabcc33499aecaf707'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+		</div>	
+	</div>
+	
+</div>
+<!--/Wrap-->
+{maccms:foot}
+</body>
+
+</html>

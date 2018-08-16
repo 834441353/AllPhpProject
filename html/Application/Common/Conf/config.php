@@ -1,0 +1,31 @@
+<?php
+return array(
+	//'配置项'=>'配置值'
+  'TMPL_PARSE_STRING' => array(
+    '__ADMIN__'=>__ROOT__.'/Public/Admin',
+    '__HOME__'=>__ROOT__.'/Public/Home',
+	'__LAYUI__'=>__ROOT__.'/Public/layui'
+  ),
+
+  //数据库配置
+  /* 数据库设置 */
+//  'DB_TYPE'               =>  'mysql',     // 数据库类型
+//  'DB_HOST'               =>  '127.0.0.1', // 服务器地址
+//  'DB_NAME'               =>  'eshop',          // 数据库名
+//  'DB_USER'               =>  'root',      // 用户名
+//  'DB_PWD'                =>  'Sunxuejia83444',          // 密码
+//  'DB_PORT'               =>  '3306',        // 端口
+//  'DB_PREFIX'             =>  'sp_',    // 数据库表前缀
+
+
+//数据库配置
+  /* 数据库设置 */
+  'DB_TYPE'               =>  'mysql',     // 数据库类型
+  'DB_HOST'               =>  'rm-wz9ekmz6x3oi98p6fo.mysql.rds.aliyuncs.com', // 服务器地址
+  'DB_NAME'               =>  'eshop',          // 数据库名
+  'DB_USER'               =>  'root',      // 用户名
+  'DB_PWD'                =>  'Sunxuejia83444',          // 密码
+  'DB_PORT'               =>  '3306',        // 端口
+  'DB_PREFIX'             =>  'sp_',    // 数据库表前缀
+
+);

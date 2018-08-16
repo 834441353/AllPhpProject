@@ -1,0 +1,1 @@
+﻿document.writeln("<a href=\"http:\/\/3344.baiyug.cn\" target=\"_blank\"><img alt=\"百域阁-影视传媒??\" src=\"" width=\"300\" height=\"250\" \/><\/a>")

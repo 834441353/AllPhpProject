@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索{page:key}结果页-{maccms:name}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="{page:key},{maccms:name}" />
+<meta name="description" content="{page:key},{maccms:name}" />
+<link href="{maccms:path_tpl}css/search.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="wrap">
+  <div id="head">
+    <div class="s_nav"> <a href="/" class="s_logo"> <img src="{maccms:path_tpl}imgs/logo.png" border="0"  id="logo"/> </a> </div>
+    <div class="sbox" style="float:left;margin-top:45px">
+      <form action="{maccms:link_search_vod}" method="post" class="fm" id="bdcs-search-form">
+        <span class="s_ipt_wr" id="search_input_container">
+        <input name="wd" id="kw" class="s_ipt" value="{page:key}" maxlength="100" onblur="if(this.value==''){ this.value='请输入影片名';this.style.color='#cfcdcd';}" onfocus="if(this.value=='请输入影片名'){this.value='';this.style.color='';}" value="请输入影片名" autocomplete="off" style="color: rgb(207, 205, 205);">
+        <b class="icon"></b> </span> <span class="s_btn_wr">
+        <input type="submit" id="su" value="搜本站" class="s_btn" onMouseDown="this.className='s_btn s_btn_h'" onmouseout="this.className='s_btn'">
+        </span>
+      </form>
+    </div>
+  </div>
+  <div id="container" class="clearfix">
+    <div id="aside" class="aside">
+      <div id="left" class="aside-main">
+        <dl class="opt">
+          <dd><b>影视栏目</b></dd>
+          {maccms:menu type=child}
+          <dd ><a href="[menu:link]" {if-A:[menu:id]={maccms:curvodtypeid}} class="this"{endif-A} title="[menu:name]" target="_self">[menu:name]</a> </dd>
+          {/maccms:menu}   
+          {maccms:menu type=3,4 order=asc table=vod}
+          <dd ><a href="[menu:link]" {if-A:[menu:id]={maccms:curvodtypeid}} class="this"{endif-A} title="[menu:name]" target="_self">[menu:name]</a> </dd>
+          {/maccms:menu}
+        </dl>
+      </div>
+    </div>
+    <div id="center" class="content">
+      <div id="results" class="content-main">
+        <div class="position">搜索 <strong class="red">{page:key}</strong> 的结果共 <strong class="red">{page:datacount}</strong> 条</div>
+        <br>
+        {maccms:vod pagesize=10 order=desc by=time}
+        <div class="result f s0">
+          <h3 class="c-title"><a>[vod:typename]</a> <a href="[vod:link]" target="_blank"><em>[vod:name]</em></a> - {maccms:name}</h3>
+          <div>
+            <div class="c-content">
+              <div class="c-abstract"> 导演: [vod:directed]...主演: [vod:starringlink]...类型: [vod:classname]..[vod:contenttext len=100]...</div>
+              <div> <span class="c-showurl">{maccms:url}[vod:link] [vod:addtime style=Y-m-d]</span> </div>
+            </div>
+          </div>
+        </div>
+        {/maccms:vod} </div>
+		<br clear="all">
+		  <DIV id="div_3">
+    <DIV class="page">{maccms:pages len=6}</DIV>
+  </DIV>
+		
+		
+		
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

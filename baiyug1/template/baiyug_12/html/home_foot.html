@@ -1,0 +1,14 @@
+    <div class="tabbar visible-xs">
+        <a href="{maccms:path}" class="item{if-A:{maccms:siteaid}==10} active{endif-A}"><i class="icon iconfont icon-home"></i><p class="text">首页</p></a>
+        {maccms:menu type=1,2,3,4 table=vod}<a class="item{if-A:{maccms:curvodtypeid}==[menu:id]} active {endif-A}{if-A:{maccms:curvodtypepid}==[menu:id]} active {endif-A}{if-A:[menu:id]=[vod:typepid]} active{endif-A}" href="[menu:link]"><i class="icon iconfont{if-A:[menu:id]==1} icon-film{endif-A}{if-A:[menu:id]==2} icon-show{endif-A}{if-A:[menu:id]==3} icon-flag{endif-A}{if-A:[menu:id]==4} icon-mallanimation{endif-A}"></i><p class="text">[menu:name] </p></a>{/maccms:menu}
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="hy-footer clearfix">
+                <p class="text-muted hidden-sm hidden-xs">本网站内容收集于互联网，{maccms:name}不承担任何由于内容的合法性及健康性所引起的争议和法律责任。 欢迎大家对网站内容侵犯版权等不合法和不健康行为进行监督和举报。</p>
+                <p class="text-muted">Copyright @ 2017 {maccms:name} - {maccms:url}</p>
+            </div>
+        </div>
+    </div>
+    <div class="backup hidden-sm"><i class="iconfont icon-uparrow"></i></div>
+    <span style="display:none">{maccms:visits}</span>
